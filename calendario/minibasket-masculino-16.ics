@@ -1,0 +1,84 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Masculino 16
+X-WR-CALDESC:Partidos de Minibasket Masculino 16 (CB El Palo)\, temporada 2
+ 026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529743@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261024T101500Z
+DTEND:20261024T121500Z
+SUMMARY:Minibasket Masculino 16 · Rincón Basket Club '15 Jr Camperos – 
+ CB El Palo
+LOCATION:CEIP Carmen Martín Gaite\, Calle Ángeles Navas Atencia\, 12\, Ri
+ ncón de la Victoria\, Málaga
+GEO:36.721727;-4.283964
+DESCRIPTION:Minibasket · Fase Previa · Jornada 1\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-16
+ #p-529743
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-16#p-529743
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529749@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Minibasket Masculino 16 · CB El Palo – AD Asunción Málaga
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 3\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-16
+ #p-529749
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-16#p-529749
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529751@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261121T123000Z
+DTEND:20261121T143000Z
+SUMMARY:Minibasket Masculino 16 · EBG Fundación Unicaja – CB El Palo
+LOCATION:Pistas exteriores de Los Guindos\, Avda. Gregorio Diego 44\, Mála
+ ga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Minibasket · Fase Previa · Jornada 4\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-16
+ #p-529751
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-16#p-529751
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529754@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Minibasket Masculino 16 · CB El Palo – CB Salliver Fuengirola Hi
+ guerón Resort Blanco
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 5\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-16
+ #p-529754
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-16#p-529754
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

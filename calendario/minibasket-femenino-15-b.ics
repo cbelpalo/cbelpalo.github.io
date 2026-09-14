@@ -1,0 +1,102 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Femenino 15 B
+X-WR-CALDESC:Partidos de Minibasket Femenino 15 B (CB El Palo)\, temporada 
+ 2026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529387@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261024T113000Z
+DTEND:20261024T133000Z
+SUMMARY:Minibasket Femenino 15 B · CB El Palo – CB Cártama
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 1\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15-
+ b#p-529387
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15-b#p-529387
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529390@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261107T093000Z
+DTEND:20261107T113000Z
+SUMMARY:Minibasket Femenino 15 B · Hamburguesería Málaga Norte Basket No
+ rte – CB El Palo
+LOCATION:CEIP Rosa de Gálvez\, Av. Jane Bowles\, 34\, 29011\, Málaga\, M
+ álaga
+DESCRIPTION:Minibasket · Fase Previa · Jornada 2\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15-
+ b#p-529390
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15-b#p-529390
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529393@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261114T123000Z
+DTEND:20261114T143000Z
+SUMMARY:Minibasket Femenino 15 B · CB El Palo – CB Salliver Fuengirola H
+ iguerón Resort Azul
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 3\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15-
+ b#p-529393
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15-b#p-529393
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529396@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261121T123000Z
+DTEND:20261121T143000Z
+SUMMARY:Minibasket Femenino 15 B · CB El Palo – CD La Goleta 15-16 Funda
+ ción Fomento y Deporte
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 4\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15-
+ b#p-529396
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15-b#p-529396
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529399@cbelpalo
+DTSTAMP:20261018T010050Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Minibasket Femenino 15 B · Rumar Seguros CAB Estepona '15 – CB E
+ l Palo
+LOCATION:Pabellón Cubierto "La Lobilla"\, Camino de los Molinos\, 11 \, Es
+ tepona\, Málaga
+GEO:36.43185;-5.14158
+DESCRIPTION:Minibasket · Fase Previa · Jornada 5\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15-
+ b#p-529399
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15-b#p-529399
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
