@@ -1,0 +1,243 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Sub22 Masculino
+X-WR-CALDESC:Partidos de Sub22 Masculino (CB El Palo)\, temporada 2026/27. 
+ Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:517541@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261003T113000Z
+DTEND:20261003T133000Z
+SUMMARY:Sub22 Masculino · CB El Palo 74-16 Rincón Basket Club Tablao Aleg
+ ría
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 1\nPista 3\nVictoria · parcial
+ es 20-6\, 16-5\, 21-2\, 17-3\nTodos los partidos: https://cbelpalo.github.
+ io/?periodo=temporada&equipos=sub22-masculino#p-517541
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517541
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517543@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261017T183000Z
+DTEND:20261017T203000Z
+SUMMARY:Sub22 Masculino · San Agustín Málaga – CB El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Senior U22 Masculino · Jornada 2\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517543
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517543
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517548@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261024T113000Z
+DTEND:20261024T133000Z
+SUMMARY:Sub22 Masculino · CB El Palo – CB Rincón de La Victoria  Taper
+ ía El Cañuelo
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 3\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-5
+ 17548
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517548
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517552@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261107T190000Z
+DTEND:20261107T210000Z
+SUMMARY:Sub22 Masculino · Recoletas Salud Marbella Basket – CB El Palo
+LOCATION:Pabellón Bello Horizonte - Carlos Cabezas\, Cam. Cristo de los Mo
+ linos\, 25\, 29603\, Marbella\, Málaga
+GEO:36.5129952;-4.858492
+DESCRIPTION:Senior U22 Masculino · Jornada 4\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517552
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517552
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517555@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261114T123000Z
+DTEND:20261114T143000Z
+SUMMARY:Sub22 Masculino · CB El Palo – EBG Málaga 09/10
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 5\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-5
+ 17555
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517555
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517561@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261122T180000Z
+DTEND:20261122T200000Z
+SUMMARY:Sub22 Masculino · Colegio El Pinar – CB El Palo
+LOCATION:Colegio El Pinar\, Camino de la Acequia\, s/n\, Alhaurín de la To
+ rre\, Málaga
+DESCRIPTION:Senior U22 Masculino · Jornada 6\nPista central\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculi
+ no#p-517561
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517561
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517562@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Sub22 Masculino · CB El Palo – CB Novaschool Rincón de La Victo
+ ria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 7\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-5
+ 17562
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517562
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517569@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261213T103000Z
+DTEND:20261213T123000Z
+SUMMARY:Sub22 Masculino · Rincón Basket Club Tablao Alegría – CB El Pa
+ lo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Senior U22 Masculino · Jornada 8\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517569
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517569
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517571@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261219T123000Z
+DTEND:20261219T143000Z
+SUMMARY:Sub22 Masculino · CB El Palo – San Agustín Málaga
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 9\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-5
+ 17571
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517571
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517576@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270110T121500Z
+DTEND:20270110T141500Z
+SUMMARY:Sub22 Masculino · CB Rincón de La Victoria  Tapería El Cañuelo 
+ – CB El Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Senior U22 Masculino · Jornada 10\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517576
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517576
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517580@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270116T123000Z
+DTEND:20270116T143000Z
+SUMMARY:Sub22 Masculino · CB El Palo – Recoletas Salud Marbella Basket
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 11\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-
+ 517580
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517580
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517583@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270123T114500Z
+DTEND:20270123T134500Z
+SUMMARY:Sub22 Masculino · EBG Málaga 09/10 – CB El Palo
+LOCATION:Colegio San José (PABELLÓN)\, C/ Argentéa 20\, Málaga\, Málag
+ a
+GEO:36.720491;-4.442957
+DESCRIPTION:Senior U22 Masculino · Jornada 12\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517583
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517583
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517589@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270130T123000Z
+DTEND:20270130T143000Z
+SUMMARY:Sub22 Masculino · CB El Palo – Colegio El Pinar
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior U22 Masculino · Jornada 13\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-
+ 517589
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517589
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517590@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270207T160000Z
+DTEND:20270207T180000Z
+SUMMARY:Sub22 Masculino · CB Novaschool Rincón de La Victoria – CB El P
+ alo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Senior U22 Masculino · Jornada 14\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p-517590
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=sub22-masculino#p
+ -517590
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

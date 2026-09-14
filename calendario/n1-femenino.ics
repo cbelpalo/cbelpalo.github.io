@@ -1,0 +1,449 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · N1 Femenino
+X-WR-CALDESC:Partidos de N1 Femenino (CB El Palo)\, temporada 2026/27. Se a
+ ctualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:512016@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20260912T151500Z
+DTEND:20260912T171500Z
+SUMMARY:N1 Femenino · CB El Palo 57-53 Unicaja
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:VI Supercopa Diputación Provincial Málaga · Jornada 1\nPista
+  1\nVictoria · parciales 13-17\, 17-17\, 16-7\, 11-12\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-5120
+ 16
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 016
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512015@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20260920T080000Z
+DTEND:20260920T100000Z
+SUMMARY:N1 Femenino · Unicaja 68-52 CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:VI Supercopa Diputación Provincial Málaga · Jornada 2\nPista
+  centro\nDerrota · parciales 17-17\, 24-12\, 13-10\, 14-13\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p
+ -512015
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 015
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512758@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20260926T163000Z
+DTEND:20260926T183000Z
+SUMMARY:N1 Femenino · El Plantel GMASB 71-52 CB El Palo
+LOCATION:Forus Antonio Prieto\, CALLE PALMITA\, S/N\, Granada\, Granada
+DESCRIPTION:Liga N1 · Jornada 1\nDerrota · parciales 14-19\, 27-9\, 14-16
+ \, 16-8\nTodos los partidos: https://cbelpalo.github.io/?periodo=temporada
+ &equipos=n1-femenino#p-512758
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 758
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512767@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261003T171500Z
+DTEND:20261003T191500Z
+SUMMARY:N1 Femenino · CB El Palo 57-63 Clínicas Dentales Dr. Manuel Cara 
+ CB La Mojonera
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 2\nPista central\nDerrota · parciales 17-12
+ \, 18-12\, 8-17\, 14-22\nTodos los partidos: https://cbelpalo.github.io/?p
+ eriodo=temporada&equipos=n1-femenino#p-512767
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 767
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512773@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261011T103000Z
+DTEND:20261011T123000Z
+SUMMARY:N1 Femenino · Hispania Agustinos – CB El Palo
+LOCATION:Colegio Agustinos\, C/ SANTO TOMAS DE VILLANUEVA\,17\, Granada\, G
+ ranada
+DESCRIPTION:Liga N1 · Jornada 3\nTodos los partidos: https://cbelpalo.gith
+ ub.io/?periodo=temporada&equipos=n1-femenino#p-512773
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 773
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512780@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261017T150000Z
+DTEND:20261017T170000Z
+SUMMARY:N1 Femenino · CB El Palo – CB Salliver Fuengirola Higuerón Reso
+ rt
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 4\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512780
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 780
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512788@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261025T103000Z
+DTEND:20261025T123000Z
+SUMMARY:N1 Femenino · EBG Málaga – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Liga N1 · Jornada 5\nPista B\nTodos los partidos: https://cbel
+ palo.github.io/?periodo=temporada&equipos=n1-femenino#p-512788
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 788
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512793@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261031T173000Z
+DTEND:20261031T193000Z
+SUMMARY:N1 Femenino · CB El Palo – Fundación Caja Rural Jaén C.B.
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 6\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512793
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 793
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512803@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261107T163000Z
+DTEND:20261107T183000Z
+SUMMARY:N1 Femenino · Fundación CB Granada – CB El Palo
+LOCATION:Pabellón Veleta\, Urb. los Vergeles\, Calle Otura\, Granada\, Gra
+ nada
+DESCRIPTION:Liga N1 · Jornada 7\nTodos los partidos: https://cbelpalo.gith
+ ub.io/?periodo=temporada&equipos=n1-femenino#p-512803
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 803
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512806@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261115T113000Z
+DTEND:20261115T133000Z
+SUMMARY:N1 Femenino · CB El Palo – Melilla Ciudad del Deporte La Salle
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 8\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512806
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 806
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512818@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261122T110000Z
+DTEND:20261122T130000Z
+SUMMARY:N1 Femenino · Clínica Dra María Martín-CD Presentación de Gran
+ ada – CB El Palo
+LOCATION:Pabellón Paquillo Fernández\, C/ ALBONDON\, S/N\, Granada\, Gran
+ ada
+DESCRIPTION:Liga N1 · Jornada 9\nTodos los partidos: https://cbelpalo.gith
+ ub.io/?periodo=temporada&equipos=n1-femenino#p-512818
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 818
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512819@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261128T173000Z
+DTEND:20261128T193000Z
+SUMMARY:N1 Femenino · CB El Palo – CAB Estepona
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 10\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512819
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 819
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512832@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261205T173000Z
+DTEND:20261205T193000Z
+SUMMARY:N1 Femenino · CB El Palo – Unicaja
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 11\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512832
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 832
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512834@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261212T190000Z
+DTEND:20261212T210000Z
+SUMMARY:N1 Femenino · Analytica Alimentaria El Toyo – CB El Palo
+LOCATION:Pabellón del Toyo\, C/ JUEGOS DE CASABLANCA\, S/N-RETAMAR\, El To
+ yo\, Almería
+DESCRIPTION:Liga N1 · Jornada 12\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-femenino#p-512834
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 834
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512845@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261219T173000Z
+DTEND:20261219T193000Z
+SUMMARY:N1 Femenino · CB El Palo – CD Roquetas BC
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 13\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512845
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 845
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512849@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270109T160000Z
+DTEND:20270109T180000Z
+SUMMARY:N1 Femenino · CB El Palo – El Plantel GMASB
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 14\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512849
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 849
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512858@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270116T160000Z
+DTEND:20270116T180000Z
+SUMMARY:N1 Femenino · Clínicas Dentales Dr. Manuel Cara CB La Mojonera 
+ – CB El Palo
+LOCATION:Pabellón Municipal La Mojonera\, C/ JAEN\, S/N\, Mojonera\, La\, 
+ Almería
+GEO:36.750191;-2.692115
+DESCRIPTION:Liga N1 · Jornada 15\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-femenino#p-512858
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 858
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512864@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270123T181500Z
+DTEND:20270123T201500Z
+SUMMARY:N1 Femenino · CB El Palo – Hispania Agustinos
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 16\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512864
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 864
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512871@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270130T193000Z
+DTEND:20270130T213000Z
+SUMMARY:N1 Femenino · CB Salliver Fuengirola Higuerón Resort – CB El Pa
+ lo
+LOCATION:Pabellón Juanito\, RECINTO FERIAL\, Fuengirola\, Málaga
+DESCRIPTION:Liga N1 · Jornada 17\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512871
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 871
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512879@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270206T181500Z
+DTEND:20270206T201500Z
+SUMMARY:N1 Femenino · CB El Palo – EBG Málaga
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 18\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512879
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 879
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512884@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270213T164500Z
+DTEND:20270213T184500Z
+SUMMARY:N1 Femenino · Fundación Caja Rural Jaén C.B. – CB El Palo
+LOCATION:Pabellón Carlos Martínez Esteban\, Calle Alcalde Emilio Arroyo L
+ ópez\, S/N\, Jaén\, Jaén
+DESCRIPTION:Liga N1 · Jornada 19\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-femenino#p-512884
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 884
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512894@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270220T160000Z
+DTEND:20270220T180000Z
+SUMMARY:N1 Femenino · CB El Palo – Fundación CB Granada
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 20\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512894
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 894
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512897@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270307T100000Z
+DTEND:20270307T120000Z
+SUMMARY:N1 Femenino · Melilla Ciudad del Deporte La Salle – CB El Palo
+LOCATION:Pabellón Guillermo García Pezzi-Melilla\, C/ AZUCENA\, 17\, Meli
+ lla\, Melilla
+DESCRIPTION:Liga N1 · Jornada 21\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-femenino#p-512897
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 897
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512909@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270313T181500Z
+DTEND:20270313T201500Z
+SUMMARY:N1 Femenino · CB El Palo – Clínica Dra María Martín-CD Presen
+ tación de Granada
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 22\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512909
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 909
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512910@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270321T121500Z
+DTEND:20270321T141500Z
+SUMMARY:N1 Femenino · CAB Estepona – CB El Palo
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Liga N1 · Jornada 23\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512910
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 910
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512923@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270404T093000Z
+DTEND:20270404T113000Z
+SUMMARY:N1 Femenino · Unicaja – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Liga N1 · Jornada 24\nPista A\nTodos los partidos: https://cbe
+ lpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512923
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 923
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512925@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270410T163000Z
+DTEND:20270410T183000Z
+SUMMARY:N1 Femenino · CB El Palo – Analytica Alimentaria El Toyo
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 25\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512925
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 925
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512936@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270418T093000Z
+DTEND:20270418T113000Z
+SUMMARY:N1 Femenino · CD Roquetas BC – CB El Palo
+LOCATION:Pabellón Infanta Cristina\, CARRETERA DE ALICUN\, S/N\, Roquetas 
+ de Mar\, Almería
+DESCRIPTION:Liga N1 · Jornada 26\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-femenino#p-512936
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-femenino#p-512
+ 936
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

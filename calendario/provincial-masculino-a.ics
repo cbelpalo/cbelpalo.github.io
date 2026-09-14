@@ -1,0 +1,317 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Provincial Masculino A
+X-WR-CALDESC:Partidos de Provincial Masculino A (CB El Palo)\, temporada 20
+ 26/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:517335@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261004T103000Z
+DTEND:20261004T123000Z
+SUMMARY:Provincial Masculino A · Lucasa Inmobiliaria Torrebasket – CB El
+  Palo
+LOCATION:Pabellón "Maestro Salvador Sánchez"\, C/ Lucero S/N\, Torre del 
+ Mar\, Málaga
+DESCRIPTION:Senior Provincial Masculino · Jornada 1\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino-
+ a#p-517335
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517335
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517342@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261017T113000Z
+DTEND:20261017T133000Z
+SUMMARY:Provincial Masculino A · Provincial Masculino A – Provincial Mas
+ culino B
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 2\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-m
+ asculino-a#p-517342
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517342
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517346@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261025T180000Z
+DTEND:20261025T200000Z
+SUMMARY:Provincial Masculino A · Cdc Los Olivos Sayco – CB El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Senior Provincial Masculino · Jornada 3\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino-
+ a#p-517346
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517346
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517351@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261107T123000Z
+DTEND:20261107T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – Future2day Rincón de La V
+ ictoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 4\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-m
+ asculino-a#p-517351
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517351
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517357@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261115T113000Z
+DTEND:20261115T133000Z
+SUMMARY:Provincial Masculino A · EBG Málaga – CB El Palo
+LOCATION:Colegio San José (PABELLÓN)\, C/ Argentéa 20\, Málaga\, Málag
+ a
+GEO:36.720491;-4.442957
+DESCRIPTION:Senior Provincial Masculino · Jornada 5\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino-
+ a#p-517357
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517357
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517360@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261121T123000Z
+DTEND:20261121T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – Rincón Basket Club Clíni
+ cas Rincón Dental
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 6\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-m
+ asculino-a#p-517360
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517360
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517368@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261129T180000Z
+DTEND:20261129T200000Z
+SUMMARY:Provincial Masculino A · CB Novaschool Rincón de La Victoria – 
+ CB El Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Senior Provincial Masculino · Jornada 7\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino-
+ a#p-517368
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517368
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517369@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261213T120000Z
+DTEND:20261213T140000Z
+SUMMARY:Provincial Masculino A · Málaga Basket – CB El Palo
+LOCATION:Ciudad Deportiva Javier Imbroda (Carranque)\, Avd. Santa Rosa Lima
+  7\, Málaga\, Málaga
+DESCRIPTION:Senior Provincial Masculino · Jornada 8\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino-
+ a#p-517369
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517369
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517378@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270116T123000Z
+DTEND:20270116T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – West Park Málaga Oeste
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 9\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-m
+ asculino-a#p-517378
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517378
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517380@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270123T123000Z
+DTEND:20270123T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – Lucasa Inmobiliaria Torreb
+ asket
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 10\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517380
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517380
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517387@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270131T113000Z
+DTEND:20270131T133000Z
+SUMMARY:Provincial Masculino A · Provincial Masculino B – Provincial Mas
+ culino A
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 11\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517387
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517387
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517391@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270206T123000Z
+DTEND:20270206T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – Cdc Los Olivos Sayco
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 12\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517391
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517391
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517396@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270213T121500Z
+DTEND:20270213T141500Z
+SUMMARY:Provincial Masculino A · Future2day Rincón de La Victoria – CB 
+ El Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Senior Provincial Masculino · Jornada 13\nTodos los partidos: 
+ https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino
+ -a#p-517396
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517396
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517402@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270220T123000Z
+DTEND:20270220T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – EBG Málaga
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 14\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517402
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517402
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517405@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270307T121500Z
+DTEND:20270307T141500Z
+SUMMARY:Provincial Masculino A · Rincón Basket Club Clínicas Rincón Den
+ tal – CB El Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Senior Provincial Masculino · Jornada 15\nTodos los partidos: 
+ https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino
+ -a#p-517405
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517405
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517413@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270313T123000Z
+DTEND:20270313T143000Z
+SUMMARY:Provincial Masculino A · CB El Palo – CB Novaschool Rincón de L
+ a Victoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 16\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517413
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517413
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517414@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270403T113000Z
+DTEND:20270403T133000Z
+SUMMARY:Provincial Masculino A · CB El Palo – Málaga Basket
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Masculino · Jornada 17\nPista 1\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-
+ masculino-a#p-517414
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517414
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517423@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270411T150000Z
+DTEND:20270411T170000Z
+SUMMARY:Provincial Masculino A · West Park Málaga Oeste – CB El Palo
+LOCATION:IES Litoral (PABELLÓN)\, Camino de la Térmica\, 4 \, Málaga\, M
+ álaga
+GEO:36.69018;-4.44716
+DESCRIPTION:Senior Provincial Masculino · Jornada 18\nTodos los partidos: 
+ https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-masculino
+ -a#p-517423
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-mascul
+ ino-a#p-517423
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

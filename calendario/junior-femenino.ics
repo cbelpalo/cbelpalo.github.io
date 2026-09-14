@@ -1,0 +1,148 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Junior Femenino
+X-WR-CALDESC:Partidos de Junior Femenino (CB El Palo)\, temporada 2026/27. 
+ Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:522474@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261004T083000Z
+DTEND:20261004T103000Z
+SUMMARY:Junior Femenino · CB El Palo – "Juntas" Torrebasket
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 1\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-fe
+ menino#p-522474
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522474
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522476@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261017T093000Z
+DTEND:20261017T113000Z
+SUMMARY:Junior Femenino · CB Salliver Fuengirola Higuerón Resort Azul –
+  CB El Palo
+LOCATION:Pabellón Training Center Higuerón\, Avda. del Higuerón s/n (Arr
+ oyo del jardín)\, Fuengirola\, Málaga
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 2\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p-
+ 522476
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522476
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522483@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261107T113000Z
+DTEND:20261107T133000Z
+SUMMARY:Junior Femenino · Ingeniería Ambiental CAB Estepona – CB El Pal
+ o
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 4\nPista central\nTod
+ os los partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=jun
+ ior-femenino#p-522483
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522483
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522484@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261115T093000Z
+DTEND:20261115T113000Z
+SUMMARY:Junior Femenino · CB El Palo – Unicaja 11-12*
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 5\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-fe
+ menino#p-522484
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522484
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522489@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261122T093000Z
+DTEND:20261122T113000Z
+SUMMARY:Junior Femenino · "Juntas" Torrebasket – CB El Palo
+LOCATION:Pabellón "Maestro Salvador Sánchez"\, C/ Lucero S/N\, Torre del 
+ Mar\, Málaga
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 6\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p-
+ 522489
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522489
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522491@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261129T093000Z
+DTEND:20261129T113000Z
+SUMMARY:Junior Femenino · CB El Palo – CB Salliver Fuengirola Higuerón 
+ Resort Azul
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 7\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-fe
+ menino#p-522491
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522491
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522498@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20261220T093000Z
+DTEND:20261220T113000Z
+SUMMARY:Junior Femenino · CB El Palo – Ingeniería Ambiental CAB Estepon
+ a
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 9\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-fe
+ menino#p-522498
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522498
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522499@cbelpalo
+DTSTAMP:20261003T231521Z
+DTSTART:20270109T090000Z
+DTEND:20270109T110000Z
+SUMMARY:Junior Femenino · Unicaja 11-12* – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Campeonatos Provinciales 26/27 · Jornada 10\nPista A\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-f
+ emenino#p-522499
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino#p
+ -522499
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
