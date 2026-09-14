@@ -1,0 +1,169 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Babybasket Masculino 20-21
+X-WR-CALDESC:Partidos de Babybasket Masculino 20-21 (CB El Palo)\, temporad
+ a 2026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:532869@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Babybasket Masculino 20-21 · CB El Palo – Teresianas´20 (hora p
+ or confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 1\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532869
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532869
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532873@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Babybasket Masculino 20-21 · Eb Cártama´20 – CB El Palo (hora 
+ por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 2\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532873
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532873
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532876@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Babybasket Masculino 20-21 · CB El Palo – Victoria Maristas (hor
+ a por confirmar)
+LOCATION:CEIP Algazara\, C. Goleta\, 57\, 29130 Alhaurín de la Torre\, Má
+ laga\, Alhaurín de la Torre\, Málaga
+GEO:36.66336;-4.53997
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 3\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532876
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532876
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532882@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Babybasket Masculino 20-21 · Edm Teatinos´20 – CB El Palo (hora
+  por confirmar)
+LOCATION:CEIP Algazara\, C. Goleta\, 57\, 29130 Alhaurín de la Torre\, Má
+ laga\, Alhaurín de la Torre\, Málaga
+GEO:36.66336;-4.53997
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 4\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532882
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532882
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532890@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Babybasket Masculino 20-21 · CB El Palo – Colegio El Pinar Gris 
+ (hora por confirmar)
+LOCATION:Colegio El Pinar\, Camino de la Acequia\, s/n\, Alhaurín de la To
+ rre\, Málaga
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 6\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532890
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532890
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532892@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Babybasket Masculino 20-21 · Inmoporsan CB Algazara´20 – CB El 
+ Palo (hora por confirmar)
+LOCATION:Ciudad Deportiva Cártama\, C/ La Feria s/n\, Cártama\, Málaga
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 7\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532892
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532892
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532897@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Babybasket Masculino 20-21 · Teresianas´20 – CB El Palo (hora p
+ or confirmar)
+LOCATION:Ciudad Deportiva Cártama\, C/ La Feria s/n\, Cártama\, Málaga
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 8\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532897
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532897
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532901@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270404
+DTEND;VALUE=DATE:20270405
+SUMMARY:Babybasket Masculino 20-21 · CB El Palo – Eb Cártama´20 (hora 
+ por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 9\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-masculino-20-21#p-532901
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532901
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532905@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270404
+DTEND;VALUE=DATE:20270405
+SUMMARY:Babybasket Masculino 20-21 · Victoria Maristas – CB El Palo (hor
+ a por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 10\nTodos l
+ os partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybas
+ ket-masculino-20-21#p-532905
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-mascul
+ ino-20-21#p-532905
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

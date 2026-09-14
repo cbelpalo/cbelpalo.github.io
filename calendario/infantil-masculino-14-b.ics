@@ -1,0 +1,119 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Masculino 14 · Alberto Gómez
+X-WR-CALDESC:Partidos de Infantil Masculino 14 · Alberto Gómez (CB El Pal
+ o)\, temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y resu
+ ltados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:528549@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261020T172000Z
+DTEND:20261020T192000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · CB El Palo 47-69 Inmopor
+ san CB Algazara´14
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 1\nDerrota · parci
+ ales 11-14\, 14-17\, 14-21\, 8-17\nTodos los partidos: https://cbelpalo.gi
+ thub.io/?periodo=temporada&equipos=infantil-masculino-14-b#p-528549
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528549
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528553@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261024T093000Z
+DTEND:20261024T113000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · EBG´14 46-35 CB El Palo
+LOCATION:IES Litoral\, Camino de la Térmica\, 4 \, Málaga\, Málaga
+GEO:36.69018;-4.44716
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 2\nDerrota · parci
+ ales 12-6\, 10-8\, 14-10\, 10-11\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=infantil-masculino-14-b#p-528553
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528553
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528556@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · CB El Palo 51-11 CB Camp
+ illos
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 3\nVictoria · parc
+ iales 14-2\, 21-4\, 6-5\, 10-0\nTodos los partidos: https://cbelpalo.githu
+ b.io/?periodo=temporada&equipos=infantil-masculino-14-b#p-528556
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528556
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528562@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261107T093000Z
+DTEND:20261107T113000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · CB Ciudad de Melilla´14
+  – CB El Palo
+LOCATION:Pistas Pepe Román (Girón) - CB Ciudad de Melilla\, Calle Guadiar
+ o 10\, 29003 \, Málaga\, Málaga
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 4\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528562
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528562
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528570@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · CB El Palo – CP Mijas 
+ Autos Moliére Baloncesto
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 6\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528570
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528570
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528572@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261128T093000Z
+DTEND:20261128T113000Z
+SUMMARY:Infantil Masculino 14 · Alberto Gómez · Miramar Torremolinos'14 
+ – CB El Palo
+LOCATION:Pistas Polideportivas PMDT\, C/Pedro Navarro Bruna s/n\, Torremoli
+ nos\, Málaga
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 7\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528572
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528572
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

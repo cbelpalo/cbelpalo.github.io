@@ -1,0 +1,294 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Premini Masculino 17
+X-WR-CALDESC:Partidos de Premini Masculino 17 (CB El Palo)\, temporada 2026
+ /27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:532241@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – Edfv La Presentación
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 3\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 41
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532241
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532243@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261128T090000Z
+DTEND:20261128T110000Z
+SUMMARY:Premini Masculino 17 · Torrebasket "La Base del Talento" – CB El
+  Palo
+LOCATION:Pabellón "Maestro Salvador Sánchez"\, C/ Lucero S/N\, Torre del 
+ Mar\, Málaga
+DESCRIPTION:Premini · Valorcesto · Jornada 4\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 43
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532243
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532250@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261212T083000Z
+DTEND:20261212T103000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – CB Rincón de La Victoria 17
+ /18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 5\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 50
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532250
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532254@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261219T083000Z
+DTEND:20261219T103000Z
+SUMMARY:Premini Masculino 17 · AD Asunción Málaga – CB El Palo
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Premini · Valorcesto · Jornada 6\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 54
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532254
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532259@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270116T083000Z
+DTEND:20270116T103000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – Rincón Basket Club 17-18 Do
+ ña Juanita
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 7\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 59
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532259
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532265@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270123T103000Z
+DTEND:20270123T123000Z
+SUMMARY:Premini Masculino 17 · Teresianas – CB El Palo
+LOCATION:Colegio Teresianas\, C/ Cañadas de los Ingleses\, 4\, Málaga\, M
+ álaga
+GEO:36.72167;-4.40585
+DESCRIPTION:Premini · Valorcesto · Jornada 8\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 65
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532265
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532231@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270130T083000Z
+DTEND:20270130T103000Z
+SUMMARY:Premini Masculino 17 · CD Estudiantes Baloncesto Nerja – CB El P
+ alo
+LOCATION:Pabellón Municipal de Nerja\, C/ Saturno s/n\, Nerja\, Málaga
+GEO:36.7554;-3.87474
+DESCRIPTION:Premini · Valorcesto · Jornada 1\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 31
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532231
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532268@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270206T083000Z
+DTEND:20270206T103000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – CB Novaschool Rincón de La 
+ Victoria
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 9\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-5322
+ 68
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532268
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532276@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270213T083000Z
+DTEND:20270213T103000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – CD Estudiantes Baloncesto Ne
+ rja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 10\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 276
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532276
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532286@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270313T103000Z
+DTEND:20270313T123000Z
+SUMMARY:Premini Masculino 17 · Edfv La Presentación – CB El Palo
+LOCATION:Colegio La Presentación\, C/Octavio Picón nº19\, Málaga\, Mál
+ aga
+GEO:36.72494;-4.36787
+DESCRIPTION:Premini · Valorcesto · Jornada 12\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 286
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532286
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532288@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270403T073000Z
+DTEND:20270403T093000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – Torrebasket "La Base del Tal
+ ento"
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 13\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 288
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532288
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532295@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270410T080000Z
+DTEND:20270410T100000Z
+SUMMARY:Premini Masculino 17 · CB Rincón de La Victoria 17/18 – CB El P
+ alo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Premini · Valorcesto · Jornada 14\nPista anexo\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-mascu
+ lino-17#p-532295
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532295
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532299@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270424T073000Z
+DTEND:20270424T093000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – AD Asunción Málaga
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 15\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 299
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532299
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532304@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270507T151500Z
+DTEND:20270507T171500Z
+SUMMARY:Premini Masculino 17 · Rincón Basket Club 17-18 Doña Juanita –
+  CB El Palo
+LOCATION:CEIP Carmen Martín Gaite\, Calle Ángeles Navas Atencia\, 12\, Ri
+ ncón de la Victoria\, Málaga
+GEO:36.721727;-4.283964
+DESCRIPTION:Premini · Valorcesto · Jornada 16\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 304
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532304
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532310@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270515T073000Z
+DTEND:20270515T093000Z
+SUMMARY:Premini Masculino 17 · CB El Palo – Teresianas
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 17\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 310
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532313@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270522T073000Z
+DTEND:20270522T093000Z
+SUMMARY:Premini Masculino 17 · CB Novaschool Rincón de La Victoria – CB
+  El Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Premini · Valorcesto · Jornada 18\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-17#p-532
+ 313
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -17#p-532313
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,190 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Babybasket Femenino 20-21
+X-WR-CALDESC:Partidos de Babybasket Femenino 20-21 (CB El Palo)\, temporada
+  2026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:532954@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Babybasket Femenino 20-21 · AD Asunción Málaga "B" – CB El Pal
+ o (hora por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 1\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532954
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532954
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532955@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Babybasket Femenino 20-21 · Babybasket Femenino 20-21 – Premini 
+ Femenino 19 (hora por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 2\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532955
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532955
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532960@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Babybasket Femenino 20-21 · CB El Palo – San Estanislao de Kostk
+ a (hora por confirmar)
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 3\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532960
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532960
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532962@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Babybasket Femenino 20-21 · Maristas Champagnat – CB El Palo (ho
+ ra por confirmar)
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 4\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532962
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532962
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532965@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Babybasket Femenino 20-21 · CB El Palo – AD Asunción Málaga "A
+ " (hora por confirmar)
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 5\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532965
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532965
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532969@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Babybasket Femenino 20-21 · CB El Palo – AD Asunción Málaga "B
+ " (hora por confirmar)
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 6\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532969
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532969
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532970@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:Babybasket Femenino 20-21 · Premini Femenino 19 – Babybasket Fem
+ enino 20-21 (hora por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 7\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532970
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532970
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532975@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:Babybasket Femenino 20-21 · San Estanislao de Kostka – CB El Pal
+ o (hora por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 8\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532975
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532975
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532977@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:Babybasket Femenino 20-21 · CB El Palo – Maristas Champagnat (ho
+ ra por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 9\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybask
+ et-femenino-20-21#p-532977
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532977
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532980@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:Babybasket Femenino 20-21 · AD Asunción Málaga "A" – CB El Pal
+ o (hora por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 10\nTodos l
+ os partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=babybas
+ ket-femenino-20-21#p-532980
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=babybasket-femeni
+ no-20-21#p-532980
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

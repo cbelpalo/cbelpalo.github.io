@@ -1,0 +1,424 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Premini Femenino 19
+X-WR-CALDESC:Partidos de Premini Femenino 19 (CB El Palo)\, temporada 2026/
+ 27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:531522@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – AD Asunción Málaga "B"
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531522
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531522
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532952@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Premini Femenino 19 · CB El Palo – Maristas Champagnat (hora por
+  confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 1\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532952
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532952
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532955@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Premini Femenino 19 · Babybasket Femenino 20-21 – Premini Femeni
+ no 19 (hora por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 2\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532955
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532955
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531524@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261122T083000Z
+DTEND:20261122T103000Z
+SUMMARY:Premini Femenino 19 · CAB Estepona '18 – CB El Palo
+LOCATION:Pabellón Cubierto "La Lobilla"\, Camino de los Molinos\, 11 \, Es
+ tepona\, Málaga
+GEO:36.43185;-5.14158
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 2\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531524
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531524
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531529@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261212T103000Z
+DTEND:20261212T123000Z
+SUMMARY:Premini Femenino 19 · Premini Femenino 19 – Premini Femenino 18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531529
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531529
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531533@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270108T164500Z
+DTEND:20270108T184500Z
+SUMMARY:Premini Femenino 19 · EBG´18 Fundación Unicaja – CB El Palo
+LOCATION:CEIP Paulo Freire\, C. Eduardo de Palacios\, 8\, Carretera de Cád
+ iz\, 29004 Málaga\, Málaga\, Málaga
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 4\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531533
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531533
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531536@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270123T103000Z
+DTEND:20270123T123000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – Cdc Los Olivos´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 5\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531536
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531536
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532958@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Premini Femenino 19 · CB El Palo – AD Asunción Málaga "A" (hor
+ a por confirmar)
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 3\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532958
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532958
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532961@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Premini Femenino 19 · CB El Palo – San Estanislao de Kostka (hor
+ a por confirmar)
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 4\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532961
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532961
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531542@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270206T083000Z
+DTEND:20270206T103000Z
+SUMMARY:Premini Femenino 19 · San Estanislao de Kostka´18 – CB El Palo
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 6\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531542
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531542
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532964@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Premini Femenino 19 · AD Asunción Málaga "B" – CB El Palo (hor
+ a por confirmar)
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 5\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532964
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532964
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532967@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:Premini Femenino 19 · Maristas Champagnat – CB El Palo (hora por
+  confirmar)
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 6\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532967
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532967
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531543@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – Edm Teatinos´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 7\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531543
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531543
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531550@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270305T163000Z
+DTEND:20270305T183000Z
+SUMMARY:Premini Femenino 19 · AD Asunción Málaga "B" – CB El Palo
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 8\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531550
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531550
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531552@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270313T103000Z
+DTEND:20270313T123000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – CAB Estepona '18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 9\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 9#p-531552
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531552
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532970@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:Premini Femenino 19 · Premini Femenino 19 – Babybasket Femenino 
+ 20-21 (hora por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 7\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532970
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532970
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532973@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:Premini Femenino 19 · AD Asunción Málaga "A" – CB El Palo (hor
+ a por confirmar)
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 8\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532973
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532973
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531557@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270403T093000Z
+DTEND:20270403T113000Z
+SUMMARY:Premini Femenino 19 · Premini Femenino 18 – Premini Femenino 19
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 10\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531557
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531557
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531561@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270417T093000Z
+DTEND:20270417T113000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – EBG´18 Fundación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 11\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531561
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531561
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532976@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:Premini Femenino 19 · San Estanislao de Kostka – CB El Palo (hor
+ a por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 9\nTodos lo
+ s partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-
+ femenino-19#p-532976
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532976
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:532979@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:Premini Femenino 19 · CB El Palo – AD Asunción Málaga "B" (hor
+ a por confirmar)
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Babybasket · Concentraciones Valorcesto · Jornada 10\nTodos l
+ os partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=premini
+ -femenino-19#p-532979
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-532979
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531564@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270424T093000Z
+DTEND:20270424T113000Z
+SUMMARY:Premini Femenino 19 · Cdc Los Olivos´18 – CB El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 12\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531564
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531564
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531570@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270508T093000Z
+DTEND:20270508T113000Z
+SUMMARY:Premini Femenino 19 · CB El Palo – San Estanislao de Kostka´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 13\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531570
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531570
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531571@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270522T080000Z
+DTEND:20270522T100000Z
+SUMMARY:Premini Femenino 19 · Edm Teatinos´18 – CB El Palo
+LOCATION:Pistas FAB Teatinos\, Avda. Parménides s/n\, Málaga\, Málaga
+GEO:36.72022;-4.47992
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 14\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531571
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 19#p-531571
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

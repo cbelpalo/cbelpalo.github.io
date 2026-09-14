@@ -1,0 +1,184 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Premini Masculino 18
+X-WR-CALDESC:Partidos de Premini Masculino 18 (CB El Palo)\, temporada 2026
+ /27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:531635@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261114T083000Z
+DTEND:20261114T103000Z
+SUMMARY:Premini Masculino 18 · CB El Palo – San Agustín´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531635
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531635
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531638@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Premini Masculino 18 · Teresianas´18 – CB El Palo
+LOCATION:Colegio Teresianas\, C/ Cañadas de los Ingleses\, 4\, Málaga\, M
+ álaga
+GEO:36.72167;-4.40585
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 2\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531638
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531638
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531641@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261212T083000Z
+DTEND:20261212T103000Z
+SUMMARY:Premini Masculino 18 · CB El Palo – EBG´18 Fundación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531641
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531641
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531644@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270116T083000Z
+DTEND:20270116T103000Z
+SUMMARY:Premini Masculino 18 · Premini Masculino 18 – Premini Masculino 
+ 19
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 4\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531644
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531644
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531647@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270130T101500Z
+DTEND:20270130T121500Z
+SUMMARY:Premini Masculino 18 · Victoria Maristas – CB El Palo
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 5\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531647
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531647
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531650@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270214T120000Z
+DTEND:20270214T140000Z
+SUMMARY:Premini Masculino 18 · San Agustín´18 – CB El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 6\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531650
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531650
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531653@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270306T083000Z
+DTEND:20270306T103000Z
+SUMMARY:Premini Masculino 18 · CB El Palo – Teresianas´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 7\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531653
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531653
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531656@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270313T123000Z
+DTEND:20270313T143000Z
+SUMMARY:Premini Masculino 18 · EBG´18 Fundación Unicaja – CB El Palo
+LOCATION:Pistas exteriores de Los Guindos\, Avda. Gregorio Diego 44\, Mála
+ ga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 8\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531656
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531656
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531659@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270410T113000Z
+DTEND:20270410T133000Z
+SUMMARY:Premini Masculino 18 · Premini Masculino 19 – Premini Masculino 
+ 18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 9\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino-
+ 18#p-531659
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531659
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531662@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270424T073000Z
+DTEND:20270424T093000Z
+SUMMARY:Premini Masculino 18 · CB El Palo – Victoria Maristas
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 10\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531662
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-masculino
+ -18#p-531662
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

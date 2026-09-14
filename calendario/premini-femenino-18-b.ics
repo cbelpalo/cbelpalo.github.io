@@ -1,0 +1,263 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Premini Femenino 18 · Miguel Bernier
+X-WR-CALDESC:Partidos de Premini Femenino 18 · Miguel Bernier (CB El Palo)
+ \, temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y result
+ ados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:531520@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · Cdc Los Olivos´18 – CB 
+ El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531520
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531520
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531525@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – San Estanis
+ lao de Kostka´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 2\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531525
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531525
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531529@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261212T103000Z
+DTEND:20261212T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · Premini Femenino 19 – Pr
+ emini Femenino 18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531529
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531529
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531532@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270109T103000Z
+DTEND:20270109T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – AD Asunció
+ n Málaga "B"
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 4\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531532
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531532
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531538@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270124T083000Z
+DTEND:20270124T103000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CAB Estepona '18 – CB El
+  Palo
+LOCATION:Pabellón Cubierto "La Lobilla"\, Camino de los Molinos\, 11 \, Es
+ tepona\, Málaga
+GEO:36.43185;-5.14158
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 5\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531538
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531538
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531539@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270206T090000Z
+DTEND:20270206T110000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · Edm Teatinos´18 – CB El
+  Palo
+LOCATION:Pistas FAB Teatinos\, Avda. Parménides s/n\, Málaga\, Málaga
+GEO:36.72022;-4.47992
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 6\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531539
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531539
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531546@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – EBG´18 Fun
+ dación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 7\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531546
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531546
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531548@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270306T103000Z
+DTEND:20270306T123000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – Cdc Los Oli
+ vos´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 8\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531548
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531548
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531553@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270313T083000Z
+DTEND:20270313T103000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · San Estanislao de Kostka´
+ 18 – CB El Palo
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 9\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-1
+ 8-b#p-531553
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531553
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531557@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270403T093000Z
+DTEND:20270403T113000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · Premini Femenino 18 – Pr
+ emini Femenino 19
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 10\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531557
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531557
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531560@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270416T153000Z
+DTEND:20270416T173000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · AD Asunción Málaga "B" 
+ – CB El Palo
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 11\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531560
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531560
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531566@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270424T093000Z
+DTEND:20270424T113000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – CAB Estepon
+ a '18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 12\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531566
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531566
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531567@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270508T093000Z
+DTEND:20270508T113000Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · CB El Palo – Edm Teatino
+ s´18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 13\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531567
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531567
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531574@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270521T154500Z
+DTEND:20270521T174500Z
+SUMMARY:Premini Femenino 18 · Miguel Bernier · EBG´18 Fundación Unicaja
+  – CB El Palo
+LOCATION:CEIP Paulo Freire\, C. Eduardo de Palacios\, 8\, Carretera de Cád
+ iz\, 29004 Málaga\, Málaga\, Málaga
+DESCRIPTION:Premini 1er Año · Valorcesto · Jornada 14\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531574
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 18-b#p-531574
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

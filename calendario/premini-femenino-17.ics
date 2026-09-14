@@ -1,0 +1,319 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Premini Femenino 17
+X-WR-CALDESC:Partidos de Premini Femenino 17 (CB El Palo)\, temporada 2026/
+ 27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:531847@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261106T170000Z
+DTEND:20261106T190000Z
+SUMMARY:Premini Femenino 17 · CB Novaschool Rincón de La Victoria – CB 
+ El Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Premini · Valorcesto · Jornada 1\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53184
+ 7
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531847
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531852@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – Rincón Basket Club 17-18 Ryo
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 2\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53185
+ 2
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531852
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531858@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Premini Femenino 17 · Restaurante La Sorrentina Tbc – CB El Palo
+LOCATION:Pabellón "Maestro Salvador Sánchez"\, C/ Lucero S/N\, Torre del 
+ Mar\, Málaga
+DESCRIPTION:Premini · Valorcesto · Jornada 3\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53185
+ 8
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531858
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531861@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – AD Asunción Málaga "A"
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 4\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53186
+ 1
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531861
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531869@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261212T090000Z
+DTEND:20261212T110000Z
+SUMMARY:Premini Femenino 17 · Edfv La Presentación – CB El Palo
+LOCATION:Colegio La Presentación\, C/Octavio Picón nº19\, Málaga\, Mál
+ aga
+GEO:36.72494;-4.36787
+DESCRIPTION:Premini · Valorcesto · Jornada 5\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53186
+ 9
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531869
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531870@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261219T103000Z
+DTEND:20261219T123000Z
+SUMMARY:Premini Femenino 17 · Premini Femenino 17 – Premini Femenino 18
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 6\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53187
+ 0
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531870
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531879@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270116T103000Z
+DTEND:20270116T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – Teresianas
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 7\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53187
+ 9
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531879
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531881@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270123T103000Z
+DTEND:20270123T123000Z
+SUMMARY:Premini Femenino 17 · San Estanislao de Kostka – CB El Palo
+LOCATION:Colegio San Estanislao\, C/ Valparaíso s/n\, Málaga\, Málaga
+GEO:36.72307;-4.36084
+DESCRIPTION:Premini · Valorcesto · Jornada 8\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53188
+ 1
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531881
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531888@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270206T103000Z
+DTEND:20270206T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – CB Rincón de La Victoria
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 9\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-53188
+ 8
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531888
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531892@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – CB Novaschool Rincón de La V
+ ictoria
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 10\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5318
+ 92
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531892
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531897@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270305T153000Z
+DTEND:20270305T173000Z
+SUMMARY:Premini Femenino 17 · Rincón Basket Club 17-18 Ryo – CB El Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Premini · Valorcesto · Jornada 11\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5318
+ 97
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531897
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531903@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270313T103000Z
+DTEND:20270313T123000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – Restaurante La Sorrentina Tbc
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 12\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 03
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531903
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531906@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270403T080000Z
+DTEND:20270403T100000Z
+SUMMARY:Premini Femenino 17 · AD Asunción Málaga "A" – CB El Palo
+LOCATION:Colegio La Asunción\, C/ Manuel del Palacio 15\, Málaga\, Málag
+ a
+GEO:36.72522;-4.37046
+DESCRIPTION:Premini · Valorcesto · Jornada 13\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 06
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531906
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531914@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270410T093000Z
+DTEND:20270410T113000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – Edfv La Presentación
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 14\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 14
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531914
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531915@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270424T113000Z
+DTEND:20270424T133000Z
+SUMMARY:Premini Femenino 17 · Premini Femenino 18 – Premini Femenino 17
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 15\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 15
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531915
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531924@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270508T073000Z
+DTEND:20270508T093000Z
+SUMMARY:Premini Femenino 17 · Teresianas – CB El Palo
+LOCATION:Colegio Teresianas\, C/ Cañadas de los Ingleses\, 4\, Málaga\, M
+ álaga
+GEO:36.72167;-4.40585
+DESCRIPTION:Premini · Valorcesto · Jornada 16\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 24
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531924
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531926@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270515T093000Z
+DTEND:20270515T113000Z
+SUMMARY:Premini Femenino 17 · CB El Palo – San Estanislao de Kostka
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Premini · Valorcesto · Jornada 17\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 26
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531926
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:531933@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20270522T080000Z
+DTEND:20270522T100000Z
+SUMMARY:Premini Femenino 17 · CB Rincón de La Victoria – CB El Palo
+LOCATION:CEIP María del Mar Romera\, C/ Ribeiro s/n (Urb. Parque Victoria)
+ \, Rincón de la Victoria\, Málaga
+DESCRIPTION:Premini · Valorcesto · Jornada 18\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-17#p-5319
+ 33
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=premini-femenino-
+ 17#p-531933
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

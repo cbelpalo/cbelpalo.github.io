@@ -1,0 +1,100 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Femenino 17
+X-WR-CALDESC:Partidos de Minibasket Femenino 17 (CB El Palo)\, temporada 20
+ 26/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529433@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261025T163000Z
+DTEND:20261025T183000Z
+SUMMARY:Minibasket Femenino 17 · Bonifacio Solís CAB Estepona ´16 43-3 C
+ B El Palo
+LOCATION:Pabellón Cubierto "La Lobilla"\, Camino de los Molinos\, 11 \, Es
+ tepona\, Málaga
+GEO:36.43185;-5.14158
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 1\nDerrota · par
+ ciales 8-1\, 14-2\, 13-0\, 8-0\, 0-0\, 0-0\nTodos los partidos: https://cb
+ elpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-17#p-52943
+ 3
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-17#p-529433
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529436@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Minibasket Femenino 17 · CB El Palo – Recoletas Salud´16 Marbel
+ la Basket
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 2\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-17#p-529436
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-17#p-529436
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529440@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261115T090000Z
+DTEND:20261115T110000Z
+SUMMARY:Minibasket Femenino 17 · Miramar Torremolinos´16 – CB El Palo
+LOCATION:Pistas Polideportivas PMDT\, C/Pedro Navarro Bruna s/n\, Torremoli
+ nos\, Málaga
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 3\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-17#p-529440
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-17#p-529440
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529441@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Minibasket Femenino 17 · Edm Teatinos´16 – CB El Palo
+LOCATION:Pistas FAB Teatinos\, Avda. Parménides s/n\, Málaga\, Málaga
+GEO:36.72022;-4.47992
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 4\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-17#p-529441
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-17#p-529441
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529446@cbelpalo
+DTSTAMP:20261031T200105Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Minibasket Femenino 17 · CB El Palo – San Agustín
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 5\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-17#p-529446
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-17#p-529446
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
