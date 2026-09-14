@@ -1,0 +1,115 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Masculino 14 B
+X-WR-CALDESC:Partidos de Infantil Masculino 14 B (CB El Palo)\, temporada 2
+ 026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:528549@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T093000Z
+DTEND:20261017T113000Z
+SUMMARY:Infantil Masculino 14 B · CB El Palo – Inmoporsan CB Algazara´1
+ 4
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 1\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528549
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528549
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528553@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T110000Z
+DTEND:20261024T130000Z
+SUMMARY:Infantil Masculino 14 B · EBG´14 – CB El Palo
+LOCATION:IES Emilio Prados\, C. Luis Barahona de Soto\, 16\, Carretera de C
+ ádiz\, 29004 Málaga\, Málaga\, Málaga
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 2\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528553
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528553
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528556@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Infantil Masculino 14 B · CB El Palo – CB Campillos
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 3\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528556
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528556
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528562@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T093000Z
+DTEND:20261107T113000Z
+SUMMARY:Infantil Masculino 14 B · CB Ciudad de Melilla´14 – CB El Palo
+LOCATION:Pistas Pepe Román (Girón) - CB Ciudad de Melilla\, Calle Guadiar
+ o 10\, Málaga\, Málaga
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 4\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528562
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528562
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528570@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Infantil Masculino 14 B · CB El Palo – CP Mijas Autos Moliére B
+ aloncesto
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 6\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528570
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528570
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528572@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T093000Z
+DTEND:20261128T113000Z
+SUMMARY:Infantil Masculino 14 B · Miramar Torremolinos'14 – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Infantil 1er Año · Fase Previa · Jornada 7\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14-b#p-528572
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14-b#p-528572
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

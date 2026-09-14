@@ -1,0 +1,133 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Masculino 14
+X-WR-CALDESC:Partidos de Infantil Masculino 14 (CB El Palo)\, temporada 202
+ 6/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:527705@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261018T080000Z
+DTEND:20261018T100000Z
+SUMMARY:Infantil Masculino 14 · Fertinagro CB Torcal´13 – CB El Palo
+LOCATION:Pabellón 15 de julio\, Calle Juan Pablo II\, nº2 \, Antequera\, 
+ Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 1\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27705
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527705
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527710@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T073000Z
+DTEND:20261024T093000Z
+SUMMARY:Infantil Masculino 14 · CB El Palo – CB Salliver Fuengirola Higu
+ erón Resort Celeste
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 2\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27710
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527710
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527714@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T083000Z
+DTEND:20261031T103000Z
+SUMMARY:Infantil Masculino 14 · EBG – CB El Palo
+LOCATION:IES Emilio Prados\, C. Luis Barahona de Soto\, 16\, Carretera de C
+ ádiz\, 29004 Málaga\, Málaga\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 3\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27714
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527714
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527717@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T083000Z
+DTEND:20261107T103000Z
+SUMMARY:Infantil Masculino 14 · CB El Palo – Recoletas Salud´13 Marbell
+ a Basket
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 4\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27717
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527717
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527723@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261115T113000Z
+DTEND:20261115T133000Z
+SUMMARY:Infantil Masculino 14 · Inmoporsan CB Algazara´13 – CB El Palo
+LOCATION:Pabellón Blas Infante\, AVD. BLAS INFANTE\, S/N\, Alhaurín de la
+  Torre\, Málaga
+GEO:36.65947;-4.56992
+DESCRIPTION:Infantil · Fase Previa · Jornada 5\nPista 1\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculi
+ no-14#p-527723
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527723
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527724@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Infantil Masculino 14 · Rincón Basket Club '13 Health Sport – C
+ B El Palo
+LOCATION:CEIP Gregorio Marañón\, Pº Filipinas\, 2. 29720 La Cala del Mor
+ al\, Rincón de la Victoria\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 6\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27724
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527724
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527731@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Infantil Masculino 14 · CB El Palo – CD Málaga Oeste
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 7\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-14#p-5
+ 27731
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-14#p-527731
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

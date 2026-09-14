@@ -1,0 +1,266 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Masculino 13
+X-WR-CALDESC:Partidos de Infantil Masculino 13 (CB El Palo)\, temporada 202
+ 6/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:527563@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T073000Z
+DTEND:20261017T093000Z
+SUMMARY:Infantil Masculino 13 · CB Salliver Fuengirola Higuerón Resort Az
+ ul – CB El Palo
+LOCATION:Pabellón Juanito\, RECINTO FERIAL\, Fuengirola\, Málaga
+DESCRIPTION:Infantil · Campeonato · Jornada 1\nPista 1\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527563
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527563
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526750@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T143000Z
+DTEND:20261017T163000Z
+SUMMARY:Infantil Masculino 13 · CB Benalmádena´12 – CB El Palo
+LOCATION:Polideportivo Ramón Rico Benalmádena Pueblo\, Av. Juan Luis Pera
+ lta\, s/n\, Benalmádena\, Málaga
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 1\nPista central\nTod
+ os los partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=inf
+ antil-masculino-13#p-526750
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-526750
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527566@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T093000Z
+DTEND:20261024T113000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – Unicaja´14*
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 2\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7566
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527566
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526751@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261025T113000Z
+DTEND:20261025T133000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – CB San Pedro Negro
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 2\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-
+ masculino-13#p-526751
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-526751
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527570@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Infantil Masculino 13 · MBK Azul´13 – CB El Palo
+LOCATION:CEIP Luis Buñuel\, C/ Tamayo y Baus\, 40\, Málaga\, Málaga
+DESCRIPTION:Infantil · Campeonato · Jornada 3\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7570
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527570
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527571@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T160000Z
+DTEND:20261107T180000Z
+SUMMARY:Infantil Masculino 13 · EBG Málaga´13 – CB El Palo
+LOCATION:Colegio San José (PABELLÓN)\, C/ Argentéa 20\, Málaga\, Málag
+ a
+GEO:36.720491;-4.442957
+DESCRIPTION:Infantil · Campeonato · Jornada 4\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7571
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527571
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526756@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261108T113000Z
+DTEND:20261108T133000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – Rincón Basket Club '12 C. 
+ Dental Irene López
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 3\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-
+ masculino-13#p-526756
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-526756
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527576@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – Miramar Torremolinos '13 Ne
+ gro
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 5\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7576
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527576
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526758@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261115T120000Z
+DTEND:20261115T140000Z
+SUMMARY:Infantil Masculino 13 · Frutas Eladio CAB Estepona – CB El Palo
+LOCATION:Pabellón Cubierto "La Lobilla"\, Camino de los Molinos\, 11 \, Es
+ tepona\, Málaga
+GEO:36.43185;-5.14158
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 4\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino
+ -13#p-526758
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-526758
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527578@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – CB Salliver Fuengirola Higu
+ erón Resort Azul
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 6\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7578
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527578
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527581@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261129T083000Z
+DTEND:20261129T103000Z
+SUMMARY:Infantil Masculino 13 · Unicaja´14* – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Infantil · Campeonato · Jornada 7\nPista B\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527581
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527581
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526761@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261129T113000Z
+DTEND:20261129T133000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – CD La Goleta´12 Jab Proté
+ sicos
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 5\nPista 3\nTodos los
+  partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-
+ masculino-13#p-526761
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-526761
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527585@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T103000Z
+DTEND:20261212T123000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – MBK Azul´13
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 8\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7585
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527585
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527586@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T103000Z
+DTEND:20261219T123000Z
+SUMMARY:Infantil Masculino 13 · CB El Palo – EBG Málaga´13
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 9\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-52
+ 7586
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527586
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527591@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270117T113000Z
+DTEND:20270117T133000Z
+SUMMARY:Infantil Masculino 13 · Miramar Torremolinos '13 Negro – CB El P
+ alo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Infantil · Campeonato · Jornada 10\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculino-13#p-5
+ 27591
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-masculin
+ o-13#p-527591
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,129 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Femenino 14
+X-WR-CALDESC:Partidos de Infantil Femenino 14 (CB El Palo)\, temporada 2026
+ /27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:528229@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T073000Z
+DTEND:20261017T093000Z
+SUMMARY:Infantil Femenino 14 · CB El Palo – CB Benalmádena
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 1\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8229
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528229
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528233@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261025T093000Z
+DTEND:20261025T113000Z
+SUMMARY:Infantil Femenino 14 · Inmoporsan CB Algazara´13 – CB El Palo
+LOCATION:Pabellón Blas Infante\, AVD. BLAS INFANTE\, S/N\, Alhaurín de la
+  Torre\, Málaga
+GEO:36.65947;-4.56992
+DESCRIPTION:Infantil · Fase Previa · Jornada 2\nPista 1\nTodos los partid
+ os: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenin
+ o-14#p-528233
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528233
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528236@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T083000Z
+DTEND:20261031T103000Z
+SUMMARY:Infantil Femenino 14 · CB El Palo – San Estanislao de Kostka
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 3\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8236
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528236
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528242@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T083000Z
+DTEND:20261107T103000Z
+SUMMARY:Infantil Femenino 14 · EBG´13 – CB El Palo
+LOCATION:IES Emilio Prados\, C. Luis Barahona de Soto\, 16\, Carretera de C
+ ádiz\, 29004 Málaga\, Málaga\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 4\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8242
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528242
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528243@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T113000Z
+DTEND:20261114T133000Z
+SUMMARY:Infantil Femenino 14 · MBK Celeste´13 – CB El Palo
+LOCATION:CEIP Tierno Galván\, Calle de Sófocles\, 1\, Málaga\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 5\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8243
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528243
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528250@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Infantil Femenino 14 · CB El Palo – Pescados Leto CD Gamarra
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 6\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8250
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528250
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528252@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T090000Z
+DTEND:20261128T110000Z
+SUMMARY:Infantil Femenino 14 · Eb Alhaurín El Grande – CB El Palo
+LOCATION:Polideportivo Municipal Alhaurín el Grande\, Arroyo de la Moraled
+ a s/n\, Alhaurín el Grande\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 7\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-14#p-52
+ 8252
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -14#p-528252
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

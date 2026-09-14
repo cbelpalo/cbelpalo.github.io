@@ -1,0 +1,144 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Masculino A
+X-WR-CALDESC:Partidos de Cadete Masculino A (CB El Palo)\, temporada 2026/2
+ 7. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525400@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261011T091500Z
+DTEND:20261011T111500Z
+SUMMARY:Cadete Masculino A · Bonifacio Solis CAB Estepona – CB El Palo
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Cadete · Campeonato · Jornada 1\nPista central\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-mascul
+ ino-a#p-525400
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525400
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525420@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261019T180000Z
+DTEND:20261019T200000Z
+SUMMARY:Cadete Masculino A · EBG Málaga´12 – CB El Palo
+LOCATION:IES Litoral (PABELLÓN)\, Camino de la Térmica\, 4 \, Málaga\, M
+ álaga
+GEO:36.69018;-4.44716
+DESCRIPTION:Cadete · Campeonato · Jornada 2\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#p-525420
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525420
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525407@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261025T100000Z
+DTEND:20261025T120000Z
+SUMMARY:Cadete Masculino A · Rosario´s Burger CD Gamarra – CB El Palo
+LOCATION:Colegio Gamarra\, C/Doctor Lazárraga 14\, Málaga\, Málaga
+GEO:36.72375;-4.44095
+DESCRIPTION:Cadete · Campeonato · Jornada 3\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#p-525407
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525407
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525410@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Cadete Masculino A · CB El Palo – CB Novaschool Rincón de La Vi
+ ctoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 4\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#
+ p-525410
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525410
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525415@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T123000Z
+DTEND:20261114T143000Z
+SUMMARY:Cadete Masculino A · CB El Palo – Bonifacio Solis CAB Estepona
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 6\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#
+ p-525415
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525415
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525405@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T123000Z
+DTEND:20261121T143000Z
+SUMMARY:Cadete Masculino A · CB El Palo – EBG Málaga´12
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 7\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#
+ p-525405
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525405
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525422@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Cadete Masculino A · CB El Palo – Rosario´s Burger CD Gamarra
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 8\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#
+ p-525422
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525422
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525425@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T083000Z
+DTEND:20261212T103000Z
+SUMMARY:Cadete Masculino A · CB Novaschool Rincón de La Victoria – CB E
+ l Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Cadete · Campeonato · Jornada 9\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-a#p-525425
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ a#p-525425
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

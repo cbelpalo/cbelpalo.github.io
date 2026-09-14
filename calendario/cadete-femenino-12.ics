@@ -1,0 +1,111 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Femenino 12
+X-WR-CALDESC:Partidos de Cadete Femenino 12 (CB El Palo)\, temporada 2026/2
+ 7. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525813@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T114500Z
+DTEND:20261017T134500Z
+SUMMARY:Cadete Femenino 12 · CB Benalmádena – CB El Palo
+LOCATION:Polideportivo Ramón Rico Benalmádena Pueblo\, Av. Juan Luis Pera
+ lta\, s/n\, Benalmádena\, Málaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 1\nPista central\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femen
+ ino-12#p-525813
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525813
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525821@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T083000Z
+DTEND:20261107T103000Z
+SUMMARY:Cadete Femenino 12 · CB El Palo – CB Novaschool Rincón de La Vi
+ ctoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 3\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-12
+ #p-525821
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525821
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525823@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T160000Z
+DTEND:20261114T180000Z
+SUMMARY:Cadete Femenino 12 · Miramar Torremolinos'11 – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 4\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-12#p-525823
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525823
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525828@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Cadete Femenino 12 · CB El Palo – CD La Goleta 11-12 Mudanzas Sa
+ nta Bárbara
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 5\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-12
+ #p-525828
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525828
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525832@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T101500Z
+DTEND:20261212T121500Z
+SUMMARY:Cadete Femenino 12 · Maristas Málaga – CB El Palo
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Cadete · Fase Previa · Jornada 6\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-12#p-525832
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525832
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525835@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T083000Z
+DTEND:20261219T103000Z
+SUMMARY:Cadete Femenino 12 · CB El Palo – Rincón Basket Club '11 Grupo 
+ de Incendios
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 7\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-12
+ #p-525835
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 2#p-525835
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,179 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Junior Femenino 09-10
+X-WR-CALDESC:Partidos de Junior Femenino 09-10 (CB El Palo)\, temporada 202
+ 6/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:522609@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T073000Z
+DTEND:20261017T093000Z
+SUMMARY:Junior Femenino 09-10 · CB El Palo – CB Ciudad de Melilla
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Fase Previa · Jornada 2\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09
+ -10#p-522609
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522609
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522611@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T103000Z
+DTEND:20261024T123000Z
+SUMMARY:Junior Femenino 09-10 · MBK 09-10 – CB El Palo
+LOCATION:CEIP Félix Revello de Toro (Teatinos)\, C/ Navarro Ledesma\, 168\
+ , Málaga\, Málaga
+GEO:36.72539;-4.47997
+DESCRIPTION:Junior · Fase Previa · Jornada 3\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09-10#p-522
+ 611
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522611
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522620@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261108T093000Z
+DTEND:20261108T113000Z
+SUMMARY:Junior Femenino 09-10 · CB El Palo – Maristas Málaga
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Fase Previa · Jornada 4\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09
+ -10#p-522620
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522620
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522624@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261115T123000Z
+DTEND:20261115T143000Z
+SUMMARY:Junior Femenino 09-10 · CP Mijas Autos Moliére Baloncesto – CB 
+ El Palo
+LOCATION:Ciudad deportiva Regino Hernández de Las Lagunas\, Camino del Alb
+ ero 14\, Mijas\, Málaga
+DESCRIPTION:Junior · Fase Previa · Jornada 5\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09-10#p-522
+ 624
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522624
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522631@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Junior Femenino 09-10 · CB El Palo – EBG Málaga 09/10
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Fase Previa · Jornada 6\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09
+ -10#p-522631
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522631
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522637@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T120000Z
+DTEND:20261128T140000Z
+SUMMARY:Junior Femenino 09-10 · Miramar Torremolinos – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Junior · Fase Previa · Jornada 7\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09-10#p-522
+ 637
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522637
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522642@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T083000Z
+DTEND:20261212T103000Z
+SUMMARY:Junior Femenino 09-10 · CB El Palo – CB San Pedro
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Fase Previa · Jornada 8\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09
+ -10#p-522642
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522642
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522650@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T103000Z
+DTEND:20270116T123000Z
+SUMMARY:Junior Femenino 09-10 · CB Salliver Fuengirola Higuerón Resort Bl
+ anco – CB El Palo
+LOCATION:Pabellón Training Center Higuerón\, Avda. del Higuerón s/n (Arr
+ oyo del jardín)\, Fuengirola\, Málaga
+DESCRIPTION:Junior · Fase Previa · Jornada 9\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09-10#p-522
+ 650
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522650
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522653@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270123T083000Z
+DTEND:20270123T103000Z
+SUMMARY:Junior Femenino 09-10 · CB El Palo – CB Novaschool Rincón de La
+  Victoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Fase Previa · Jornada 10\nPista 3\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522653
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522653
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522663@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270129T184500Z
+DTEND:20270129T204500Z
+SUMMARY:Junior Femenino 09-10 · Rosario´s Burger CD Gamarra – CB El Pal
+ o
+LOCATION:Colegio Gamarra\, C/Doctor Lazárraga 14\, Málaga\, Málaga
+GEO:36.72375;-4.44095
+DESCRIPTION:Junior · Fase Previa · Jornada 11\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-09-10#p-52
+ 2663
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-femenino-0
+ 9-10#p-522663
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

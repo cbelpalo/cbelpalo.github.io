@@ -1,0 +1,26 @@
+{
+  "name": "Partidos · CB El Palo",
+  "short_name": "CB El Palo",
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#082654",
+  "icons": [
+    {
+      "src": "img/icono-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "es.zidjian.andscout"
+    }
+  ]
+}

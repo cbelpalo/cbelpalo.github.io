@@ -1,0 +1,314 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Provincial Femenino
+X-WR-CALDESC:Partidos de Provincial Femenino (CB El Palo)\, temporada 2026/
+ 27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:517153@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261003T113000Z
+DTEND:20261003T133000Z
+SUMMARY:Provincial Femenino · Vive CB Alhaurín de La Torre 47-52 CB El Pa
+ lo
+LOCATION:Pabellón Blas Infante\, AVD. BLAS INFANTE\, S/N\, Alhaurín de la
+  Torre\, Málaga
+GEO:36.65947;-4.56992
+DESCRIPTION:Senior Provincial Femenino · Jornada 1\nPista central\nVictori
+ a · parciales 12-11\, 12-15\, 13-7\, 10-19\nTodos los partidos: https://c
+ belpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p-517153
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517153
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517156@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T113000Z
+DTEND:20261017T133000Z
+SUMMARY:Provincial Femenino · Provincial Femenino – Sub22 Femenino
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 2\nPista 1\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-fe
+ menino#p-517156
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517156
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517164@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T170000Z
+DTEND:20261024T190000Z
+SUMMARY:Provincial Femenino · CP Mijas Autos Moliére Baloncesto – CB El
+  Palo
+LOCATION:Ciudad deportiva Regino Hernández de Las Lagunas\, Camino del Alb
+ ero 14\, Mijas\, Málaga
+DESCRIPTION:Senior Provincial Femenino · Jornada 3\nTodos los partidos: ht
+ tps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p-
+ 517164
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517164
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517165@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T123000Z
+DTEND:20261107T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – MBK
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 4\nPista 1\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-fe
+ menino#p-517165
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517165
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517174@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T123000Z
+DTEND:20261114T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – Hamburguesería Málaga Norte
+  Basket Norte
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 5\nPista 1\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-fe
+ menino#p-517174
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517174
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517176@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261122T121500Z
+DTEND:20261122T141500Z
+SUMMARY:Provincial Femenino · Future2day Rincón de La Victoria – CB El 
+ Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Senior Provincial Femenino · Jornada 6\nTodos los partidos: ht
+ tps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p-
+ 517176
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517176
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517183@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – Recoletas Salud Marbella Bask
+ et
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 7\nPista 1\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-fe
+ menino#p-517183
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517183
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517187@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T170000Z
+DTEND:20261212T190000Z
+SUMMARY:Provincial Femenino · EBG Málaga – CB El Palo
+LOCATION:Colegio San José (PABELLÓN)\, C/ Argentéa 20\, Málaga\, Málag
+ a
+GEO:36.720491;-4.442957
+DESCRIPTION:Senior Provincial Femenino · Jornada 8\nTodos los partidos: ht
+ tps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p-
+ 517187
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517187
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517192@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T123000Z
+DTEND:20270116T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – Academia 675
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 9\nPista 1\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-fe
+ menino#p-517192
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517192
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517198@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270123T123000Z
+DTEND:20270123T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – Vive CB Alhaurín de La Torre
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 10\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-f
+ emenino#p-517198
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517198
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517201@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270130T103000Z
+DTEND:20270130T123000Z
+SUMMARY:Provincial Femenino · Sub22 Femenino – Provincial Femenino
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 11\nPista 3\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-f
+ emenino#p-517201
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517201
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517209@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270206T123000Z
+DTEND:20270206T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – CP Mijas Autos Moliére Balon
+ cesto
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 12\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-f
+ emenino#p-517209
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517209
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517210@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270214T100000Z
+DTEND:20270214T120000Z
+SUMMARY:Provincial Femenino · MBK – CB El Palo
+LOCATION:Ciudad Deportiva Javier Imbroda (Carranque)\, Avd. Santa Rosa Lima
+  7\, Málaga\, Málaga
+DESCRIPTION:Senior Provincial Femenino · Jornada 13\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p
+ -517210
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517210
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517219@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270307T180000Z
+DTEND:20270307T200000Z
+SUMMARY:Provincial Femenino · Hamburguesería Málaga Norte Basket Norte 
+ – CB El Palo
+LOCATION:IES Sierra Bermeja\, C. Potro de Córdoba\, 4\, Málaga\, Málaga
+DESCRIPTION:Senior Provincial Femenino · Jornada 14\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p
+ -517219
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517219
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517221@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270313T123000Z
+DTEND:20270313T143000Z
+SUMMARY:Provincial Femenino · CB El Palo – Future2day Rincón de La Vict
+ oria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 15\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-f
+ emenino#p-517221
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517221
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517228@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270403T153000Z
+DTEND:20270403T173000Z
+SUMMARY:Provincial Femenino · Recoletas Salud Marbella Basket – CB El Pa
+ lo
+LOCATION:Pabellón Bello Horizonte - Carlos Cabezas\, Cam. Cristo de los Mo
+ linos\, 25\, 29603\, Marbella\, Málaga
+GEO:36.5129952;-4.858492
+DESCRIPTION:Senior Provincial Femenino · Jornada 16\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p
+ -517228
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517228
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517232@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270410T113000Z
+DTEND:20270410T133000Z
+SUMMARY:Provincial Femenino · CB El Palo – EBG Málaga
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Senior Provincial Femenino · Jornada 17\nPista 1\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-f
+ emenino#p-517232
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517232
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:517237@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270417T100000Z
+DTEND:20270417T120000Z
+SUMMARY:Provincial Femenino · Academia 675 – CB El Palo
+LOCATION:Complejo Deportivo Universidad de Málaga (Teatinos)\, Bulevar Lou
+ is Pasteur\, s/n\, Málaga\, Málaga
+DESCRIPTION:Senior Provincial Femenino · Jornada 18\nTodos los partidos: h
+ ttps://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femenino#p
+ -517237
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=provincial-femeni
+ no#p-517237
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

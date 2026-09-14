@@ -1,0 +1,115 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Femenino 11-12
+X-WR-CALDESC:Partidos de Cadete Femenino 11-12 (CB El Palo)\, temporada 202
+ 6/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525755@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T103000Z
+DTEND:20261017T123000Z
+SUMMARY:Cadete Femenino 11-12 · CB Ciudad de Melilla – CB El Palo
+LOCATION:Pistas Pepe Román (Girón) - CB Ciudad de Melilla\, Calle Guadiar
+ o 10\, Málaga\, Málaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 1\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 755
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525755
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525758@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T093000Z
+DTEND:20261024T113000Z
+SUMMARY:Cadete Femenino 11-12 · CB El Palo – MBK Blanco´11
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete · Fase Previa · Jornada 2\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 758
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525758
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525764@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T083000Z
+DTEND:20261107T103000Z
+SUMMARY:Cadete Femenino 11-12 · Cdc Los Olivos – CB El Palo
+LOCATION:Colegio Los Olivos\, Julio Verne\, 8\, Málaga\, Málaga
+GEO:36.73442;-4.46683
+DESCRIPTION:Cadete · Fase Previa · Jornada 3\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 764
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525764
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525772@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Cadete Femenino 11-12 · CB El Palo – Recoletas Salud´11 Marbell
+ a Basket
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete · Fase Previa · Jornada 5\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 772
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525772
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525774@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261213T123000Z
+DTEND:20261213T143000Z
+SUMMARY:Cadete Femenino 11-12 · CB San Pedro 11/12 – CB El Palo
+LOCATION:Pabellón Sergio Scariolo\, C/ Lyon 1\, San Pedro de Alcántara\, 
+ Málaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 6\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 774
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525774
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525779@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T103000Z
+DTEND:20261219T123000Z
+SUMMARY:Cadete Femenino 11-12 · CB El Palo – Cuore CB Alhaurïn de La To
+ rre
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete · Fase Previa · Jornada 7\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-11-12#p-525
+ 779
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-1
+ 1-12#p-525779
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,350 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · N1 Masculino
+X-WR-CALDESC:Partidos de N1 Masculino (CB El Palo)\, temporada 2026/27. Se 
+ actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:512295@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261003T150000Z
+DTEND:20261003T170000Z
+SUMMARY:N1 Masculino · CB El Palo 89-58 Caja Rural Jaén C.B.
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 1\nVictoria · parciales 22-15\, 20-20\, 20-
+ 8\, 27-15\nTodos los partidos: https://cbelpalo.github.io/?periodo=tempora
+ da&equipos=n1-masculino#p-512295
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2295
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512297@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261010T153000Z
+DTEND:20261010T173000Z
+SUMMARY:N1 Masculino · Linaqua CB Linares 72-80 CB El Palo
+LOCATION:Pabellón Julián Jiménez\, C/ FINCA SAN JOSE\, 1\, Linares\, Ja
+ én
+DESCRIPTION:Liga N1 · Jornada 2\nVictoria · parciales 15-18\, 29-23\, 15-
+ 19\, 13-20\nTodos los partidos: https://cbelpalo.github.io/?periodo=tempor
+ ada&equipos=n1-masculino#p-512297
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2297
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512306@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T171500Z
+DTEND:20261017T191500Z
+SUMMARY:N1 Masculino · CB El Palo – CB Salliver Fuengirola Higuerón Res
+ ort
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 3\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512306
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2306
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512310@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261025T114500Z
+DTEND:20261025T134500Z
+SUMMARY:N1 Masculino · CD Colegio El Pinar – CB El Palo
+LOCATION:Colegio El Pinar\, Camino de la Acequia\, s/n\, Alhaurín de la To
+ rre\, Málaga
+DESCRIPTION:Liga N1 · Jornada 4\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512310
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512383@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261108T123000Z
+DTEND:20261108T143000Z
+SUMMARY:N1 Masculino · EBG Málaga Tecnocasa – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Liga N1 · Jornada 5\nPista A\nTodos los partidos: https://cbel
+ palo.github.io/?periodo=temporada&equipos=n1-masculino#p-512383
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2383
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512323@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T180000Z
+DTEND:20261114T200000Z
+SUMMARY:N1 Masculino · CB Benalmádena – CB El Palo
+LOCATION:Polideportivo Ramón Rico Benalmádena Pueblo\, Av. Juan Luis Pera
+ lta\, s/n\, Benalmádena\, Málaga
+DESCRIPTION:Liga N1 · Jornada 6\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512323
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2323
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512328@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T173000Z
+DTEND:20261121T193000Z
+SUMMARY:N1 Masculino · CB El Palo – Club Andújar
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 7\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512328
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2328
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512336@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T180000Z
+DTEND:20261128T200000Z
+SUMMARY:N1 Masculino · Campoameno CB La Mota – CB El Palo
+LOCATION:Complejo Polideportivo Alcalá La Real\, AV. IBEROAMERICA\, 39\, A
+ lcalá la Real\, Jaén
+DESCRIPTION:Liga N1 · Jornada 8\nTodos los partidos: https://cbelpalo.gith
+ ub.io/?periodo=temporada&equipos=n1-masculino#p-512336
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2336
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512339@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T173000Z
+DTEND:20261212T193000Z
+SUMMARY:N1 Masculino · CB El Palo – Invermoneda CB Alhaurín de La Torre
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 9\nPista central\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512339
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2339
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512349@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T173000Z
+DTEND:20261219T193000Z
+SUMMARY:N1 Masculino · MBK – CB El Palo
+LOCATION:Ciudad Deportiva Javier Imbroda (Carranque)\, Avd. Santa Rosa Lima
+  7\, Málaga\, Málaga
+DESCRIPTION:Liga N1 · Jornada 10\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-masculino#p-512349
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2349
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512350@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270109T181500Z
+DTEND:20270109T201500Z
+SUMMARY:N1 Masculino · CB El Palo – Unicaja
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 11\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512350
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2350
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512361@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T164500Z
+DTEND:20270116T184500Z
+SUMMARY:N1 Masculino · Caja Rural Jaén C.B. – CB El Palo
+LOCATION:Pabellón Carlos Martínez Esteban\, Calle Alcalde Emilio Arroyo L
+ ópez\, S/N\, Jaén\, Jaén
+DESCRIPTION:Liga N1 · Jornada 12\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-masculino#p-512361
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2361
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512363@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270123T160000Z
+DTEND:20270123T180000Z
+SUMMARY:N1 Masculino · CB El Palo – Linaqua CB Linares
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 13\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512363
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2363
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512372@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270130T170000Z
+DTEND:20270130T190000Z
+SUMMARY:N1 Masculino · CB Salliver Fuengirola Higuerón Resort – CB El P
+ alo
+LOCATION:Pabellón Juanito\, RECINTO FERIAL\, Fuengirola\, Málaga
+DESCRIPTION:Liga N1 · Jornada 14\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512372
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2372
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512376@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270206T160000Z
+DTEND:20270206T180000Z
+SUMMARY:N1 Masculino · CB El Palo – CD Colegio El Pinar
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 15\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512376
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2376
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512317@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270213T173000Z
+DTEND:20270213T193000Z
+SUMMARY:N1 Masculino · CB El Palo – EBG Málaga Tecnocasa
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 16\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512317
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2317
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512389@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270220T181500Z
+DTEND:20270220T201500Z
+SUMMARY:N1 Masculino · CB El Palo – CB Benalmádena
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 17\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512389
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2389
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512394@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270306T180000Z
+DTEND:20270306T200000Z
+SUMMARY:N1 Masculino · Club Andújar – CB El Palo
+LOCATION:Pabellón Mun José L. Fernández Mena\, C/ EGIDO DEL PUENTE\, S/N
+ \, Andújar\, Jaén
+DESCRIPTION:Liga N1 · Jornada 18\nTodos los partidos: https://cbelpalo.git
+ hub.io/?periodo=temporada&equipos=n1-masculino#p-512394
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2394
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512402@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270313T160000Z
+DTEND:20270313T180000Z
+SUMMARY:N1 Masculino · CB El Palo – Campoameno CB La Mota
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 19\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512402
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2402
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512405@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270320T180000Z
+DTEND:20270320T200000Z
+SUMMARY:N1 Masculino · Invermoneda CB Alhaurín de La Torre – CB El Palo
+LOCATION:Pabellón Blas Infante\, AVD. BLAS INFANTE\, S/N\, Alhaurín de la
+  Torre\, Málaga
+GEO:36.65947;-4.56992
+DESCRIPTION:Liga N1 · Jornada 20\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512405
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2405
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512415@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270403T163000Z
+DTEND:20270403T183000Z
+SUMMARY:N1 Masculino · CB El Palo – MBK
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Liga N1 · Jornada 21\nPista central\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512415
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2415
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:512416@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270411T113000Z
+DTEND:20270411T133000Z
+SUMMARY:N1 Masculino · Unicaja – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Liga N1 · Jornada 22\nPista A\nTodos los partidos: https://cbe
+ lpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-512416
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=n1-masculino#p-51
+ 2416
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

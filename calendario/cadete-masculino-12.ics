@@ -1,0 +1,94 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Masculino 12
+X-WR-CALDESC:Partidos de Cadete Masculino 12 (CB El Palo)\, temporada 2026/
+ 27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525432@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T103000Z
+DTEND:20261017T123000Z
+SUMMARY:Cadete Masculino 12 · CB Álora – CB El Palo
+LOCATION:Pabellón Antonio Henares\, Avda. Pablo Ruiz Picasso\, Álora\, M
+ álaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 1\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-12#p-52543
+ 2
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 12#p-525432
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525433@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T113000Z
+DTEND:20261024T133000Z
+SUMMARY:Cadete Masculino 12 · CB El Palo – San Estanislao de Kostka
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 2\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-1
+ 2#p-525433
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 12#p-525433
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525438@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Cadete Masculino 12 · CB El Palo – Eb Alhaurín El Grande
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 3\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-1
+ 2#p-525438
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 12#p-525438
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525440@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T093000Z
+DTEND:20261114T113000Z
+SUMMARY:Cadete Masculino 12 · CB Campillos – CB El Palo
+LOCATION:Pabellón Municipal Campillos\, Avda. Gerardo Fernández s/n\, Cam
+ pillos\, Málaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 4\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-12#p-52544
+ 0
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 12#p-525440
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525443@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Cadete Masculino 12 · CB El Palo – Teresianas
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 5\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-1
+ 2#p-525443
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 12#p-525443
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

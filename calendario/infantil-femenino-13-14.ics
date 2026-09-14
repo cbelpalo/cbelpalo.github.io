@@ -1,0 +1,132 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Femenino 13-14
+X-WR-CALDESC:Partidos de Infantil Femenino 13-14 (CB El Palo)\, temporada 2
+ 026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:528258@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T073000Z
+DTEND:20261017T093000Z
+SUMMARY:Infantil Femenino 13-14 · CB El Palo – CB San Pedro
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 1\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528258
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528258
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528260@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T080000Z
+DTEND:20261024T100000Z
+SUMMARY:Infantil Femenino 13-14 · CB Cártama – CB El Palo
+LOCATION:Ciudad Deportiva Cártama\, C/ La Feria s/n\, Cártama\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 2\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528260
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528260
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528265@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T083000Z
+DTEND:20261031T103000Z
+SUMMARY:Infantil Femenino 13-14 · CB El Palo – MBK Blanco´13
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 3\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528265
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528265
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528269@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261106T173000Z
+DTEND:20261106T193000Z
+SUMMARY:Infantil Femenino 13-14 · CB Torrox El Morche Acj Seguros – CB E
+ l Palo
+LOCATION:CEIP El Morche\, Plaza de la Marina\, 29793 El Morche\, Torrox\, M
+ álaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 4\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528269
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528269
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528272@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T083000Z
+DTEND:20261114T103000Z
+SUMMARY:Infantil Femenino 13-14 · CB El Palo – CP Mijas Autos Moliére B
+ aloncesto
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 5\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528272
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528272
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528278@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Infantil Femenino 13-14 · Atmoss Lighting Basket Norte – CB El P
+ alo
+LOCATION:IES Sierra Bermeja\, C. Potro de Córdoba\, 4\, Málaga\, Málaga
+DESCRIPTION:Infantil · Fase Previa · Jornada 6\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528278
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528278
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528279@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Infantil Femenino 13-14 · CB El Palo – CB Novaschool Rincón de 
+ La Victoria
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Fase Previa · Jornada 7\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13-14#p
+ -528279
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13-14#p-528279
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

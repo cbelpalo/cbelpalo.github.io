@@ -1,0 +1,79 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Masculino 11
+X-WR-CALDESC:Partidos de Cadete Masculino 11 (CB El Palo)\, temporada 2026/
+ 27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525541@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261025T093000Z
+DTEND:20261025T113000Z
+SUMMARY:Cadete Masculino 11 · CB El Palo – MBK´12 Azul
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 2\nPista 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-1
+ 1#p-525541
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 11#p-525541
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525543@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261108T113000Z
+DTEND:20261108T133000Z
+SUMMARY:Cadete Masculino 11 · CD Estudiantes Baloncesto Nerja – CB El Pa
+ lo
+LOCATION:Pabellón Municipal de Nerja\, C/ Saturno s/n\, Nerja\, Málaga
+GEO:36.7554;-3.87474
+DESCRIPTION:Cadete · Fase Previa · Jornada 3\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-11#p-52554
+ 3
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 11#p-525543
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525546@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261115T093000Z
+DTEND:20261115T113000Z
+SUMMARY:Cadete Masculino 11 · CB El Palo – CB Benalmádena´11
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Fase Previa · Jornada 4\nPista 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-1
+ 1#p-525546
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 11#p-525546
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525550@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Cadete Masculino 11 · CB Salliver Fuengirola Higuerón Resort Cele
+ ste – CB El Palo
+LOCATION:Colegio Salliver\, Avda. Finlandia\, 4\, Fuengirola\, Málaga
+DESCRIPTION:Cadete · Fase Previa · Jornada 5\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-11#p-52555
+ 0
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-masculino-
+ 11#p-525550
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

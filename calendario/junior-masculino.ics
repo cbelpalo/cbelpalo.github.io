@@ -1,0 +1,311 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Junior Masculino
+X-WR-CALDESC:Partidos de Junior Masculino (CB El Palo)\, temporada 2026/27.
+  Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:522093@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261003T093000Z
+DTEND:20261003T113000Z
+SUMMARY:Junior Masculino · CB El Palo 65-71 CB Novaschool Azul Rincón de 
+ La Victoria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 1\nPista 3\nDerrota · parciale
+ s 13-20\, 17-7\, 22-13\, 13-31\nTodos los partidos: https://cbelpalo.githu
+ b.io/?periodo=temporada&equipos=junior-masculino#p-522093
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522093
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522101@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261011T180000Z
+DTEND:20261011T200000Z
+SUMMARY:Junior Masculino · EBG Málaga 09/10 – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Junior · Campeonato · Jornada 2\nPista B\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522101
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522101
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522111@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T093000Z
+DTEND:20261024T113000Z
+SUMMARY:Junior Masculino · CB El Palo – CB Novaschool Rincón de La Vict
+ oria
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 4\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522111
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522111
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522102@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261028T173000Z
+DTEND:20261028T193000Z
+SUMMARY:Junior Masculino · Unicaja 11-12* – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Junior · Campeonato · Jornada 3\nPista A\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522102
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522102
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522113@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261101T113000Z
+DTEND:20261101T133000Z
+SUMMARY:Junior Masculino · Colegio El Pinar Rojo – CB El Palo
+LOCATION:Colegio El Pinar\, Camino de la Acequia\, s/n\, Alhaurín de la To
+ rre\, Málaga
+DESCRIPTION:Junior · Campeonato · Jornada 5\nPista central\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-mascul
+ ino#p-522113
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522113
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522120@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Junior Masculino · CB El Palo – Pinturas Miranda y Lucena MBK´1
+ 0
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 6\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522120
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522120
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522124@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Junior Masculino · CB Salliver Fuengirola Higuerón Resort Azul 
+ – CB El Palo
+LOCATION:Pabellón Juanito\, RECINTO FERIAL\, Fuengirola\, Málaga
+DESCRIPTION:Junior · Campeonato · Jornada 7\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522124
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522124
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522129@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Junior Masculino · CB El Palo – Unicaja Academy
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 8\nPista 3\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-
+ 522129
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522129
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522135@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261129T090000Z
+DTEND:20261129T110000Z
+SUMMARY:Junior Masculino · CB Benalmádena – CB El Palo
+LOCATION:Polideportivo Ramón Rico Benalmádena Pueblo\, Av. Juan Luis Pera
+ lta\, s/n\, Benalmádena\, Málaga
+DESCRIPTION:Junior · Campeonato · Jornada 9\nPista central\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=junior-mascul
+ ino#p-522135
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522135
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522138@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261205T120000Z
+DTEND:20261205T140000Z
+SUMMARY:Junior Masculino · CB Novaschool Azul Rincón de La Victoria – C
+ B El Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Junior · Campeonato · Jornada 10\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-522138
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522138
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522146@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T103000Z
+DTEND:20261212T123000Z
+SUMMARY:Junior Masculino · CB El Palo – EBG Málaga 09/10
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 11\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522146
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522146
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522147@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T103000Z
+DTEND:20261219T123000Z
+SUMMARY:Junior Masculino · CB El Palo – Unicaja 11-12*
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 12\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522147
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522147
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522156@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270109T101500Z
+DTEND:20270109T121500Z
+SUMMARY:Junior Masculino · CB Novaschool Rincón de La Victoria – CB El 
+ Palo
+LOCATION:Colegio Novaschool Añoreta (Pabellón)\, Ctra. Macharaviaya s/n (
+ Urb.Añoreta)\, Rincón de la Victoria\, Málaga
+GEO:36.73033;-4.24336
+DESCRIPTION:Junior · Campeonato · Jornada 13\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-522156
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522156
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522158@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T103000Z
+DTEND:20270116T123000Z
+SUMMARY:Junior Masculino · CB El Palo – Colegio El Pinar Rojo
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 14\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522158
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522158
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522165@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270124T120000Z
+DTEND:20270124T140000Z
+SUMMARY:Junior Masculino · Pinturas Miranda y Lucena MBK´10 – CB El Pal
+ o
+LOCATION:Ciudad Deportiva Javier Imbroda (Carranque)\, Avd. Santa Rosa Lima
+  7\, Málaga\, Málaga
+DESCRIPTION:Junior · Campeonato · Jornada 15\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p-522165
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522165
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522169@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270130T103000Z
+DTEND:20270130T123000Z
+SUMMARY:Junior Masculino · CB El Palo – CB Salliver Fuengirola Higuerón
+  Resort Azul
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 16\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522169
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522169
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522174@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270206T110000Z
+DTEND:20270206T130000Z
+SUMMARY:Junior Masculino · Unicaja Academy – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Junior · Campeonato · Jornada 17\nPista A\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522174
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522174
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:522180@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Junior Masculino · CB El Palo – CB Benalmádena
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Junior · Campeonato · Jornada 18\nPista 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#p
+ -522180
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=junior-masculino#
+ p-522180
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

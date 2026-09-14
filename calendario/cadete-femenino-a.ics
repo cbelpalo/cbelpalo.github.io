@@ -1,0 +1,240 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Cadete Femenino A
+X-WR-CALDESC:Partidos de Cadete Femenino A (CB El Palo)\, temporada 2026/27
+ . Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:525554@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261018T073000Z
+DTEND:20261018T093000Z
+SUMMARY:Cadete Femenino A · Jugador Doce CAB Estepona* – CB El Palo
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Cadete · Campeonato · Jornada 1\nPista central\nTodos los par
+ tidos: https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femeni
+ no-a#p-525554
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525554
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525555@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261031T103000Z
+DTEND:20261031T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – Unicaja´13*
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 2\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525555
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525555
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525562@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – CP Mijas Autos Moliére Balonce
+ sto '12
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 3\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525562
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525562
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525564@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T153000Z
+DTEND:20261114T173000Z
+SUMMARY:Cadete Femenino A · Ópticas Perea Torrebasket – CB El Palo
+LOCATION:Pabellón "Maestro Salvador Sánchez"\, C/ Lucero S/N\, Torre del 
+ Mar\, Málaga
+DESCRIPTION:Cadete · Campeonato · Jornada 4\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p-525564
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525564
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525569@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – Proinsermant CAB Estepona
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 5\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525569
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525569
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525573@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T083000Z
+DTEND:20261128T103000Z
+SUMMARY:Cadete Femenino A · MBK Azul´11 – CB El Palo
+LOCATION:Ciudad Deportiva Javier Imbroda (Carranque)\, Avd. Santa Rosa Lima
+  7\, Málaga\, Málaga
+DESCRIPTION:Cadete · Campeonato · Jornada 6\nTodos los partidos: https://
+ cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p-525573
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525573
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525576@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T103000Z
+DTEND:20261212T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – EBG Málaga´11
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 7\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525576
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525576
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525582@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261219T103000Z
+DTEND:20261219T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – Jugador Doce CAB Estepona*
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 8\nPista 1\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525582
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525582
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525583@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270109T110000Z
+DTEND:20270109T130000Z
+SUMMARY:Cadete Femenino A · Unicaja´13* – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Cadete · Campeonato · Jornada 9\nPista B\nTodos los partidos:
+  https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p
+ -525583
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525583
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525590@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T123000Z
+DTEND:20270116T143000Z
+SUMMARY:Cadete Femenino A · CP Mijas Autos Moliére Baloncesto '12 – CB 
+ El Palo
+LOCATION:Ciudad deportiva Regino Hernández de Las Lagunas\, Camino del Alb
+ ero 14\, Mijas\, Málaga
+DESCRIPTION:Cadete · Campeonato · Jornada 10\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p-525590
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525590
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525592@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270123T103000Z
+DTEND:20270123T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – Ópticas Perea Torrebasket
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 11\nPista 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#
+ p-525592
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525592
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525597@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270131T160000Z
+DTEND:20270131T180000Z
+SUMMARY:Cadete Femenino A · Proinsermant CAB Estepona – CB El Palo
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Cadete · Campeonato · Jornada 12\nPista central\nTodos los pa
+ rtidos: https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femen
+ ino-a#p-525597
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525597
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525601@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270206T103000Z
+DTEND:20270206T123000Z
+SUMMARY:Cadete Femenino A · CB El Palo – MBK Azul´11
+LOCATION:Pabellón La Mosca\, C/ Cano Martín s/n\, Málaga\, Málaga
+GEO:36.7282;-4.37045
+DESCRIPTION:Cadete · Campeonato · Jornada 13\nPista 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#
+ p-525601
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525601
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:525604@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Cadete Femenino A · EBG Málaga´11 – CB El Palo
+LOCATION:IES Litoral (PABELLÓN)\, Camino de la Térmica\, 4 \, Málaga\, M
+ álaga
+GEO:36.69018;-4.44716
+DESCRIPTION:Cadete · Campeonato · Jornada 14\nTodos los partidos: https:/
+ /cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a#p-525604
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=cadete-femenino-a
+ #p-525604
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,337 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Infantil Femenino 13
+X-WR-CALDESC:Partidos de Infantil Femenino 13 (CB El Palo)\, temporada 2026
+ /27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:527981@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261017T093000Z
+DTEND:20261017T113000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – CD La Goleta ´13 Mudanzas S
+ anta Bárbara
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 1\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-527
+ 981
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527981
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526877@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261018T093000Z
+DTEND:20261018T113000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – EBG´12
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 1\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-
+ 13#p-526877
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-526877
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526880@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261023T180000Z
+DTEND:20261023T200000Z
+SUMMARY:Infantil Femenino 13 · CD Lourdes – CB El Palo
+LOCATION:Pabellón Colegio Ntra.Sra.de Lourdes de Coín\, C/Camino de los L
+ lanos s/n\, Urb. Miravalle\, Coín\, Málaga
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 2\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-
+ 13#p-526880
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-526880
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527985@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261024T160000Z
+DTEND:20261024T180000Z
+SUMMARY:Infantil Femenino 13 · Rincón Basket Club '13 Ascensores Embarba 
+ – CB El Palo
+LOCATION:CEIP Gregorio Marañón\, Pº Filipinas\, 2. 29720 La Cala del Mor
+ al\, Rincón de la Victoria\, Málaga
+DESCRIPTION:Infantil · Campeonato · Jornada 2\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-527
+ 985
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527985
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527988@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Miramar Torremolinos'13
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 3\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-527
+ 988
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527988
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526883@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261108T103000Z
+DTEND:20261108T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Noacrea CD Puerta Oscura
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 3\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-
+ 13#p-526883
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-526883
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527994@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261114T090000Z
+DTEND:20261114T110000Z
+SUMMARY:Infantil Femenino 13 · Unicaja´14* – CB El Palo
+LOCATION:Pabellón José Mª Martín Urbano\, Avda. Gregorio Diego 44\, Má
+ laga\, Málaga
+GEO:36.68879;-4.44953
+DESCRIPTION:Infantil · Campeonato · Jornada 4\nPista B\nTodos los partido
+ s: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527994
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527994
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526886@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261115T103000Z
+DTEND:20261115T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Catering El Cántaro MBK 12
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 4\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-
+ 13#p-526886
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-526886
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:527995@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261122T083000Z
+DTEND:20261122T103000Z
+SUMMARY:Infantil Femenino 13 · Jugador Doce CAB Estepona – CB El Palo
+LOCATION:Pabellón José Antonio Pineda\, CRISTOBAL RUIZ MENDEZ\, 29\, Este
+ pona\, Málaga
+GEO:36.4235;-5.15451
+DESCRIPTION:Infantil · Campeonato · Jornada 5\nPista central\nTodos los p
+ artidos: https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-fe
+ menino-13#p-527995
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-527995
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528002@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – MBK Azul´13
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 6\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-528
+ 002
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528002
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:526889@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261128T160000Z
+DTEND:20261128T180000Z
+SUMMARY:Infantil Femenino 13 · Miramar Torremolinos '12 – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Cadete 1er Año · Fase Previa · Jornada 5\nTodos los partidos
+ : https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-
+ 13#p-526889
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-526889
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528004@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20261212T110000Z
+DTEND:20261212T130000Z
+SUMMARY:Infantil Femenino 13 · CB Salliver Fuengirola Higuerón Resort Azu
+ l – CB El Palo
+LOCATION:Polideportivo Municipal Elola\, C/ Mallorca 16\, Fuengirola\, Mál
+ aga
+DESCRIPTION:Infantil · Campeonato · Jornada 7\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-528
+ 004
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528004
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528009@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270116T100000Z
+DTEND:20270116T120000Z
+SUMMARY:Infantil Femenino 13 · CD La Goleta ´13 Mudanzas Santa Bárbara 
+ – CB El Palo
+LOCATION:Colegio San Juan de Dios Goleta\, Calle Cruz del Molinillo\, 2\, M
+ álaga\, Málaga
+DESCRIPTION:Infantil · Campeonato · Jornada 8\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-528
+ 009
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528009
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528013@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270123T103000Z
+DTEND:20270123T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Rincón Basket Club '13 Asce
+ nsores Embarba
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 9\nTodos los partidos: https:
+ //cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-528
+ 013
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528013
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528016@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270131T093000Z
+DTEND:20270131T113000Z
+SUMMARY:Infantil Femenino 13 · Miramar Torremolinos'13 – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Infantil · Campeonato · Jornada 10\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-52
+ 8016
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528016
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528022@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270206T103000Z
+DTEND:20270206T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Unicaja´14*
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 11\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-52
+ 8022
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528022
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528023@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270213T103000Z
+DTEND:20270213T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – Jugador Doce CAB Estepona
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 12\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-52
+ 8023
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528023
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528030@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270220T113000Z
+DTEND:20270220T133000Z
+SUMMARY:Infantil Femenino 13 · MBK Azul´13 – CB El Palo
+LOCATION:CEIP Félix Revello de Toro (Teatinos)\, C/ Navarro Ledesma\, 168\
+ , Málaga\, Málaga
+GEO:36.72539;-4.47997
+DESCRIPTION:Infantil · Campeonato · Jornada 13\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-52
+ 8030
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528030
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:528032@cbelpalo
+DTSTAMP:20261010T174540Z
+DTSTART:20270306T103000Z
+DTEND:20270306T123000Z
+SUMMARY:Infantil Femenino 13 · CB El Palo – CB Salliver Fuengirola Higue
+ rón Resort Azul
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Infantil · Campeonato · Jornada 14\nTodos los partidos: https
+ ://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino-13#p-52
+ 8032
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=infantil-femenino
+ -13#p-528032
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
