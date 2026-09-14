@@ -1,0 +1,5 @@
+League Spartan 700 (subconjunto latino, woff2), descargada de Google Fonts el 21-10-2026 para los
+carteles de la semana — Copyright The League Spartan Project Authors
+(https://github.com/theleagueof/league-spartan), bajo la SIL Open Font License 1.1: https://openfontlicense.org
+
+Los fondos (fondo-*.webp) salen de la plantilla de Canva del club con herramientas/fondos-carteles.py.
