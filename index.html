@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partidos · CB El Palo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#082654">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="img/icono-32.png?v=2" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icono-180.png?v=2">
+<link rel="preload" href="fuentes/saira-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/asap-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* El cartel de horarios del club: franja de mando azul con la selección en naranja, bandas claras
+   por día, horas en naranja, renglones sobre blanco y fondo de hormigón. Móvil primero; las
+   rejillas cambian por container query sobre .marco. */
+
+@font-face { font-family: 'Saira Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url(fuentes/saira-condensed-600-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Saira Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url(fuentes/saira-condensed-700-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Asap'; font-style: normal; font-weight: 100 900; font-stretch: 100%; font-display: swap; src: url(fuentes/asap-latin.woff2) format('woff2'); }
+
+:root {
+  /* Marca: variables de la cabecera de cbelpalo.com */
+  --azul: #082654;
+  --naranja: #e65d1e;
+  /* Derivados */
+  --azul-claro: #b9c7dd;
+  --banda: #d6dfeb;
+  --naranja-claro: #ffb392;
+  --naranja-tinte: #fde4d7;
+  --hormigon: #eceef1;
+  --papel: #ffffff;
+  --tinta: #0c1a2e;
+  --tinta-suave: #46546a;
+  --regla: #d4dae3;
+
+  --f-cartel: 'Saira Condensed', 'Arial Narrow', sans-serif-condensed, sans-serif;
+  --f-texto: 'Asap', system-ui, sans-serif;
+
+  --t-etiqueta: 0.8125rem;
+  --t-dato: 0.9375rem;
+  --t-texto: 1rem;
+  --t-equipo: 1.125rem;
+  --t-banda: 1.625rem;
+  --t-hora: 2rem;
+
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+
+  /* Márgenes laterales: el contenido se centra en 76rem, las bandas llegan a los bordes. */
+  --margen: max(1rem, calc((100% - 80rem) / 2));
+  --radio: 3px;
+  --alto-fijo: 0px;
+  --salida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--azul) var(--hormigon); }
+body {
+  margin: 0;
+  background: var(--hormigon);
+  color: var(--tinta);
+  font: 400 var(--t-texto) / 1.45 var(--f-texto);
+  caret-color: var(--naranja);
+}
+::selection { background: var(--azul); color: #fff; }
+:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+button, input, select { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.icono { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.marco { container: marco / inline-size; min-height: 100vh; }
+
+/* ── Cabecera ─────────────────────────────────────────────────────────── */
+/* Móvil y tableta: fija arriba, con la marca y la hamburguesa que abre el panel de filtros, y el
+   filete naranja que antes cerraba la barra. En el PC (≥60rem) vuelve a ser la franja de siempre. */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-2) var(--e-4);
+  padding-block: var(--e-2);
+  padding-inline: var(--margen);
+  background: var(--azul);
+  color: #fff;
+  border-bottom: 3px solid var(--naranja);
+}
+.cabecera__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  color: #fff;
+  text-decoration: none;
+  font: 700 1.375rem / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cabecera__marca img { width: 2.75rem; height: 2.75rem; object-fit: contain; }
+.frescura { margin: 0; font-size: var(--t-dato); color: var(--azul-claro); }
+.frescura time { color: #fff; font-weight: 500; font-variant-numeric: tabular-nums; }
+.frescura--vieja { color: var(--naranja-claro); font-weight: 600; }
+.frescura--vieja time { color: inherit; }
+.cabecera .frescura { display: none; }
+.boton-icono {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid rgb(255 255 255 / 0.5);
+  border-radius: var(--radio);
+  background: transparent;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.boton-icono:hover { background: rgb(255 255 255 / 0.14); }
+
+/* ── Panel de filtros ─────────────────────────────────────────────────── */
+/* Móvil y tableta: panel lateral que entra por la derecha (a todo el ancho en el teléfono) con
+   «Actualizado» arriba y los filtros debajo. Es contenedor propio: dentro, los filtros se colocan
+   según lo que mide el panel, no la pantalla. */
+.panel {
+  position: fixed;
+  inset-block: 0;
+  right: 0;
+  z-index: 40;
+  width: min(26rem, 100%);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--azul);
+  container: mando / inline-size;
+  box-shadow: -12px 0 32px -16px rgb(8 38 84 / 0.7);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.22s var(--salida), visibility 0s linear 0.22s;
+}
+.panel--abierto { transform: none; visibility: visible; transition: transform 0.22s var(--salida); }
+.panel__cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding-block: var(--e-2);
+  padding-inline: var(--e-4);
+  border-bottom: 1px solid rgb(255 255 255 / 0.12);
+}
+.velo {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  background: rgb(8 38 84 / 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s var(--salida), visibility 0s linear 0.22s;
+}
+.panel--abierto + .velo { opacity: 1; visibility: visible; transition: opacity 0.22s var(--salida); }
+html:has(.panel--abierto) { overflow: hidden; }
+
+/* ── Barra de mando ───────────────────────────────────────────────────── */
+.mando {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-4) var(--e-5);
+  padding-block: var(--e-4);
+  padding-inline: var(--margen);
+  background: var(--azul);
+  color: #fff;
+}
+.cabecera :focus-visible, .panel :focus-visible, .segmento__control:focus-visible + .segmento { outline-color: #fff; }
+.grupo { flex: 1 1 100%; min-width: 0; margin: 0; padding: 0; border: 0; }
+.grupo__nombre {
+  margin-bottom: var(--e-2);
+  padding: 0;
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--azul-claro);
+}
+
+.segmentos { display: flex; flex-wrap: wrap; gap: var(--e-2); }
+.segmentos--unidos { flex-wrap: nowrap; gap: 0; }
+.segmento__control { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+.segmento {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--naranja);
+  border-radius: var(--radio);
+  background: var(--hormigon);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s var(--salida), color 0.15s var(--salida);
+}
+/* En los móviles más estrechos (320px) los unidos aprietan el relleno para que «7 · 14 · 1 mes · Fechas» quepa. */
+.segmentos--unidos .segmento { flex: 1 1 auto; padding-inline: var(--e-2); border-radius: 0; }
+.segmentos--unidos .segmento:not(:first-of-type) { margin-left: -2px; }
+.segmentos--unidos .segmento:first-of-type { border-radius: var(--radio) 0 0 var(--radio); }
+.segmentos--unidos .segmento:last-of-type { border-radius: 0 var(--radio) var(--radio) 0; }
+.segmento:hover { background: var(--naranja-tinte); }
+/* La selección va en naranja: texto tinta (4,95:1), no blanco (3,53:1 no llega a AA a 18px). */
+.segmento__control:checked + .segmento { z-index: 1; background: var(--naranja); color: var(--tinta); }
+.segmento__control:focus-visible + .segmento { z-index: 2; outline: 3px solid #fff; outline-offset: 2px; }
+.segmento__cuenta {
+  min-width: 1.5rem;
+  padding: 0.1875rem 0.375rem;
+  border-radius: 999px;
+  background: var(--regla);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-texto);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  text-align: center;
+}
+.segmento__cuenta:has([data-cuenta]:empty) { display: none; }
+/* «días» solo se ve con sitio (PC); en el móvil lo lee el lector de pantalla y lo dice la leyenda. */
+.segmento__unidad { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.segmento__control:checked + .segmento .segmento__cuenta { background: var(--azul); color: #fff; }
+/* «Equipos» abre una ventana: mismo segmento, naranja cuando hay un subconjunto elegido. */
+.segmento--boton { font: 700 var(--t-equipo) / 1 var(--f-cartel); }
+.segmento--activo { background: var(--naranja); color: var(--tinta); }
+.segmento--activo:hover { background: var(--naranja); }
+.icono--lista { width: 1.125rem; height: 1.125rem; stroke-width: 2.2; }
+.icono--marca { width: 1.125rem; height: 1.125rem; padding: 1px; border: 2px solid currentColor; border-radius: 2px; stroke: transparent; stroke-width: 2.5; }
+.segmento__control:checked + .segmento .icono--marca { stroke: currentColor; }
+
+.fechas { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-3); }
+.fechas__campo {
+  display: grid;
+  gap: var(--e-1);
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--azul-claro);
+}
+.fechas__campo input, .fechas__campo select {
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--papel);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  font: 500 var(--t-texto) / 1 var(--f-texto);
+  letter-spacing: 0;
+  text-transform: none;
+  accent-color: var(--azul);
+}
+/* Con un periodo elegido, «desde/hasta» son de solo lectura: se leen en blanco sobre el azul, sin
+   caja de papel ni calendario, para que no parezcan editables. */
+.fechas__campo input[readonly] {
+  border-color: rgb(255 255 255 / 0.28);
+  background: transparent;
+  color: #fff;
+  color-scheme: dark;
+  cursor: default;
+}
+.fechas__campo input[readonly]::-webkit-calendar-picker-indicator { display: none; }
+/* Desplegable «Mes»: mismo campo que las fechas, con flecha propia para que mida igual en todos los navegadores. */
+.fechas__campo select {
+  appearance: none;
+  padding-right: 2.25rem;
+  background: var(--papel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230c1a2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 1rem;
+  cursor: pointer;
+}
+.fechas__error { margin: var(--e-2) 0 0; color: var(--naranja-claro); font-weight: 600; }
+
+/* ── Bandas y renglones ───────────────────────────────────────────────── */
+.dia, .pabellon, .subgrupo { margin: 0; }
+.banda {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-3);
+  margin: 0;
+  padding-block: var(--e-2);
+  padding-inline: var(--margen);
+  background: var(--banda);
+  color: var(--azul);
+  font: 700 var(--t-banda) / 1.1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  position: sticky;
+  top: var(--alto-fijo);
+  z-index: 10;
+}
+.banda__cuando {
+  align-self: center;
+  padding: 0.3125rem 0.5rem;
+  border-radius: var(--radio);
+  background: var(--naranja);
+  color: var(--tinta);
+  font: 700 var(--t-etiqueta) / 1 var(--f-cartel);
+  letter-spacing: 0.08em;
+}
+.banda__ciudad { color: var(--tinta-suave); font-weight: 600; }
+.banda__ciudad::before { content: " · "; }
+.cuenta { margin-left: auto; white-space: nowrap; font: 600 var(--t-dato) / 1 var(--f-cartel); letter-spacing: 0.06em; text-transform: uppercase; }
+.banda .cuenta { color: var(--tinta-suave); }
+.subgrupo__cabeza {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-3);
+  margin: 0;
+  padding-block: var(--e-2);
+  padding-inline: var(--margen);
+  border-bottom: 1px solid var(--regla);
+  background: var(--hormigon);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1.15 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.subgrupo__cabeza .cuenta { color: var(--tinta-suave); }
+
+.lista { margin: 0; padding: 0; list-style: none; background: var(--papel); }
+.lista:empty { display: none; }
+.partido {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  grid-template-areas:
+    "cuando equipo"
+    "cuando encuentro"
+    "cuando sitio"
+    "cuando competicion";
+  gap: var(--e-1) var(--e-3);
+  padding-block: var(--e-3);
+  padding-inline: var(--margen);
+  border-bottom: 1px solid var(--regla);
+  background: var(--papel);
+}
+.partido__cuando { grid-area: cuando; display: flex; flex-direction: column; gap: 0.125rem; }
+.partido__dia {
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1.1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.resultados[data-vista^="fecha"] .partido__dia { display: none; }
+.partido__hora {
+  color: var(--naranja);
+  font: 700 var(--t-hora) / 1 var(--f-cartel);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.partido[data-estado="aplazado"] .partido__hora,
+.partido[data-estado="suspendido"] .partido__hora { color: var(--tinta-suave); text-decoration: line-through; text-decoration-thickness: 2px; }
+.partido__equipo {
+  grid-area: equipo;
+  align-self: center;
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1.15 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+/* El partido como en AND Scout: por cada lado escudo, nombre y tanteo, local primero. Móvil primero:
+   un equipo por línea con su tanteo a la derecha. Cuando el propio partido mide 24rem o más (container
+   query sobre él, ver abajo), una sola línea centrada en el marcador. El club en azul, mayúsculas y
+   peso 800 para encontrarlo de un vistazo; el tanteo en Saira. */
+.partido__encuentro { grid-area: encuentro; align-self: center; container: encuentro / inline-size; }
+.encuentro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--e-1) var(--e-3);
+  font-weight: 500;
+  line-height: 1.35;
+}
+.encuentro__lado { display: flex; align-items: center; gap: var(--e-2); min-width: 0; }
+.encuentro__lado--local { grid-area: 1 / 1; }
+.encuentro__lado--visitante { grid-area: 2 / 1; }
+.encuentro__lado--visitante .escudo { order: -1; }
+/* En dos líneas el nombre no se parte: el rival largo ya viene con su nombre corto (registro de
+   config/club.mjs o recorte automático) y, si ni así cabe en un móvil muy estrecho, elipsis. */
+.encuentro__nombre { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.encuentro__nombre--club { color: var(--azul); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; }
+.encuentro__tanteo { color: var(--tinta); font: 700 var(--t-equipo) / 1 var(--f-cartel); font-variant-numeric: tabular-nums; text-align: end; }
+.encuentro__tanteo--local { grid-area: 1 / 2; }
+.encuentro__tanteo--visitante { grid-area: 2 / 2; }
+/* En dos líneas el guion sobra; la marca de aplazado o suspendido ocupa la columna de los tanteos. */
+.encuentro__guion { display: none; color: var(--tinta-suave); }
+.encuentro__centro.marca-estado { grid-area: 1 / 2 / 3 / 3; justify-self: end; }
+.escudo { flex: none; width: 1.75rem; height: 1.75rem; object-fit: contain; }
+.partido__sitio, .partido__competicion { font-size: var(--t-dato); line-height: 1.35; color: var(--tinta-suave); }
+.partido__sitio { grid-area: sitio; }
+.partido__competicion { grid-area: competicion; }
+.partido__sitio > span + span::before { content: " · "; }
+.sitio__pista--sin { display: none; }
+/* Por pabellón, el pabellón y la ciudad ya están en la cabeza del grupo: el renglón solo dice la
+   pista, y si no la hay, un guion en lugar de un hueco. */
+.resultados[data-vista$="pabellon"] .sitio__pabellon,
+.resultados[data-vista$="pabellon"] .sitio__ciudad { display: none; }
+.resultados[data-vista$="pabellon"] .sitio__pista::before { content: none; }
+.resultados[data-vista$="pabellon"] .sitio__pista--sin { display: inline; }
+.marca-estado {
+  display: inline-block;
+  padding: 0.3125rem 0.5rem;
+  border: 1.5px solid var(--azul);
+  border-radius: var(--radio);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.marca-estado { border-style: dashed; }
+
+/* ── Sin partidos ─────────────────────────────────────────────────────── */
+.vacio { padding-block: var(--e-7); padding-inline: var(--margen); background: var(--papel); border-block: 1px solid var(--regla); }
+.vacio__texto {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--azul);
+  font: 700 var(--t-banda) / 1.15 var(--f-cartel);
+  text-wrap: balance;
+}
+.vacio__ayuda { max-width: 60ch; margin: var(--e-2) 0 0; color: var(--tinta-suave); }
+.vacio__acciones { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-top: var(--e-4); }
+.boton {
+  min-height: 2.75rem;
+  padding-inline: var(--e-4);
+  border: 2px solid var(--azul);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s var(--salida), color 0.15s var(--salida);
+}
+.boton:hover { background: var(--azul); color: #fff; }
+.boton--pequeno { min-height: 2.25rem; padding-inline: var(--e-3); font-size: var(--t-dato); }
+.boton--primario { width: 100%; border-color: var(--naranja); background: var(--naranja); color: var(--tinta); }
+.boton--primario:hover { border-color: var(--azul); background: var(--azul); color: #fff; }
+
+/* ── Ventana de equipos ───────────────────────────────────────────────── */
+html:has(.dialogo[open]) { overflow: hidden; }
+.dialogo {
+  width: min(100% - 2rem, 30rem);
+  max-width: none;
+  max-height: min(100% - 2rem, 44rem);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 24px 48px -16px rgb(8 38 84 / 0.5);
+}
+.dialogo[open] { display: flex; }
+.dialogo::backdrop { background: rgb(8 38 84 / 0.6); }
+.dialogo__caja { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+.dialogo__cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding: var(--e-3) var(--e-3) var(--e-3) var(--e-4);
+  border-bottom: 3px solid var(--naranja);
+  background: var(--azul);
+  color: #fff;
+}
+.dialogo__titulo { margin: 0; font: 700 var(--t-banda) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.02em; }
+.dialogo__cabeza .boton-icono:focus-visible { outline-color: #fff; }
+.dialogo__atajos { display: flex; gap: var(--e-2); padding: var(--e-3) var(--e-4); border-bottom: 1px solid var(--regla); }
+.dialogo__lista { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 0 var(--e-2); }
+.familia { margin: 0; padding: 0; border: 0; }
+.familia__nombre {
+  width: 100%;
+  padding: var(--e-2) var(--e-4);
+  background: var(--banda);
+  color: var(--azul);
+  font: 700 var(--t-etiqueta) / 1.2 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.equipo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 3rem;
+  padding: var(--e-2) var(--e-4);
+  border-bottom: 1px solid var(--regla);
+  cursor: pointer;
+}
+.equipo:hover { background: var(--naranja-tinte); }
+.equipo__control { width: 1.25rem; height: 1.25rem; margin: 0; flex: none; accent-color: var(--naranja); cursor: pointer; }
+.equipo__nombre { flex: 1; color: var(--azul); font: 700 var(--t-equipo) / 1.15 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.equipo__cuenta {
+  min-width: 1.5rem;
+  padding: 0.1875rem 0.375rem;
+  border-radius: 999px;
+  background: var(--regla);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-texto);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.dialogo__pie { padding: var(--e-3) var(--e-4); border-top: 1px solid var(--regla); background: var(--papel); }
+
+/* ── Reagrupar: un solo fundido corto ─────────────────────────────────── */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.18s; animation-timing-function: var(--salida); }
+@media (prefers-reduced-motion: reduce) {
+  .panel, .panel--abierto, .velo, .panel--abierto + .velo { transition: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+/* ── Filtros según lo que mide su sitio (el panel en el móvil, la franja en el PC) ── */
+/* En los móviles más estrechos los unidos aprietan el relleno para que «7 · 14 · 1 mes · Custom» quepa. */
+@container mando (min-width: 24rem) {
+  .segmentos--unidos .segmento { padding-inline: var(--e-3); }
+}
+@container mando (min-width: 40rem) {
+  .grupo { flex: 0 1 auto; }
+  /* «Mes · Desde · Hasta» en una fila que NO ensancha el grupo «Rango»: si lo ensanchara, al
+     pulsar «Custom» saltarían «Tipo», «Agrupar» y «Equipos». La fila se sale por la derecha, por
+     debajo de esos grupos (que son más bajos), y el grupo sube de capa para que los clics le lleguen. */
+  .grupo--rango { position: relative; z-index: 1; }
+  .fechas { flex-wrap: nowrap; width: 0; min-width: 100%; }
+  .fechas > * { flex: none; }
+  .segmento__unidad { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+}
+
+/* ── Partido en una línea cuando cabe ─────────────────────────────────── */
+/* escudo · local · 57 – 53 · visitante · escudo, con los lados de igual ancho para que el marcador
+   quede centrado y los de todos los renglones caigan en la misma vertical. Escudo y nombre son un
+   bloque centrado en vertical en la fila, con el escudo más grande (la fila la marca la hora, de
+   2.25rem). Un nombre corto se pega al marcador; uno que se parte llena su lado y se alinea hacia
+   SU escudo, así nunca se separa de él (alineado hacia el marcador, el escudo se iba al borde). */
+@container encuentro (min-width: 24rem) {
+  .encuentro { grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); column-gap: var(--e-2); }
+  .escudo { width: 2.25rem; height: 2.25rem; }
+  .encuentro__lado--local { justify-content: flex-end; }
+  .encuentro__lado--visitante .escudo { order: 0; }
+  .encuentro__lado--visitante .encuentro__nombre { text-align: end; }
+  /* En la línea ancha un nombre que no quepa se parte, en líneas parejas. */
+  .encuentro__nombre { white-space: normal; overflow: visible; overflow-wrap: break-word; text-wrap: balance; }
+  .encuentro__tanteo--local { grid-area: 1 / 2; }
+  .encuentro__guion { display: block; }
+  .encuentro__centro, .encuentro__centro.marca-estado { grid-area: 1 / 3; justify-self: center; }
+  .encuentro__tanteo--visitante { grid-area: 1 / 4; }
+  .encuentro__lado--visitante { grid-area: 1 / 5; }
+}
+
+/* ── Tableta ──────────────────────────────────────────────────────────── */
+@container marco (min-width: 40rem) {
+  .resultados { --t-banda: 2rem; }
+  .partido {
+    grid-template-columns: 6rem minmax(0, 0.8fr) minmax(0, 1.5fr);
+    grid-template-areas:
+      "cuando equipo encuentro"
+      "cuando competicion sitio";
+    align-items: center;
+    column-gap: var(--e-4);
+  }
+}
+
+/* ── Escritorio: barra y bandas fijas, un renglón por partido ─────────── */
+/* La cabecera se va con el scroll y lo fijo es la franja de filtros; sin hamburguesa ni velo. */
+@container marco (min-width: 60rem) {
+  .cabecera { position: static; flex-wrap: wrap; padding-block: var(--e-3); border-bottom: 0; }
+  .cabecera .frescura { display: block; }
+  .cabecera__menu, .panel__cabeza, .velo { display: none; }
+  .panel {
+    position: sticky;
+    inset: auto;
+    top: 0;
+    z-index: 20;
+    width: auto;
+    overflow: visible;
+    transform: none;
+    visibility: visible;
+    transition: none;
+    box-shadow: 0 8px 18px -14px rgb(8 38 84 / 0.45);
+  }
+  .mando { border-top: 1px solid rgb(255 255 255 / 0.12); border-bottom: 3px solid var(--naranja); }
+}
+@container marco (min-width: 64rem) {
+  .resultados { --t-banda: 2.25rem; --t-hora: 2.25rem; }
+  .partido {
+    /* El partido lleva dos escudos de 2.25rem y dos nombres: se lleva el ancho que la competición
+       («Liga N1 · Jornada 3») no usa. */
+    grid-template-columns: 6.5rem minmax(9rem, 0.7fr) minmax(0, 2.1fr) minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-template-areas: "cuando equipo encuentro sitio competicion";
+    row-gap: 0;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="marco">
+<header class="cabecera">
+<a class="cabecera__marca" href="./"><img src="img/escudo-160.png" alt="" width="44" height="44"><span>CB El Palo</span></a>
+<p class="frescura" data-capturado="2026-09-15T22:45:09.012Z">Actualizado: <time datetime="2026-09-15T22:45:09.012Z">16 sep, 00:45</time></p>
+<button class="boton-icono cabecera__menu" type="button" id="menu-abrir" aria-label="Filtros" aria-controls="panel" aria-expanded="false"><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg></button>
+</header>
+
+<div class="panel" id="panel" aria-label="Filtros">
+<div class="panel__cabeza">
+<p class="frescura" data-capturado="2026-09-15T22:45:09.012Z">Actualizado: <time datetime="2026-09-15T22:45:09.012Z">16 sep, 00:45</time></p>
+<button class="boton-icono" type="button" id="panel-cerrar" aria-label="Cerrar filtros"><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+</div>
+<form class="mando" id="mando" aria-label="Filtros de los partidos">
+<fieldset class="grupo grupo--rango">
+<legend class="grupo__nombre">Rango</legend>
+<div class="segmentos segmentos--unidos">
+<input class="segmento__control" type="radio" name="rango" value="7" id="rango-7" checked><label class="segmento" for="rango-7"><span>7<span class="segmento__unidad"> días</span></span><span class="segmento__cuenta"><span data-cuenta="rango-7"></span><span class="oculto"> partidos</span></span></label>
+<input class="segmento__control" type="radio" name="rango" value="14" id="rango-14"><label class="segmento" for="rango-14"><span>14<span class="segmento__unidad"> días</span></span><span class="segmento__cuenta"><span data-cuenta="rango-14"></span><span class="oculto"> partidos</span></span></label>
+<input class="segmento__control" type="radio" name="rango" value="mes" id="rango-mes"><label class="segmento" for="rango-mes"><span>1 mes</span><span class="segmento__cuenta"><span data-cuenta="rango-mes"></span><span class="oculto"> partidos</span></span></label>
+<input class="segmento__control" type="radio" name="rango" value="fechas" id="rango-fechas"><label class="segmento" for="rango-fechas"><span>Custom</span></label>
+</div>
+<div class="fechas" id="fechas" hidden>
+<label class="fechas__campo"><span>Mes</span><select name="periodo" id="periodo">
+<option value="personalizado">Rango personalizado</option>
+<option value="temporada" data-desde="2026-09-01" data-hasta="2027-06-30">Toda la temporada</option>
+<option value="resto" data-desde="2026-09-01" data-hasta="2027-06-30">Resto de temporada</option>
+<option value="2026-09" data-desde="2026-09-01" data-hasta="2026-09-30">Septiembre</option>
+<option value="2026-10" data-desde="2026-10-01" data-hasta="2026-10-31">Octubre</option>
+<option value="2026-11" data-desde="2026-11-01" data-hasta="2026-11-30">Noviembre</option>
+<option value="2026-12" data-desde="2026-12-01" data-hasta="2026-12-31">Diciembre</option>
+<option value="2027-01" data-desde="2027-01-01" data-hasta="2027-01-31">Enero</option>
+<option value="2027-02" data-desde="2027-02-01" data-hasta="2027-02-28">Febrero</option>
+<option value="2027-03" data-desde="2027-03-01" data-hasta="2027-03-31">Marzo</option>
+<option value="2027-04" data-desde="2027-04-01" data-hasta="2027-04-30">Abril</option>
+<option value="2027-05" data-desde="2027-05-01" data-hasta="2027-05-31">Mayo</option>
+<option value="2027-06" data-desde="2027-06-01" data-hasta="2027-06-30">Junio</option>
+</select></label>
+<label class="fechas__campo"><span>Desde</span><input type="date" name="desde" id="desde"></label>
+<label class="fechas__campo"><span>Hasta</span><input type="date" name="hasta" id="hasta"></label>
+</div>
+<p class="fechas__error" id="fechas-error" role="alert" hidden>La fecha «hasta» es anterior a «desde». Cambia una de las dos.</p>
+</fieldset>
+<fieldset class="grupo">
+<legend class="grupo__nombre">Tipo</legend>
+<div class="segmentos segmentos--unidos">
+<input class="segmento__control" type="radio" name="lado" value="local" id="lado-local"><label class="segmento" for="lado-local"><span>Local</span><span class="segmento__cuenta"><span data-cuenta="lado-local"></span><span class="oculto"> partidos</span></span></label>
+<input class="segmento__control" type="radio" name="lado" value="visitante" id="lado-visitante"><label class="segmento" for="lado-visitante"><span>Visitante</span><span class="segmento__cuenta"><span data-cuenta="lado-visitante"></span><span class="oculto"> partidos</span></span></label>
+<input class="segmento__control" type="radio" name="lado" value="todos" id="lado-todos" checked><label class="segmento" for="lado-todos"><span>Todos</span><span class="segmento__cuenta"><span data-cuenta="lado-todos"></span><span class="oculto"> partidos</span></span></label>
+</div>
+</fieldset>
+<fieldset class="grupo">
+<legend class="grupo__nombre">Agrupar</legend>
+<div class="segmentos">
+<input class="segmento__control" type="checkbox" name="agrupar" value="fecha" id="agrupar-fecha" checked><label class="segmento" for="agrupar-fecha"><svg class="icono icono--marca" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Por fecha</span></label>
+<input class="segmento__control" type="checkbox" name="agrupar" value="pabellon" id="agrupar-pabellon"><label class="segmento" for="agrupar-pabellon"><svg class="icono icono--marca" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span>Por pabellón</span></label>
+</div>
+</fieldset>
+<fieldset class="grupo">
+<legend class="grupo__nombre">Equipos</legend>
+<div class="segmentos">
+<button class="segmento segmento--boton" type="button" id="equipos-abrir" aria-haspopup="dialog" aria-controls="equipos-dialogo"><svg class="icono icono--lista" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></svg><span id="equipos-texto">Todos</span></button>
+</div>
+</fieldset>
+</form>
+</div>
+<div class="velo" id="velo"></div>
+
+<main class="resultados" id="resultados" data-vista="fecha" data-lado="todos">
+<h1 class="oculto">Partidos de CB El Palo</h1>
+
+<div class="vista" id="vista-fecha">
+<section class="dia" data-fecha="2026-09-12" hidden aria-labelledby="dia-2026-09-12">
+<h2 class="banda" id="dia-2026-09-12"><span class="banda__texto">sábado 12 sep</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-09-12"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-09-12|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-09-17" aria-labelledby="dia-2026-09-17">
+<h2 class="banda" id="dia-2026-09-17"><span class="banda__texto">jueves 17 sep</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>1 partido</span></h2>
+<ol class="lista" data-destino="fecha|2026-09-17"><li class="partido" id="p-511998" data-fecha="2026-09-17" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">jue 17 sep</span><time class="partido__hora" datetime="2026-09-17T21:00">21:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Málaga Basket</span><img class="escudo" src="img/escudos/5217ee19364f5447.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista 1</span></span>
+<span class="partido__competicion">VI Supercopa Diputación Provincial Málaga · Jornada 2</span></li></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-09-17|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-09-20" aria-labelledby="dia-2026-09-20">
+<h2 class="banda" id="dia-2026-09-20"><span class="banda__texto">domingo 20 sep</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>2 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-09-20"><li class="partido" id="p-512015" data-fecha="2026-09-20" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 20 sep</span><time class="partido__hora" datetime="2026-09-20T10:00">10:00</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Unicaja</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista centro</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">VI Supercopa Diputación Provincial Málaga · Jornada 2</span></li>
+<li class="partido" id="p-512000" data-fecha="2026-09-20" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 20 sep</span><time class="partido__hora" datetime="2026-09-20T12:30">12:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/e80b56a2a43cd2f8.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">EBG Málaga Tecnocasa</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista centro</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">VI Supercopa Diputación Provincial Málaga · Jornada 3</span></li></ol><section class="subgrupo" data-pabellon="jose-m-martin-urbano" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-09-20|jose-m-martin-urbano"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-09-26" hidden aria-labelledby="dia-2026-09-26">
+<h2 class="banda" id="dia-2026-09-26"><span class="banda__texto">sábado 26 sep</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-09-26"></ol><section class="subgrupo" data-pabellon="forus-antonio-prieto" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Forus Antonio Prieto<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-09-26|forus-antonio-prieto"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-03" hidden aria-labelledby="dia-2026-10-03">
+<h2 class="banda" id="dia-2026-10-03"><span class="banda__texto">sábado 3 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-03"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-03|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-10" hidden aria-labelledby="dia-2026-10-10">
+<h2 class="banda" id="dia-2026-10-10"><span class="banda__texto">sábado 10 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-10"></ol><section class="subgrupo" data-pabellon="parque-deportes-san-jose" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Parque Deportes San José<span class="banda__ciudad">Linares</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-10|parque-deportes-san-jose"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-11" hidden aria-labelledby="dia-2026-10-11">
+<h2 class="banda" id="dia-2026-10-11"><span class="banda__texto">domingo 11 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-11"></ol><section class="subgrupo" data-pabellon="colegio-agustinos" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Colegio Agustinos<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-11|colegio-agustinos"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-17" hidden aria-labelledby="dia-2026-10-17">
+<h2 class="banda" id="dia-2026-10-17"><span class="banda__texto">sábado 17 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-17"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-17|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-25" hidden aria-labelledby="dia-2026-10-25">
+<h2 class="banda" id="dia-2026-10-25"><span class="banda__texto">domingo 25 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-25"></ol><section class="subgrupo" data-pabellon="colegio-el-pinar" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Colegio El Pinar<span class="banda__ciudad">Alhaurín de la Torre</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-25|colegio-el-pinar"></ol></section><section class="subgrupo" data-pabellon="jose-m-martin-urbano" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-25|jose-m-martin-urbano"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-10-31" hidden aria-labelledby="dia-2026-10-31">
+<h2 class="banda" id="dia-2026-10-31"><span class="banda__texto">sábado 31 oct</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-10-31"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-10-31|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-11-07" hidden aria-labelledby="dia-2026-11-07">
+<h2 class="banda" id="dia-2026-11-07"><span class="banda__texto">sábado 7 nov</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-11-07"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-07|la-mosca"></ol></section><section class="subgrupo" data-pabellon="veleta" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Veleta<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-07|veleta"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-11-14" hidden aria-labelledby="dia-2026-11-14">
+<h2 class="banda" id="dia-2026-11-14"><span class="banda__texto">sábado 14 nov</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-11-14"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-14|la-mosca"></ol></section><section class="subgrupo" data-pabellon="ramon-rico-benalmadena-pueblo" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Polideportivo Ramón Rico Benalmádena Pueblo<span class="banda__ciudad">Benalmádena</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-14|ramon-rico-benalmadena-pueblo"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-11-21" hidden aria-labelledby="dia-2026-11-21">
+<h2 class="banda" id="dia-2026-11-21"><span class="banda__texto">sábado 21 nov</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-11-21"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-21|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-11-22" hidden aria-labelledby="dia-2026-11-22">
+<h2 class="banda" id="dia-2026-11-22"><span class="banda__texto">domingo 22 nov</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-11-22"></ol><section class="subgrupo" data-pabellon="paquillo-fernandez" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Paquillo Fernández<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-22|paquillo-fernandez"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-11-28" hidden aria-labelledby="dia-2026-11-28">
+<h2 class="banda" id="dia-2026-11-28"><span class="banda__texto">sábado 28 nov</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-11-28"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-28|la-mosca"></ol></section><section class="subgrupo" data-pabellon="alcala-la-real" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Complejo Polideportivo Alcalá La Real<span class="banda__ciudad">Alcalá la Real</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-11-28|alcala-la-real"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-12-05" hidden aria-labelledby="dia-2026-12-05">
+<h2 class="banda" id="dia-2026-12-05"><span class="banda__texto">sábado 5 dic</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-12-05"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-12-05|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-12-12" hidden aria-labelledby="dia-2026-12-12">
+<h2 class="banda" id="dia-2026-12-12"><span class="banda__texto">sábado 12 dic</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-12-12"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-12-12|la-mosca"></ol></section><section class="subgrupo" data-pabellon="del-toyo" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón del Toyo<span class="banda__ciudad">El Toyo</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-12-12|del-toyo"></ol></section>
+</section>
+<section class="dia" data-fecha="2026-12-19" hidden aria-labelledby="dia-2026-12-19">
+<h2 class="banda" id="dia-2026-12-19"><span class="banda__texto">sábado 19 dic</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2026-12-19"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-12-19|la-mosca"></ol></section><section class="subgrupo" data-pabellon="javier-imbroda-carranque" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Ciudad Deportiva Javier Imbroda (Carranque)<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2026-12-19|javier-imbroda-carranque"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-01-09" hidden aria-labelledby="dia-2027-01-09">
+<h2 class="banda" id="dia-2027-01-09"><span class="banda__texto">sábado 9 ene</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-01-09"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-01-09|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-01-16" hidden aria-labelledby="dia-2027-01-16">
+<h2 class="banda" id="dia-2027-01-16"><span class="banda__texto">sábado 16 ene</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-01-16"></ol><section class="subgrupo" data-pabellon="carlos-martinez-esteban" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Carlos Martínez Esteban<span class="banda__ciudad">Jaén</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-01-16|carlos-martinez-esteban"></ol></section><section class="subgrupo" data-pabellon="la-mojonera" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Municipal La Mojonera<span class="banda__ciudad">La Mojonera</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-01-16|la-mojonera"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-01-23" hidden aria-labelledby="dia-2027-01-23">
+<h2 class="banda" id="dia-2027-01-23"><span class="banda__texto">sábado 23 ene</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-01-23"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-01-23|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-01-30" hidden aria-labelledby="dia-2027-01-30">
+<h2 class="banda" id="dia-2027-01-30"><span class="banda__texto">sábado 30 ene</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-01-30"></ol><section class="subgrupo" data-pabellon="juanito" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Juanito<span class="banda__ciudad">Fuengirola</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-01-30|juanito"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-02-06" hidden aria-labelledby="dia-2027-02-06">
+<h2 class="banda" id="dia-2027-02-06"><span class="banda__texto">sábado 6 feb</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-02-06"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-02-06|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-02-13" hidden aria-labelledby="dia-2027-02-13">
+<h2 class="banda" id="dia-2027-02-13"><span class="banda__texto">sábado 13 feb</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-02-13"></ol><section class="subgrupo" data-pabellon="carlos-martinez-esteban" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Carlos Martínez Esteban<span class="banda__ciudad">Jaén</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-02-13|carlos-martinez-esteban"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-02-14" hidden aria-labelledby="dia-2027-02-14">
+<h2 class="banda" id="dia-2027-02-14"><span class="banda__texto">domingo 14 feb</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-02-14"></ol><section class="subgrupo" data-pabellon="jose-m-martin-urbano" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-02-14|jose-m-martin-urbano"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-02-20" hidden aria-labelledby="dia-2027-02-20">
+<h2 class="banda" id="dia-2027-02-20"><span class="banda__texto">sábado 20 feb</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-02-20"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-02-20|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-03-06" hidden aria-labelledby="dia-2027-03-06">
+<h2 class="banda" id="dia-2027-03-06"><span class="banda__texto">sábado 6 mar</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-03-06"></ol><section class="subgrupo" data-pabellon="municipal-andujar" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Polideportivo Municipal<span class="banda__ciudad">Andújar</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-03-06|municipal-andujar"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-03-07" hidden aria-labelledby="dia-2027-03-07">
+<h2 class="banda" id="dia-2027-03-07"><span class="banda__texto">domingo 7 mar</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-03-07"></ol><section class="subgrupo" data-pabellon="guillermo-garcia-pezzi-melilla" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Guillermo García Pezzi-Melilla<span class="banda__ciudad">Melilla</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-03-07|guillermo-garcia-pezzi-melilla"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-03-13" hidden aria-labelledby="dia-2027-03-13">
+<h2 class="banda" id="dia-2027-03-13"><span class="banda__texto">sábado 13 mar</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-03-13"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-03-13|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-03-20" hidden aria-labelledby="dia-2027-03-20">
+<h2 class="banda" id="dia-2027-03-20"><span class="banda__texto">sábado 20 mar</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-03-20"></ol><section class="subgrupo" data-pabellon="blas-infante" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Blas Infante<span class="banda__ciudad">Alhaurín de la Torre</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-03-20|blas-infante"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-03-21" hidden aria-labelledby="dia-2027-03-21">
+<h2 class="banda" id="dia-2027-03-21"><span class="banda__texto">domingo 21 mar</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-03-21"></ol><section class="subgrupo" data-pabellon="jose-antonio-pineda" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Antonio Pineda<span class="banda__ciudad">Estepona</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-03-21|jose-antonio-pineda"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-04-03" hidden aria-labelledby="dia-2027-04-03">
+<h2 class="banda" id="dia-2027-04-03"><span class="banda__texto">sábado 3 abr</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-04-03"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-04-03|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-04-04" hidden aria-labelledby="dia-2027-04-04">
+<h2 class="banda" id="dia-2027-04-04"><span class="banda__texto">domingo 4 abr</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-04-04"></ol><section class="subgrupo" data-pabellon="jose-m-martin-urbano" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-04-04|jose-m-martin-urbano"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-04-10" hidden aria-labelledby="dia-2027-04-10">
+<h2 class="banda" id="dia-2027-04-10"><span class="banda__texto">sábado 10 abr</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-04-10"></ol><section class="subgrupo" data-pabellon="la-mosca" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-04-10|la-mosca"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-04-11" hidden aria-labelledby="dia-2027-04-11">
+<h2 class="banda" id="dia-2027-04-11"><span class="banda__texto">domingo 11 abr</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-04-11"></ol><section class="subgrupo" data-pabellon="jose-m-martin-urbano" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-04-11|jose-m-martin-urbano"></ol></section>
+</section>
+<section class="dia" data-fecha="2027-04-18" hidden aria-labelledby="dia-2027-04-18">
+<h2 class="banda" id="dia-2027-04-18"><span class="banda__texto">domingo 18 abr</span><span class="banda__cuando" hidden></span><span class="cuenta" data-contador>0 partidos</span></h2>
+<ol class="lista" data-destino="fecha|2027-04-18"></ol><section class="subgrupo" data-pabellon="infanta-cristina" hidden><h3 class="subgrupo__cabeza"><span class="banda__texto">Pabellón Infanta Cristina<span class="banda__ciudad">Roquetas de Mar</span></span><span class="cuenta" data-contador></span></h3><ol class="lista" data-destino="fecha-pabellon|2027-04-18|infanta-cristina"></ol></section>
+</section>
+</div>
+<div class="vista" id="vista-pabellon" hidden>
+<section class="pabellon" data-pabellon="la-mosca" hidden aria-labelledby="pab-la-mosca"><h2 class="banda" id="pab-la-mosca"><span class="banda__texto">Pabellón La Mosca<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|la-mosca"></ol></section>
+<section class="pabellon" data-pabellon="javier-imbroda-carranque" hidden aria-labelledby="pab-javier-imbroda-carranque"><h2 class="banda" id="pab-javier-imbroda-carranque"><span class="banda__texto">Ciudad Deportiva Javier Imbroda (Carranque)<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|javier-imbroda-carranque"></ol></section>
+<section class="pabellon" data-pabellon="colegio-agustinos" hidden aria-labelledby="pab-colegio-agustinos"><h2 class="banda" id="pab-colegio-agustinos"><span class="banda__texto">Colegio Agustinos<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|colegio-agustinos"></ol></section>
+<section class="pabellon" data-pabellon="colegio-el-pinar" hidden aria-labelledby="pab-colegio-el-pinar"><h2 class="banda" id="pab-colegio-el-pinar"><span class="banda__texto">Colegio El Pinar<span class="banda__ciudad">Alhaurín de la Torre</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|colegio-el-pinar"></ol></section>
+<section class="pabellon" data-pabellon="alcala-la-real" hidden aria-labelledby="pab-alcala-la-real"><h2 class="banda" id="pab-alcala-la-real"><span class="banda__texto">Complejo Polideportivo Alcalá La Real<span class="banda__ciudad">Alcalá la Real</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|alcala-la-real"></ol></section>
+<section class="pabellon" data-pabellon="forus-antonio-prieto" hidden aria-labelledby="pab-forus-antonio-prieto"><h2 class="banda" id="pab-forus-antonio-prieto"><span class="banda__texto">Forus Antonio Prieto<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|forus-antonio-prieto"></ol></section>
+<section class="pabellon" data-pabellon="blas-infante" hidden aria-labelledby="pab-blas-infante"><h2 class="banda" id="pab-blas-infante"><span class="banda__texto">Pabellón Blas Infante<span class="banda__ciudad">Alhaurín de la Torre</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|blas-infante"></ol></section>
+<section class="pabellon" data-pabellon="carlos-martinez-esteban" hidden aria-labelledby="pab-carlos-martinez-esteban"><h2 class="banda" id="pab-carlos-martinez-esteban"><span class="banda__texto">Pabellón Carlos Martínez Esteban<span class="banda__ciudad">Jaén</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|carlos-martinez-esteban"></ol></section>
+<section class="pabellon" data-pabellon="del-toyo" hidden aria-labelledby="pab-del-toyo"><h2 class="banda" id="pab-del-toyo"><span class="banda__texto">Pabellón del Toyo<span class="banda__ciudad">El Toyo</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|del-toyo"></ol></section>
+<section class="pabellon" data-pabellon="guillermo-garcia-pezzi-melilla" hidden aria-labelledby="pab-guillermo-garcia-pezzi-melilla"><h2 class="banda" id="pab-guillermo-garcia-pezzi-melilla"><span class="banda__texto">Pabellón Guillermo García Pezzi-Melilla<span class="banda__ciudad">Melilla</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|guillermo-garcia-pezzi-melilla"></ol></section>
+<section class="pabellon" data-pabellon="infanta-cristina" hidden aria-labelledby="pab-infanta-cristina"><h2 class="banda" id="pab-infanta-cristina"><span class="banda__texto">Pabellón Infanta Cristina<span class="banda__ciudad">Roquetas de Mar</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|infanta-cristina"></ol></section>
+<section class="pabellon" data-pabellon="jose-antonio-pineda" hidden aria-labelledby="pab-jose-antonio-pineda"><h2 class="banda" id="pab-jose-antonio-pineda"><span class="banda__texto">Pabellón José Antonio Pineda<span class="banda__ciudad">Estepona</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|jose-antonio-pineda"></ol></section>
+<section class="pabellon" data-pabellon="jose-m-martin-urbano" hidden aria-labelledby="pab-jose-m-martin-urbano"><h2 class="banda" id="pab-jose-m-martin-urbano"><span class="banda__texto">Pabellón José Mª Martín Urbano<span class="banda__ciudad">Málaga</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|jose-m-martin-urbano"></ol></section>
+<section class="pabellon" data-pabellon="juanito" hidden aria-labelledby="pab-juanito"><h2 class="banda" id="pab-juanito"><span class="banda__texto">Pabellón Juanito<span class="banda__ciudad">Fuengirola</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|juanito"></ol></section>
+<section class="pabellon" data-pabellon="la-mojonera" hidden aria-labelledby="pab-la-mojonera"><h2 class="banda" id="pab-la-mojonera"><span class="banda__texto">Pabellón Municipal La Mojonera<span class="banda__ciudad">La Mojonera</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|la-mojonera"></ol></section>
+<section class="pabellon" data-pabellon="paquillo-fernandez" hidden aria-labelledby="pab-paquillo-fernandez"><h2 class="banda" id="pab-paquillo-fernandez"><span class="banda__texto">Pabellón Paquillo Fernández<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|paquillo-fernandez"></ol></section>
+<section class="pabellon" data-pabellon="veleta" hidden aria-labelledby="pab-veleta"><h2 class="banda" id="pab-veleta"><span class="banda__texto">Pabellón Veleta<span class="banda__ciudad">Granada</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|veleta"></ol></section>
+<section class="pabellon" data-pabellon="parque-deportes-san-jose" hidden aria-labelledby="pab-parque-deportes-san-jose"><h2 class="banda" id="pab-parque-deportes-san-jose"><span class="banda__texto">Parque Deportes San José<span class="banda__ciudad">Linares</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|parque-deportes-san-jose"></ol></section>
+<section class="pabellon" data-pabellon="municipal-andujar" hidden aria-labelledby="pab-municipal-andujar"><h2 class="banda" id="pab-municipal-andujar"><span class="banda__texto">Polideportivo Municipal<span class="banda__ciudad">Andújar</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|municipal-andujar"></ol></section>
+<section class="pabellon" data-pabellon="ramon-rico-benalmadena-pueblo" hidden aria-labelledby="pab-ramon-rico-benalmadena-pueblo"><h2 class="banda" id="pab-ramon-rico-benalmadena-pueblo"><span class="banda__texto">Polideportivo Ramón Rico Benalmádena Pueblo<span class="banda__ciudad">Benalmádena</span></span><span class="cuenta" data-contador></span></h2><ol class="lista" data-destino="pabellon|ramon-rico-benalmadena-pueblo"></ol></section>
+</div>
+<div class="vista" id="vista-plano" hidden>
+<ol class="lista" data-destino="plano"></ol>
+</div>
+
+<div class="vacio" id="vacio" hidden>
+<p class="vacio__texto" id="vacio-texto">No hay partidos del club en estas fechas.</p>
+<p class="vacio__ayuda" id="vacio-ayuda" hidden></p>
+<div class="vacio__acciones">
+<button class="boton" type="button" data-accion="rango-14" hidden>Ver 14 días</button>
+<button class="boton" type="button" data-accion="rango-mes" hidden>Ver 1 mes</button>
+<button class="boton" type="button" data-accion="lado-todos" hidden>Ver todos</button>
+<button class="boton" type="button" data-accion="equipos-todos" hidden>Ver todos los equipos</button>
+</div>
+</div>
+
+<ol class="almacen" data-destino="almacen" hidden>
+<li class="partido" id="p-512016" data-fecha="2026-09-12" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="terminado">
+<span class="partido__cuando"><span class="partido__dia">sáb 12 sep</span><time class="partido__hora" datetime="2026-09-12T17:15">17:15</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__tanteo encuentro__tanteo--local">57</span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__tanteo encuentro__tanteo--visitante">53</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Unicaja</span><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista 1</span></span>
+<span class="partido__competicion">VI Supercopa Diputación Provincial Málaga · Jornada 1</span></li>
+<li class="partido" id="p-511996" data-fecha="2026-09-12" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="terminado">
+<span class="partido__cuando"><span class="partido__dia">sáb 12 sep</span><time class="partido__hora" datetime="2026-09-12T19:30">19:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__tanteo encuentro__tanteo--local">90</span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__tanteo encuentro__tanteo--visitante">78</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">CB Benalmádena</span><img class="escudo" src="img/escudos/186a9d221edc0ad4.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista 1</span></span>
+<span class="partido__competicion">VI Supercopa Diputación Provincial Málaga · Jornada 1</span></li>
+<li class="partido" id="p-512758" data-fecha="2026-09-26" data-lado="visitante" data-pabellon="forus-antonio-prieto" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 26 sep</span><time class="partido__hora" datetime="2026-09-26T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/d92d8e6839707003.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">El Plantel GMASB</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Forus Antonio Prieto</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Granada</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 1</span></li>
+<li class="partido" id="p-512295" data-fecha="2026-10-03" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 3 oct</span><time class="partido__hora" datetime="2026-10-03T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Caja Rural Jaén C.B.</span><img class="escudo" src="img/escudos/c361102f1d83fe66.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 1</span></li>
+<li class="partido" id="p-512767" data-fecha="2026-10-03" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 3 oct</span><time class="partido__hora" datetime="2026-10-03T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Clínicas Dentales Dr. Manuel Cara CB La Mojonera">CB La Mojonera</span><img class="escudo" src="img/escudos/ecac6daacb3a550e.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 2</span></li>
+<li class="partido" id="p-512297" data-fecha="2026-10-10" data-lado="visitante" data-pabellon="parque-deportes-san-jose" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 10 oct</span><time class="partido__hora" datetime="2026-10-10T17:30">17:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/31aca0bef4d13747.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Linaqua CB Linares</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Parque Deportes San José</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Linares</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 2</span></li>
+<li class="partido" id="p-512773" data-fecha="2026-10-11" data-lado="visitante" data-pabellon="colegio-agustinos" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 11 oct</span><time class="partido__hora" datetime="2026-10-11T12:30">12:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/168312104a5bf7e3.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Hispania Agustinos</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Colegio Agustinos</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Granada</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 3</span></li>
+<li class="partido" id="p-512306" data-fecha="2026-10-17" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 17 oct</span><time class="partido__hora" datetime="2026-10-17T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="CB Salliver Fuengirola Higuerón Resort">CB Salliver Fuengirola</span><img class="escudo" src="img/escudos/83a8dd0651a7f3ca.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 3</span></li>
+<li class="partido" id="p-512780" data-fecha="2026-10-17" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 17 oct</span><time class="partido__hora" datetime="2026-10-17T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="CB Salliver Fuengirola Higuerón Resort">CB Salliver Fuengirola</span><img class="escudo" src="img/escudos/83a8dd0651a7f3ca.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 4</span></li>
+<li class="partido" id="p-512788" data-fecha="2026-10-25" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 25 oct</span><time class="partido__hora" datetime="2026-10-25T11:30">11:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/e80b56a2a43cd2f8.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">EBG Málaga</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista A</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 5</span></li>
+<li class="partido" id="p-512310" data-fecha="2026-10-25" data-lado="visitante" data-pabellon="colegio-el-pinar" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 25 oct</span><time class="partido__hora" datetime="2026-10-25T12:45">12:45</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/39528a23647091fa.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">CD Colegio El Pinar</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Colegio El Pinar</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Alhaurín de la Torre</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 4</span></li>
+<li class="partido" id="p-512793" data-fecha="2026-10-31" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 31 oct</span><time class="partido__hora" datetime="2026-10-31T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Fundación Caja Rural Jaén C.B.">Caja Rural Jaén</span><img class="escudo" src="img/escudos/c361102f1d83fe66.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 6</span></li>
+<li class="partido" id="p-512803" data-fecha="2026-11-07" data-lado="visitante" data-pabellon="veleta" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 7 nov</span><time class="partido__hora" datetime="2026-11-07T17:30">17:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/0f2105fecb847d6e.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Fundación CB Granada</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Veleta</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Granada</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 7</span></li>
+<li class="partido" id="p-512317" data-fecha="2026-11-07" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 7 nov</span><time class="partido__hora" datetime="2026-11-07T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">EBG Málaga Tecnocasa</span><img class="escudo" src="img/escudos/e80b56a2a43cd2f8.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 5</span></li>
+<li class="partido" id="p-512806" data-fecha="2026-11-14" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 14 nov</span><time class="partido__hora" datetime="2026-11-14T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Melilla Ciudad del Deporte La Salle">Melilla La Salle</span><img class="escudo" src="img/escudos/1a2b2ba6eb771c4a.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 8</span></li>
+<li class="partido" id="p-512323" data-fecha="2026-11-14" data-lado="visitante" data-pabellon="ramon-rico-benalmadena-pueblo" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 14 nov</span><time class="partido__hora" datetime="2026-11-14T19:00">19:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/186a9d221edc0ad4.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">CB Benalmádena</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Polideportivo Ramón Rico Benalmádena Pueblo</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Benalmádena</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 6</span></li>
+<li class="partido" id="p-512328" data-fecha="2026-11-21" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 21 nov</span><time class="partido__hora" datetime="2026-11-21T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Club Andújar</span><img class="escudo" src="img/escudos/08ea1705b708a225.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 7</span></li>
+<li class="partido" id="p-512818" data-fecha="2026-11-22" data-lado="visitante" data-pabellon="paquillo-fernandez" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 22 nov</span><time class="partido__hora" datetime="2026-11-22T12:00">12:00</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/cb76c3efc870fd33.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Clínica Dra María Martín-CD Presentación de Granada">Presentación Granada</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Paquillo Fernández</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Granada</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 9</span></li>
+<li class="partido" id="p-512819" data-fecha="2026-11-28" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 28 nov</span><time class="partido__hora" datetime="2026-11-28T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">CAB Estepona</span><img class="escudo" src="img/escudos/9ff6f9467970c3d0.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 10</span></li>
+<li class="partido" id="p-512336" data-fecha="2026-11-28" data-lado="visitante" data-pabellon="alcala-la-real" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 28 nov</span><time class="partido__hora" datetime="2026-11-28T19:00">19:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/f9804d7b5773f364.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Campoameno CB La Mota">CB La Mota</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Complejo Polideportivo Alcalá La Real</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Alcalá la Real</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 8</span></li>
+<li class="partido" id="p-512832" data-fecha="2026-12-05" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 5 dic</span><time class="partido__hora" datetime="2026-12-05T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Unicaja SD</span><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 11</span></li>
+<li class="partido" id="p-512339" data-fecha="2026-12-12" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 12 dic</span><time class="partido__hora" datetime="2026-12-12T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Invermoneda CB Alhaurín de La Torre">Alhaurín de La Torre</span><img class="escudo" src="img/escudos/237536a07e9939ab.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 9</span></li>
+<li class="partido" id="p-512834" data-fecha="2026-12-12" data-lado="visitante" data-pabellon="del-toyo" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 12 dic</span><time class="partido__hora" datetime="2026-12-12T20:00">20:00</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/4522c5357bbd0276.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Analytica Alimentaria El Toyo">El Toyo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón del Toyo</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">El Toyo</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 12</span></li>
+<li class="partido" id="p-512349" data-fecha="2026-12-19" data-lado="visitante" data-pabellon="javier-imbroda-carranque" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 19 dic</span><time class="partido__hora" datetime="2026-12-19T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/5217ee19364f5447.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Málaga Basket</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Ciudad Deportiva Javier Imbroda (Carranque)</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 10</span></li>
+<li class="partido" id="p-512845" data-fecha="2026-12-19" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 19 dic</span><time class="partido__hora" datetime="2026-12-19T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">CD Roquetas BC</span><img class="escudo" src="img/escudos/a48564396ba1fc80.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 13</span></li>
+<li class="partido" id="p-512350" data-fecha="2027-01-09" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 9 ene</span><time class="partido__hora" datetime="2027-01-09T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Unicaja SD</span><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 11</span></li>
+<li class="partido" id="p-512849" data-fecha="2027-01-09" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 9 ene</span><time class="partido__hora" datetime="2027-01-09T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">El Plantel GMASB</span><img class="escudo" src="img/escudos/d92d8e6839707003.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 14</span></li>
+<li class="partido" id="p-512858" data-fecha="2027-01-16" data-lado="visitante" data-pabellon="la-mojonera" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 16 ene</span><time class="partido__hora" datetime="2027-01-16T17:00">17:00</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/ecac6daacb3a550e.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Clínicas Dentales Dr. Manuel Cara CB La Mojonera">CB La Mojonera</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Municipal La Mojonera</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">La Mojonera</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 15</span></li>
+<li class="partido" id="p-512361" data-fecha="2027-01-16" data-lado="visitante" data-pabellon="carlos-martinez-esteban" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 16 ene</span><time class="partido__hora" datetime="2027-01-16T17:45">17:45</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/c361102f1d83fe66.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Caja Rural Jaén C.B.</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Carlos Martínez Esteban</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Jaén</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 12</span></li>
+<li class="partido" id="p-512363" data-fecha="2027-01-23" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 23 ene</span><time class="partido__hora" datetime="2027-01-23T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Linaqua CB Linares</span><img class="escudo" src="img/escudos/31aca0bef4d13747.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 13</span></li>
+<li class="partido" id="p-512864" data-fecha="2027-01-23" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 23 ene</span><time class="partido__hora" datetime="2027-01-23T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Hispania Agustinos</span><img class="escudo" src="img/escudos/168312104a5bf7e3.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 16</span></li>
+<li class="partido" id="p-512372" data-fecha="2027-01-30" data-lado="visitante" data-pabellon="juanito" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 30 ene</span><time class="partido__hora" datetime="2027-01-30T18:00">18:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/83a8dd0651a7f3ca.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="CB Salliver Fuengirola Higuerón Resort">CB Salliver Fuengirola</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Juanito</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Fuengirola</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 14</span></li>
+<li class="partido" id="p-512871" data-fecha="2027-01-30" data-lado="visitante" data-pabellon="juanito" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 30 ene</span><time class="partido__hora" datetime="2027-01-30T20:30">20:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/83a8dd0651a7f3ca.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="CB Salliver Fuengirola Higuerón Resort">CB Salliver Fuengirola</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Juanito</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Fuengirola</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 17</span></li>
+<li class="partido" id="p-512376" data-fecha="2027-02-06" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 6 feb</span><time class="partido__hora" datetime="2027-02-06T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">CD Colegio El Pinar</span><img class="escudo" src="img/escudos/39528a23647091fa.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 15</span></li>
+<li class="partido" id="p-512879" data-fecha="2027-02-06" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 6 feb</span><time class="partido__hora" datetime="2027-02-06T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">EBG Málaga</span><img class="escudo" src="img/escudos/e80b56a2a43cd2f8.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 18</span></li>
+<li class="partido" id="p-512884" data-fecha="2027-02-13" data-lado="visitante" data-pabellon="carlos-martinez-esteban" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 13 feb</span><time class="partido__hora" datetime="2027-02-13T17:45">17:45</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/c361102f1d83fe66.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Fundación Caja Rural Jaén C.B.">Caja Rural Jaén</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Carlos Martínez Esteban</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Jaén</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 19</span></li>
+<li class="partido" id="p-512383" data-fecha="2027-02-14" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 14 feb</span><time class="partido__hora" datetime="2027-02-14T13:30">13:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/e80b56a2a43cd2f8.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">EBG Málaga Tecnocasa</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista A</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 16</span></li>
+<li class="partido" id="p-512389" data-fecha="2027-02-20" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 20 feb</span><time class="partido__hora" datetime="2027-02-20T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">CB Benalmádena</span><img class="escudo" src="img/escudos/186a9d221edc0ad4.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 17</span></li>
+<li class="partido" id="p-512894" data-fecha="2027-02-20" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 20 feb</span><time class="partido__hora" datetime="2027-02-20T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Fundación CB Granada</span><img class="escudo" src="img/escudos/0f2105fecb847d6e.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 20</span></li>
+<li class="partido" id="p-512394" data-fecha="2027-03-06" data-lado="visitante" data-pabellon="municipal-andujar" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 6 mar</span><time class="partido__hora" datetime="2027-03-06T19:00">19:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/08ea1705b708a225.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Club Andújar</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Polideportivo Municipal</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Andújar</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 18</span></li>
+<li class="partido" id="p-512897" data-fecha="2027-03-07" data-lado="visitante" data-pabellon="guillermo-garcia-pezzi-melilla" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 7 mar</span><time class="partido__hora" datetime="2027-03-07T12:00">12:00</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/1a2b2ba6eb771c4a.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Melilla Ciudad del Deporte La Salle">Melilla La Salle</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Guillermo García Pezzi-Melilla</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Melilla</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 21</span></li>
+<li class="partido" id="p-512402" data-fecha="2027-03-13" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 13 mar</span><time class="partido__hora" datetime="2027-03-13T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Campoameno CB La Mota">CB La Mota</span><img class="escudo" src="img/escudos/f9804d7b5773f364.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 19</span></li>
+<li class="partido" id="p-512909" data-fecha="2027-03-13" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 13 mar</span><time class="partido__hora" datetime="2027-03-13T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Clínica Dra María Martín-CD Presentación de Granada">Presentación Granada</span><img class="escudo" src="img/escudos/cb76c3efc870fd33.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 22</span></li>
+<li class="partido" id="p-512405" data-fecha="2027-03-20" data-lado="visitante" data-pabellon="blas-infante" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 20 mar</span><time class="partido__hora" datetime="2027-03-20T19:00">19:00</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/237536a07e9939ab.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre" title="Invermoneda CB Alhaurín de La Torre">Alhaurín de La Torre</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Blas Infante</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Alhaurín de la Torre</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 20</span></li>
+<li class="partido" id="p-512910" data-fecha="2027-03-21" data-lado="visitante" data-pabellon="jose-antonio-pineda" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 21 mar</span><time class="partido__hora" datetime="2027-03-21T13:15">13:15</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/9ff6f9467970c3d0.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">CAB Estepona</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Antonio Pineda</span><span class="sitio__pista">Pista central</span><span class="sitio__ciudad">Estepona</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 23</span></li>
+<li class="partido" id="p-512415" data-fecha="2027-04-03" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 3 abr</span><time class="partido__hora" datetime="2027-04-03T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre">Málaga Basket</span><img class="escudo" src="img/escudos/5217ee19364f5447.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 21</span></li>
+<li class="partido" id="p-512923" data-fecha="2027-04-04" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 4 abr</span><time class="partido__hora" datetime="2027-04-04T11:30">11:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Unicaja SD</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista A</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 24</span></li>
+<li class="partido" id="p-512925" data-fecha="2027-04-10" data-lado="local" data-pabellon="la-mosca" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">sáb 10 abr</span><time class="partido__hora" datetime="2027-04-10T18:30">18:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre" title="Analytica Alimentaria El Toyo">El Toyo</span><img class="escudo" src="img/escudos/4522c5357bbd0276.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón La Mosca</span><span class="sitio__pista">Pista central</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 25</span></li>
+<li class="partido" id="p-512416" data-fecha="2027-04-11" data-lado="visitante" data-pabellon="jose-m-martin-urbano" data-equipos="n1-masculino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 11 abr</span><time class="partido__hora" datetime="2027-04-11T13:30">13:30</time></span>
+<span class="partido__equipo">N1 Masculino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/cd5e0e5694f3839b.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">Unicaja SD</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón José Mª Martín Urbano</span><span class="sitio__pista">Pista A</span><span class="sitio__ciudad">Málaga</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 22</span></li>
+<li class="partido" id="p-512936" data-fecha="2027-04-18" data-lado="visitante" data-pabellon="infanta-cristina" data-equipos="n1-femenino" data-estado="pendiente">
+<span class="partido__cuando"><span class="partido__dia">dom 18 abr</span><time class="partido__hora" datetime="2027-04-18T11:30">11:30</time></span>
+<span class="partido__equipo">N1 Femenino</span>
+<span class="partido__encuentro"><span class="encuentro"><span class="encuentro__lado encuentro__lado--local"><img class="escudo" src="img/escudos/a48564396ba1fc80.jpg" alt="" width="28" height="28" loading="lazy" decoding="async"><span class="encuentro__nombre">CD Roquetas BC</span></span> <span class="encuentro__centro encuentro__guion">–</span> <span class="encuentro__lado encuentro__lado--visitante"><span class="encuentro__nombre encuentro__nombre--club">CB El Palo</span><img class="escudo" src="img/escudo-160.png" alt="" width="28" height="28" loading="lazy" decoding="async"></span></span></span>
+<span class="partido__sitio"><span class="sitio__pabellon">Pabellón Infanta Cristina</span><span class="sitio__pista sitio__pista--sin" title="Pista sin indicar"><span aria-hidden="true">—</span><span class="oculto">Pista sin indicar</span></span><span class="sitio__ciudad">Roquetas de Mar</span></span>
+<span class="partido__competicion">Liga N1 · Jornada 26</span></li>
+</ol>
+</main>
+<dialog class="dialogo" id="equipos-dialogo" aria-labelledby="equipos-titulo">
+<form class="dialogo__caja" method="dialog">
+<div class="dialogo__cabeza">
+<h2 class="dialogo__titulo" id="equipos-titulo">Equipos</h2>
+<button class="boton-icono" type="submit" value="cerrar" aria-label="Cerrar"><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+</div>
+<div class="dialogo__atajos">
+<button class="boton boton--pequeno" type="button" data-marcar-equipos="todos">Todos</button>
+<button class="boton boton--pequeno" type="button" data-marcar-equipos="ninguno">Ninguno</button>
+</div>
+<div class="dialogo__lista">
+<fieldset class="familia">
+<legend class="familia__nombre">Sénior</legend>
+<label class="equipo"><input class="equipo__control" type="checkbox" name="equipo" value="n1-femenino" checked><span class="equipo__nombre">N1 Femenino</span><span class="equipo__cuenta"><span data-cuenta-equipo="n1-femenino"></span><span class="oculto"> partidos</span></span></label>
+<label class="equipo"><input class="equipo__control" type="checkbox" name="equipo" value="n1-masculino" checked><span class="equipo__nombre">N1 Masculino</span><span class="equipo__cuenta"><span data-cuenta-equipo="n1-masculino"></span><span class="oculto"> partidos</span></span></label>
+</fieldset>
+</div>
+<div class="dialogo__pie">
+<button class="boton boton--primario" type="submit" value="cerrar">Ver <span id="equipos-total"></span></button>
+</div>
+</form>
+</dialog>
+</div>
+<script>
+// FILTROS: mueve y oculta los renglones que ya vienen pintados desde el build. No construye HTML:
+// solo cambia textos, atributos y de qué lista cuelga cada renglón.
+//
+// El "hoy" lo pone el navegador (en hora de Madrid): la página puede llevar días publicada.
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  const DIAS_CORTOS = ['lun', 'mar', 'mié', 'jue', 'vie', 'sáb', 'dom'];
+  const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const aMs = (f) => Date.UTC(Number(f.slice(0, 4)), Number(f.slice(5, 7)) - 1, Number(f.slice(8, 10)));
+  const sumarDias = (f, n) => new Date(aMs(f) + n * 86400000).toISOString().slice(0, 10);
+  // «1 mes»: hasta el mismo día del mes siguiente; si ese mes es más corto, hasta su último día (31 ene → 28 feb).
+  const mismoDiaMesSiguiente = (f) => {
+    const anio = Number(f.slice(0, 4));
+    const mes = Number(f.slice(5, 7));
+    const ultimo = new Date(Date.UTC(anio, mes + 1, 0)).getUTCDate();
+    return new Date(Date.UTC(anio, mes, Math.min(Number(f.slice(8, 10)), ultimo))).toISOString().slice(0, 10);
+  };
+  const corto = (f) => `${DIAS_CORTOS[(new Date(aMs(f)).getUTCDay() + 6) % 7]} ${Number(f.slice(8, 10))} ${MESES_CORTOS[Number(f.slice(5, 7)) - 1]}`;
+  const esFecha = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || '');
+  const partidos = (n) => (n === 1 ? '1 partido' : `${n} partidos`);
+
+  const partesHoy = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit', day: '2-digit' })
+    .formatToParts(new Date()).map((p) => [p.type, p.value]));
+  const hoy = `${partesHoy.year}-${partesHoy.month}-${partesHoy.day}`;
+
+  const form = $('#mando');
+  const main = $('#resultados');
+  const destinos = new Map($$('[data-destino]').map((ol) => [ol.dataset.destino, ol]));
+  const inicio = (f) => `${$('time', f).getAttribute('datetime')}|${f.id}`;
+  const filas = $$('.partido').sort((a, b) => inicio(a).localeCompare(inicio(b)));
+  const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dialogo = $('#equipos-dialogo');
+  const panelAbierto = () => $('#panel').classList.contains('panel--abierto');
+  const casillasEquipo = $$('input[name="equipo"]', dialogo);
+  const idsEquipo = casillasEquipo.map((c) => c.value);
+  const etiquetaEquipo = new Map(casillasEquipo.map((c) => [c.value, c.nextElementSibling.textContent]));
+
+  // Periodos del desplegable de «Custom». «Resto de temporada» va de hoy al 30 de junio; los demás
+  // traen sus fechas del build. «Rango personalizado» no trae fechas: se escriben a mano.
+  const selectorPeriodo = $('#periodo');
+  const opcionPeriodo = (valor) => Array.from(selectorPeriodo.options).find((o) => o.value === valor && o.dataset.hasta);
+  const fechasDeOpcion = (o) => ({
+    desde: o.value === 'resto' && hoy <= o.dataset.hasta ? hoy : o.dataset.desde,
+    hasta: o.dataset.hasta,
+  });
+
+  const q = new URLSearchParams(window.location.search);
+  const agrupar = q.has('agrupar') ? (q.get('agrupar') || '').split(',') : ['fecha'];
+  const RANGOS = ['7', '14', 'mes'];
+  // En la URL, un periodo va por su nombre (?periodo=resto), así «resto de temporada» sigue
+  // empezando hoy mañana; solo el rango personalizado lleva las fechas (?desde=…&hasta=…).
+  const periodoUrl = opcionPeriodo(q.get('periodo'));
+  const fechasUrl = periodoUrl ? fechasDeOpcion(periodoUrl) : { desde: q.get('desde'), hasta: q.get('hasta') };
+  const estado = {
+    rango: RANGOS.includes(q.get('rango')) ? q.get('rango') : (esFecha(fechasUrl.desde) && esFecha(fechasUrl.hasta) ? 'fechas' : '7'),
+    periodo: periodoUrl ? periodoUrl.value : 'personalizado',
+    desde: esFecha(fechasUrl.desde) ? fechasUrl.desde : '',
+    hasta: esFecha(fechasUrl.hasta) ? fechasUrl.hasta : '',
+    // Fila de «mes / desde / hasta»: se abre al elegir «Custom» y se pliega pulsándolo otra vez.
+    fechasAbiertas: true,
+    lado: ['local', 'visitante', 'todos'].includes(q.get('lado')) ? q.get('lado') : 'todos',
+    fecha: agrupar.includes('fecha'),
+    pabellon: agrupar.includes('pabellon'),
+    // null = todos los equipos (sin filtro); si no, el conjunto de ids elegidos (puede estar vacío).
+    equipos: q.has('equipos') ? new Set((q.get('equipos') || '').split(',').filter((id) => idsEquipo.includes(id))) : null,
+  };
+
+  const rangoDe = (r) => {
+    if (r === 'fechas') return { desde: estado.desde, hasta: estado.hasta };
+    return { desde: hoy, hasta: r === 'mes' ? mismoDiaMesSiguiente(hoy) : sumarDias(hoy, Number(r) - 1) };
+  };
+  const valido = (r) => esFecha(r.desde) && esFecha(r.hasta) && r.desde <= r.hasta;
+  let ultimoValido = rangoDe('7');
+  // Un derbi lleva dos equipos del club: entra si cualquiera de los dos está elegido.
+  const deEquipos = (f, equipos) => equipos === null || f.dataset.equipos.split(' ').some((id) => equipos.has(id));
+  const cuenta = (r, lado, equipos = estado.equipos) => filas.reduce((n, f) => n
+    + (f.dataset.fecha >= r.desde && f.dataset.fecha <= r.hasta && (lado === 'todos' || f.dataset.lado === lado) && deEquipos(f, equipos) ? 1 : 0), 0);
+
+  function sincronizarFormulario() {
+    form.elements.rango.value = estado.rango;
+    form.elements.lado.value = estado.lado;
+    $('#agrupar-fecha').checked = estado.fecha;
+    $('#agrupar-pabellon').checked = estado.pabellon;
+    for (const c of casillasEquipo) c.checked = estado.equipos === null || estado.equipos.has(c.value);
+    $('#fechas').hidden = !(estado.rango === 'fechas' && estado.fechasAbiertas);
+    if (estado.rango === 'fechas') {
+      selectorPeriodo.value = estado.periodo;
+      // Con un periodo elegido las fechas son las suyas: se ven, pero no se tocan.
+      for (const campo of [$('#desde'), $('#hasta')]) {
+        campo.value = estado[campo.name];
+        campo.readOnly = estado.periodo !== 'personalizado';
+      }
+    }
+  }
+
+  function aplicar() {
+    const pedido = rangoDe(estado.rango);
+    $('#fechas-error').hidden = !(estado.rango === 'fechas' && estado.fechasAbiertas && esFecha(pedido.desde) && esFecha(pedido.hasta) && pedido.desde > pedido.hasta);
+    // Mientras una fecha a medida esté a medio escribir o al revés, se queda el último rango bueno.
+    const rango = valido(pedido) ? pedido : ultimoValido;
+    ultimoValido = rango;
+
+    const porPabellon = estado.pabellon;
+    const vista = estado.fecha ? (porPabellon ? 'fecha-pabellon' : 'fecha') : (porPabellon ? 'pabellon' : 'plano');
+    main.dataset.vista = vista;
+    main.dataset.lado = estado.lado;
+
+    let total = 0;
+    for (const f of filas) {
+      const entra = f.dataset.fecha >= rango.desde && f.dataset.fecha <= rango.hasta && (estado.lado === 'todos' || f.dataset.lado === estado.lado) && deEquipos(f, estado.equipos);
+      let destino = 'almacen';
+      if (entra) {
+        total += 1;
+        if (vista === 'fecha') destino = `fecha|${f.dataset.fecha}`;
+        else if (vista === 'fecha-pabellon') destino = `fecha-pabellon|${f.dataset.fecha}|${f.dataset.pabellon}`;
+        else if (vista === 'pabellon') destino = `pabellon|${f.dataset.pabellon}`;
+        else destino = 'plano';
+      }
+      destinos.get(destino).append(f);
+    }
+
+    $('#vista-fecha').hidden = !vista.startsWith('fecha');
+    $('#vista-pabellon').hidden = vista !== 'pabellon';
+    $('#vista-plano').hidden = vista !== 'plano';
+    for (const grupo of $$('.dia, .subgrupo, .pabellon')) {
+      const n = grupo.querySelectorAll('.partido').length;
+      grupo.hidden = n === 0;
+      const contador = grupo.querySelector(':scope > .banda [data-contador], :scope > .subgrupo__cabeza [data-contador]');
+      if (contador) contador.textContent = partidos(n);
+    }
+
+    for (const r of RANGOS) $(`[data-cuenta="rango-${r}"]`).textContent = cuenta(rangoDe(r), estado.lado);
+    for (const l of ['local', 'visitante', 'todos']) $(`[data-cuenta="lado-${l}"]`).textContent = cuenta(rango, l);
+    // En la ventana de equipos, cada equipo cuenta sus partidos del rango y tipo elegidos.
+    for (const id of idsEquipo) $(`[data-cuenta-equipo="${id}"]`, dialogo).textContent = cuenta(rango, estado.lado, new Set([id]));
+    $('#equipos-total').textContent = partidos(total);
+    const elegidos = estado.equipos === null ? null : idsEquipo.filter((id) => estado.equipos.has(id));
+    const textoEquipos = elegidos === null ? 'Todos' : elegidos.length === 0 ? 'Ninguno' : elegidos.length === 1 ? etiquetaEquipo.get(elegidos[0]) : `${elegidos.length} equipos`;
+    $('#equipos-texto').textContent = textoEquipos;
+    $('#equipos-abrir').classList.toggle('segmento--activo', elegidos !== null);
+
+    $('#vacio').hidden = total > 0;
+    if (!total) {
+      const donde = { local: ' en casa', visitante: ' fuera de casa', todos: '' }[estado.lado];
+      $('#vacio-texto').textContent = estado.rango === 'fechas'
+        ? `No hay partidos del club${donde} entre el ${corto(rango.desde)} y el ${corto(rango.hasta)}.`
+        : `No hay partidos del club${donde} ${estado.rango === 'mes' ? 'en el próximo mes' : `en los próximos ${estado.rango} días`}.`;
+      $('[data-accion="rango-14"]').hidden = !(estado.rango === '7' && cuenta(rangoDe('14'), estado.lado) > 0);
+      $('[data-accion="rango-mes"]').hidden = !(['7', '14'].includes(estado.rango) && cuenta(rangoDe('mes'), estado.lado) > 0);
+      $('[data-accion="lado-todos"]').hidden = !(estado.lado !== 'todos' && cuenta(rango, 'todos') > 0);
+      $('[data-accion="equipos-todos"]').hidden = !(estado.equipos !== null && cuenta(rango, estado.lado, null) > 0);
+      const sinAcciones = $$('[data-accion]').every((b) => b.hidden);
+      $('#vacio-ayuda').hidden = !sinAcciones;
+      $('#vacio-ayuda').textContent = estado.rango === 'fechas'
+        ? 'Elige otras fechas arriba, en «Rango».'
+        : 'La FAB todavía no ha publicado partidos para esos días.';
+    }
+
+    const p = new URLSearchParams();
+    if (estado.rango === 'fechas' && estado.periodo !== 'personalizado') p.set('periodo', estado.periodo);
+    else if (estado.rango === 'fechas') {
+      p.set('desde', rango.desde);
+      p.set('hasta', rango.hasta);
+    } else if (estado.rango !== '7') p.set('rango', estado.rango);
+    if (estado.lado !== 'todos') p.set('lado', estado.lado);
+    const grupos = [estado.fecha && 'fecha', estado.pabellon && 'pabellon'].filter(Boolean).join(',');
+    if (grupos !== 'fecha') p.set('agrupar', grupos);
+    if (elegidos !== null) p.set('equipos', elegidos.join(','));
+    window.history.replaceState(null, '', p.toString() ? `?${p}` : window.location.pathname);
+  }
+
+  function cambiar() {
+    const hacer = () => {
+      sincronizarFormulario();
+      aplicar();
+    };
+    // Con la ventana de equipos o el panel abiertos no hay fundido: se ve el cambio detrás, sin parpadeos.
+    if (suave && document.startViewTransition && !dialogo.open && !panelAbierto()) document.startViewTransition(hacer);
+    else hacer();
+  }
+
+  form.addEventListener('submit', (e) => e.preventDefault());
+  form.addEventListener('change', (e) => {
+    const t = e.target;
+    if (t.name === 'rango') {
+      estado.rango = t.value;
+      estado.fechasAbiertas = true;
+      if (t.value === 'fechas' && !valido(rangoDe('fechas'))) {
+        estado.periodo = 'personalizado';
+        estado.desde = hoy;
+        estado.hasta = sumarDias(hoy, 13);
+      }
+    } else if (t.name === 'lado') estado.lado = t.value;
+    else if (t.id === 'agrupar-fecha') estado.fecha = t.checked;
+    else if (t.id === 'agrupar-pabellon') estado.pabellon = t.checked;
+    else if ((t.name === 'desde' || t.name === 'hasta') && estado.periodo === 'personalizado') estado[t.name] = t.value;
+    else if (t.name === 'periodo') {
+      // Al volver a «Rango personalizado» se quedan las fechas del periodo, ya editables.
+      estado.periodo = t.value;
+      if (opcionPeriodo(t.value)) Object.assign(estado, fechasDeOpcion(opcionPeriodo(t.value)));
+    }
+    cambiar();
+  });
+  // Un radio ya marcado no avisa con «change»: pulsar «Custom» otra vez pliega o despliega su fila.
+  $('#rango-fechas').addEventListener('click', () => {
+    if (estado.rango !== 'fechas') return;
+    estado.fechasAbiertas = !estado.fechasAbiertas;
+    cambiar();
+  });
+
+  main.addEventListener('click', (e) => {
+    const accion = e.target.closest('[data-accion]');
+    if (!accion) return;
+    const [clave, valor] = accion.dataset.accion.split('-');
+    estado[clave] = clave === 'equipos' ? null : valor;
+    cambiar();
+  });
+
+  // Ventana de equipos: se aplica al momento; «Ver N partidos», la cruz, Esc o el fondo la cierran.
+  $('#equipos-abrir').addEventListener('click', () => dialogo.showModal());
+  dialogo.addEventListener('change', (e) => {
+    if (e.target.name !== 'equipo') return;
+    const marcados = casillasEquipo.filter((c) => c.checked).map((c) => c.value);
+    estado.equipos = marcados.length === idsEquipo.length ? null : new Set(marcados);
+    cambiar();
+  });
+  dialogo.addEventListener('click', (e) => {
+    const atajo = e.target.closest('[data-marcar-equipos]');
+    if (atajo) {
+      estado.equipos = atajo.dataset.marcarEquipos === 'todos' ? null : new Set();
+      cambiar();
+    } else if (e.target === dialogo) dialogo.close();
+  });
+
+  // Móvil y tableta: los filtros viven en un panel lateral que abre la hamburguesa. Mientras está
+  // abierto, lo de detrás es inerte (el foco no se escapa) y se cierra con la cruz, el velo o Esc.
+  const panel = $('#panel');
+  const cabecera = $('.cabecera');
+  const botonMenu = $('#menu-abrir');
+  const escritorio = () => window.getComputedStyle(panel).position === 'sticky';
+  function mostrarPanel(abrir, { devolverFoco = true } = {}) {
+    panel.classList.toggle('panel--abierto', abrir);
+    botonMenu.setAttribute('aria-expanded', String(abrir));
+    if (abrir) {
+      panel.setAttribute('role', 'dialog');
+      panel.setAttribute('aria-modal', 'true');
+    } else {
+      panel.removeAttribute('role');
+      panel.removeAttribute('aria-modal');
+    }
+    main.inert = abrir;
+    cabecera.inert = abrir;
+    if (abrir) $('#panel-cerrar').focus();
+    else if (devolverFoco) botonMenu.focus();
+  }
+  botonMenu.addEventListener('click', () => mostrarPanel(true));
+  $('#panel-cerrar').addEventListener('click', () => mostrarPanel(false));
+  $('#velo').addEventListener('click', () => mostrarPanel(false));
+  // Con la ventana de equipos abierta, Esc la cierra a ella primero.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panelAbierto() && !dialogo.open) mostrarPanel(false);
+  });
+  // Las bandas de cada día se quedan justo debajo de lo que está fijo arriba: la franja de filtros
+  // en el PC, la cabecera en el móvil. Si la ventana crece hasta el PC con el panel abierto, se cierra.
+  const altoFijo = new ResizeObserver(() => {
+    if (escritorio() && panelAbierto()) mostrarPanel(false, { devolverFoco: false });
+    document.documentElement.style.setProperty('--alto-fijo', `${(escritorio() ? panel : cabecera).offsetHeight}px`);
+  });
+  altoFijo.observe(panel);
+  altoFijo.observe(cabecera);
+
+  for (const dia of $$('.dia')) {
+    const marca = $('.banda__cuando', dia);
+    marca.textContent = dia.dataset.fecha === hoy ? 'Hoy' : dia.dataset.fecha === sumarDias(hoy, 1) ? 'Mañana' : '';
+    marca.hidden = !marca.textContent;
+  }
+
+  // «Actualizado» sale dos veces (cabecera del PC y panel del móvil): las dos avisan igual si es viejo.
+  for (const frescura of $$('.frescura')) {
+    const horas = (Date.now() - Date.parse(frescura.dataset.capturado)) / 3600000;
+    if (horas <= 36) continue;
+    const dias = Math.round(horas / 24);
+    frescura.classList.add('frescura--vieja');
+    frescura.firstChild.textContent = `Actualizado hace ${dias === 1 ? '1 día' : `${dias} días`}: `;
+  }
+
+  sincronizarFormulario();
+  aplicar();
+})();
+
+</script>
+</body>
+</html>
