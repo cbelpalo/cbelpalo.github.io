@@ -1,0 +1,24 @@
+<dialog class="dialogo dialogo--carteles" id="carteles-dialogo" aria-labelledby="carteles-titulo">
+<form class="dialogo__caja" method="dialog">
+<div class="dialogo__cabeza">
+<h2 class="dialogo__titulo" id="carteles-titulo">Carteles de la semana</h2>
+<button class="boton-icono" type="submit" value="cerrar" aria-label="Cerrar"><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+</div>
+<div class="carteles__semana">
+<button class="boton boton--pequeno" type="button" data-semana="-1" aria-label="Semana anterior" title="Semana anterior"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+<p class="carteles__fechas" id="carteles-fechas" aria-live="polite"></p>
+<button class="boton boton--pequeno" type="button" data-semana="1" aria-label="Semana siguiente" title="Semana siguiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+<p class="dialogo__nota carteles__nota" id="carteles-nota" hidden>Para guardar en Fotos, abre la web publicada con ?carteles o mantén pulsado el cartel.</p>
+<div class="dialogo__lista carteles__marco"><div class="carteles__lista" id="carteles-lista"></div></div>
+</form>
+</dialog>
+<dialog class="visor" id="cartel-visor" aria-label="Cartel a pantalla completa">
+<img class="visor__imagen" id="visor-imagen" alt="">
+<p class="visor__pie" id="visor-pie" aria-live="polite"></p>
+<button class="boton-icono visor__boton visor__boton--cerrar" type="button" data-visor="cerrar" aria-label="Cerrar" autofocus><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+<button class="boton-icono visor__boton visor__boton--anterior" type="button" data-visor="-1" aria-label="Cartel anterior"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+<button class="boton-icono visor__boton visor__boton--siguiente" type="button" data-visor="1" aria-label="Cartel siguiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+</dialog>
+<template id="cartel-ficha"><figure class="cartel"><button class="cartel__ampliar" type="button" aria-haspopup="dialog" aria-controls="cartel-visor" disabled><img class="cartel__imagen" alt="" width="1080" height="1440" aria-busy="true"></button><figcaption class="cartel__pie"><span class="cartel__nombre"></span><span class="cartel__acciones"><a class="boton boton--pequeno boton--primario" data-descargar aria-disabled="true"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Descargar</a><button class="boton boton--pequeno" type="button" data-compartir hidden><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>Compartir</button></span></figcaption></figure></template>
+<template id="cartel-vacio"><p class="dialogo__nota"></p></template>

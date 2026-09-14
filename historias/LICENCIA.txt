@@ -1,0 +1,7 @@
+Questrial 400 (subconjunto latino, woff2), descargada de Google Fonts el 25-11-2026 para las historias
+de Instagram: es la que más se parece a la del bocadillo de la plantilla de Canva — Copyright The
+Questrial Project Authors (https://github.com/googlefonts/questrial), bajo la SIL Open Font License
+1.1: https://openfontlicense.org
+
+Las plantillas (plantilla-*.webp) salen de «JORNADA DE PARTIDO.pdf» (Canva, la del CM del club) con
+herramientas/plantillas-historias.py.

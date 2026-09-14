@@ -1,0 +1,1621 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asignar pistas · CB El Palo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#082654">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="img/icono-32.png?v=2" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icono-180.png?v=2">
+<link rel="preload" href="fuentes/saira-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/asap-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* El cartel de horarios del club: franja de mando azul con la selección en naranja, bandas claras
+   por día, horas en naranja, renglones sobre blanco y fondo de hormigón. Móvil primero; las
+   rejillas cambian por container query sobre .marco. */
+
+@font-face { font-family: 'Saira Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url(fuentes/saira-condensed-600-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Saira Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url(fuentes/saira-condensed-700-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Asap'; font-style: normal; font-weight: 100 900; font-stretch: 100%; font-display: swap; src: url(fuentes/asap-latin.woff2) format('woff2'); }
+
+:root {
+  /* Marca: variables de la cabecera de cbelpalo.com */
+  --azul: #082654;
+  --naranja: #e65d1e;
+  /* Derivados */
+  --azul-claro: #b9c7dd;
+  --banda: #d6dfeb;
+  --naranja-claro: #ffb392;
+  --naranja-tinte: #fde4d7;
+  --hormigon: #eceef1;
+  --papel: #ffffff;
+  --tinta: #0c1a2e;
+  --tinta-suave: #46546a;
+  --regla: #d4dae3;
+  --finde: #c62828; /* sábado y domingo en el calendario de las fechas (21-10) */
+
+  --f-cartel: 'Saira Condensed', 'Arial Narrow', sans-serif-condensed, sans-serif;
+  --f-texto: 'Asap', system-ui, sans-serif;
+
+  --t-etiqueta: 0.8125rem;
+  --t-dato: 0.9375rem;
+  --t-texto: 1rem;
+  --t-equipo: 1rem;
+  --t-banda: 1.625rem;
+  --t-hora: 2rem;
+
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+
+  /* Márgenes laterales: el contenido se centra en 76rem, las bandas llegan a los bordes. */
+  --margen: max(1rem, calc((100% - 80rem) / 2));
+  --radio: 3px;
+  --alto-fijo: 0px;
+  --salida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--azul) var(--hormigon); }
+body {
+  margin: 0;
+  background: var(--hormigon);
+  color: var(--tinta);
+  font: 400 var(--t-texto) / 1.45 var(--f-texto);
+  caret-color: var(--naranja);
+}
+::selection { background: var(--azul); color: #fff; }
+:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+button, input, select { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.icono { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Columna de pantalla entera: con pocos partidos, los resultados crecen y el pie queda abajo. */
+.marco { container: marco / inline-size; display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+.marco > .resultados { flex: 1 0 auto; }
+
+/* ── Cabecera ─────────────────────────────────────────────────────────── */
+/* Móvil y tableta: fija arriba, con la marca y la hamburguesa que abre el panel de filtros, y el
+   filete naranja que antes cerraba la barra. En el PC (≥60rem) vuelve a ser la franja de siempre. */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-2) var(--e-4);
+  padding-block: var(--e-2);
+  padding-inline: var(--margen);
+  background: var(--azul);
+  color: #fff;
+  border-bottom: 3px solid var(--naranja);
+}
+.cabecera__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  color: #fff;
+  text-decoration: none;
+  font: 700 1.375rem / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cabecera__marca img { width: 2.75rem; height: 2.75rem; object-fit: contain; }
+.frescura { margin: 0; font-size: var(--t-dato); color: var(--azul-claro); }
+.frescura time { color: #fff; font-weight: 500; font-variant-numeric: tabular-nums; }
+.frescura--vieja { color: var(--naranja-claro); font-weight: 600; }
+.frescura--vieja time { color: inherit; }
+/* Vistas guardadas en la fila del escudo: solo en el PC (en el móvil van al final del panel), y con
+   ellas el botón de plegar la franja de filtros (en el móvil los filtros ya viven en el panel). */
+.cabecera__vistas { display: none; align-items: center; gap: var(--e-3); }
+.cabecera__plegar { display: none; }
+.cabecera__etiqueta { font: 600 var(--t-etiqueta) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.08em; color: var(--azul-claro); }
+/* CARTELES (21-10): el botón, a la derecha (junto a la hamburguesa en el móvil, junto a las vistas
+   en el PC). Solo el icono en lo estrecho; con sitio, también la palabra. En la web publicada viene
+   oculto salvo con `?carteles` (site/carteles/arranque.js). */
+.boton-icono.cabecera__carteles { width: auto; min-width: 2.75rem; margin-left: auto; padding-inline: var(--e-2); gap: var(--e-2); }
+/* HISTORIAS (25-11): el mismo botón, justo a la derecha del de carteles (site/historias/arranque.js). */
+/* Historias y Pistas (asignar.html) son el mismo botón: cada uno pegado a la derecha (margin-left: auto,
+   de arriba) salvo que vaya otro VISIBLE delante, que entonces va a su lado (25-11 y 27-11, Luismi). */
+.cabecera__carteles:not([hidden]) ~ .boton-icono.cabecera__carteles { margin-left: 0; }
+/* Es un enlace (a historias.html) con aspecto de botón: sin subrayado (25-11, Luismi). */
+a.boton-icono.cabecera__carteles { text-decoration: none; }
+.cabecera__carteles-texto { display: none; font: 700 var(--t-equipo) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+@container marco (width >= 40rem) {
+  .boton-icono.cabecera__carteles { display: inline-flex; align-items: center; padding-inline: var(--e-3); }
+  .cabecera__carteles-texto { display: inline; }
+}
+@container marco (width >= 64rem) {
+  .boton-icono.cabecera__carteles { height: 2.25rem; }
+}
+
+/* ── Pie: cuándo se actualizaron los datos ────────────────────────────── */
+.pie {
+  padding-block: var(--e-4);
+  padding-inline: var(--margen);
+  border-top: 3px solid var(--naranja);
+  background: var(--azul);
+}
+.boton-icono {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid rgb(255 255 255 / 0.5);
+  border-radius: var(--radio);
+  background: transparent;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.boton-icono:hover { background: rgb(255 255 255 / 0.14); }
+
+/* ── Panel de filtros ─────────────────────────────────────────────────── */
+/* Móvil y tableta: panel lateral que entra por la derecha (a todo el ancho en el teléfono) con
+   «Actualizado» arriba y los filtros debajo. Es contenedor propio: dentro, los filtros se colocan
+   según lo que mide el panel, no la pantalla. */
+.panel {
+  position: fixed;
+  inset-block: 0;
+  right: 0;
+  z-index: 40;
+  width: min(26rem, 100%);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--azul);
+  container: mando / inline-size;
+  box-shadow: -12px 0 32px -16px rgb(8 38 84 / 0.7);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.22s var(--salida), visibility 0s linear 0.22s;
+}
+.panel--abierto { transform: none; visibility: visible; transition: transform 0.22s var(--salida); }
+.panel__cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding-block: var(--e-2);
+  padding-inline: var(--e-4);
+  border-bottom: 1px solid rgb(255 255 255 / 0.12);
+}
+.velo {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  background: rgb(8 38 84 / 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s var(--salida), visibility 0s linear 0.22s;
+}
+.panel--abierto + .velo { opacity: 1; visibility: visible; transition: opacity 0.22s var(--salida); }
+html:has(.panel--abierto) { overflow: hidden; }
+
+/* ── Barra de mando ───────────────────────────────────────────────────── */
+.mando {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-4) var(--e-5);
+  padding-block: var(--e-4);
+  padding-inline: var(--margen);
+  background: var(--azul);
+  color: #fff;
+}
+.cabecera :focus-visible, .panel :focus-visible, .segmento__control:focus-visible + .segmento { outline-color: #fff; }
+.grupo { flex: 1 1 100%; min-width: 0; margin: 0; padding: 0; border: 0; }
+.grupo__nombre {
+  margin-bottom: var(--e-2);
+  padding: 0;
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--azul-claro);
+}
+
+.segmentos { display: flex; flex-wrap: wrap; gap: var(--e-2); }
+.segmentos--unidos { flex-wrap: nowrap; gap: 0; }
+.segmento__control { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+.segmento {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--naranja);
+  border-radius: var(--radio);
+  background: var(--hormigon);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s var(--salida), color 0.15s var(--salida);
+}
+/* En los móviles más estrechos (320px) los unidos aprietan el relleno para que «7 · 14 · 1 mes · Fechas» quepa. */
+.segmentos--unidos .segmento { flex: 1 1 auto; padding-inline: var(--e-2); border-radius: 0; }
+.segmentos--unidos .segmento:not(:first-of-type) { margin-left: -2px; }
+.segmentos--unidos .segmento:first-of-type { border-radius: var(--radio) 0 0 var(--radio); }
+.segmentos--unidos .segmento:last-of-type { border-radius: 0 var(--radio) var(--radio) 0; }
+/* El de las fechas a medida es un icono: cuadrado (el alto del segmento) y sin relleno lateral. */
+/* `gap: 0`: el nombre para el lector de pantalla va en un span aparte y, con hueco, descentraba el icono. */
+.segmento--cuadrado { width: 2.75rem; padding-inline: 0; gap: 0; }
+.segmento--con-icono .icono { width: 1.125rem; height: 1.125rem; }
+.segmentos--unidos .segmento--cuadrado { flex: 0 0 auto; padding-inline: 0; }
+.segmento--cuadrado .icono { width: 1.125rem; height: 1.125rem; }
+.segmento:hover { background: var(--naranja-tinte); }
+/* La selección va en naranja: texto tinta (4,95:1), no blanco (3,53:1 no llega a AA a 18px). */
+.segmento__control:checked + .segmento { z-index: 1; background: var(--naranja); color: var(--tinta); }
+.segmento__control:focus-visible + .segmento { z-index: 2; outline: 3px solid #fff; outline-offset: 2px; }
+.segmento__cuenta {
+  min-width: 1.5rem;
+  padding: 0.1875rem 0.375rem;
+  border-radius: 999px;
+  background: var(--regla);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-texto);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  text-align: center;
+}
+.segmento__cuenta:has([data-cuenta]:empty) { display: none; }
+/* «días» solo se ve con sitio (PC); en el móvil lo lee el lector de pantalla y lo dice la leyenda. */
+.segmento__unidad { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* «Equipos» abre una ventana: mismo segmento, naranja cuando hay un subconjunto elegido. */
+.segmento--boton { font: 700 var(--t-equipo) / 1 var(--f-cartel); }
+/* Con un solo equipo elegido el botón lleva «Equipo · Entrenador», que es largo: se recorta, con el
+   texto entero en el título (lo pone site/filtros.js). 10rem es el tope MEDIDO a 1024px: con él la
+   franja aguanta en una sola fila (a 12rem ya se parte). Subió de 5.5 a 10rem cuando «Local» y
+   «Visitante» pasaron a ser iconos y soltaron unos 64px (18-09). */
+#equipos-texto { display: block; overflow: hidden; max-width: 10rem; text-overflow: ellipsis; }
+.segmento--activo { background: var(--naranja); color: var(--tinta); }
+.segmento--activo:hover { background: var(--naranja); }
+.icono--lista { width: 1.125rem; height: 1.125rem; stroke-width: 2.2; }
+.icono--marca { width: 1.125rem; height: 1.125rem; padding: 1px; border: 2px solid currentColor; border-radius: 2px; stroke: transparent; stroke-width: 2.5; }
+.segmento__control:checked + .segmento .icono--marca { stroke: currentColor; }
+
+/* «Resaltar coincidencias»: interruptor bajo «Agrupar», con cualquier agrupación (09-10). No es un
+   segmento (no cambia qué partidos salen, solo cómo se ven): pista redonda, naranja al encenderse. */
+.interruptor {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  width: fit-content;
+  min-height: 2.75rem;
+  margin-top: var(--e-2);
+  color: #fff;
+  font: 600 var(--t-equipo) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  user-select: none;
+}
+.interruptor__control { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+.interruptor__pista {
+  position: relative;
+  flex: none;
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.25);
+  transition: background-color 0.15s var(--salida);
+}
+.interruptor__pista::after {
+  content: "";
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s var(--salida);
+}
+.interruptor:hover .interruptor__pista { background: rgb(255 255 255 / 0.4); }
+.interruptor__control:checked + .interruptor__pista { background: var(--naranja); }
+.interruptor__control:checked + .interruptor__pista::after { transform: translateX(1rem); }
+.interruptor__control:focus-visible + .interruptor__pista { outline: 3px solid #fff; outline-offset: 2px; }
+
+.fechas { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-3); }
+.fechas__campo {
+  display: grid;
+  gap: var(--e-1);
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--azul-claro);
+}
+.fechas__campo input, .fechas__campo select {
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--papel);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  font: 500 var(--t-texto) / 1 var(--f-texto);
+  letter-spacing: 0;
+  text-transform: none;
+  accent-color: var(--azul);
+}
+/* Con un periodo elegido, «desde/hasta» son de solo lectura: se leen en blanco sobre el azul, sin
+   caja de papel ni calendario, para que no parezcan editables. */
+.fechas__campo input[readonly] {
+  border-color: rgb(255 255 255 / 0.28);
+  background: transparent;
+  color: #fff;
+  color-scheme: dark;
+  cursor: default;
+}
+/* «Desde» y «Hasta» (21-10): campo de texto «dd/mm/aaaa» con el icono del calendario (el
+   «calendar» de Lucide) y, al pulsarlo, el CALENDARIO PROPIO (site/selector-fecha.js). Va antes que
+   la regla de solo lectura, que le quita la caja y el icono. */
+.fechas__campo .fecha__entrada {
+  width: 10.5rem;
+  padding-right: 2.5rem;
+  background: var(--papel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230c1a2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v4'/%3E%3Cpath d='M16 2v4'/%3E%3Crect width='18' height='18' x='3' y='4' rx='2'/%3E%3Cpath d='M3 10h18'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 1.125rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.fechas__campo .fecha__entrada[readonly] { background: transparent; cursor: default; }
+/* Desplegable «Mes»: mismo campo que las fechas, con flecha propia para que mida igual en todos los navegadores. */
+.fechas__campo select {
+  appearance: none;
+  padding-right: 2.25rem;
+  background: var(--papel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230c1a2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.75rem center / 1rem;
+  cursor: pointer;
+}
+.fechas__error { margin: var(--e-2) 0 0; color: var(--naranja-claro); font-weight: 600; }
+/* CALENDARIO (21-10): papel bajo el campo, como el desplegable de las vistas. Semana de lunes a
+   domingo, sábado y domingo en rojo, hoy recuadrado en azul, el elegido en naranja (el de los filtros
+   encendidos) y lo que no se puede elegir apagado. «Hoy» y «Limpiar» abajo, con .boton. */
+.fecha { position: relative; display: block; }
+.calendario {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + var(--e-1));
+  left: 0;
+  width: 18rem;
+  max-width: calc(100vw - 2rem);
+  padding: var(--e-3);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 24px 48px -16px rgb(8 38 84 / 0.5);
+  font: 500 var(--t-dato) / 1 var(--f-texto);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.calendario__cabeza { display: flex; align-items: center; justify-content: space-between; gap: var(--e-2); margin-bottom: var(--e-2); }
+.calendario__mes { margin: 0; color: var(--azul); font: 700 var(--t-equipo) / 1 var(--f-cartel); letter-spacing: 0.03em; text-transform: uppercase; }
+.calendario__flecha {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 2px solid var(--azul);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--azul);
+  cursor: pointer;
+}
+.calendario__flecha:hover { background: var(--azul); color: #fff; }
+.calendario__flecha:disabled { border-color: var(--regla); background: var(--papel); color: var(--regla); cursor: default; }
+.calendario__rejilla { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.calendario__rejilla th { padding: var(--e-1) 0; color: var(--tinta-suave); font: 600 var(--t-etiqueta) / 1 var(--f-cartel); }
+.calendario__rejilla td { padding: 1px; text-align: center; }
+.calendario__dia {
+  width: 100%;
+  height: 2.25rem;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  background: none;
+  color: var(--tinta);
+  font: 500 var(--t-dato) / 1 var(--f-texto);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.calendario__dia:hover { background: var(--naranja-tinte); }
+.calendario .calendario__finde { color: var(--finde); }
+.calendario__dia--otro-mes { opacity: 0.45; }
+.calendario__dia--hoy { border-color: var(--azul); font-weight: 700; }
+.calendario .calendario__dia--elegido { background: var(--naranja); color: var(--tinta); font-weight: 700; }
+.calendario .calendario__dia:disabled { background: none; color: var(--regla); cursor: default; }
+.calendario__pie { display: flex; gap: var(--e-2); margin-top: var(--e-2); }
+.calendario__pie .boton { flex: 1; }
+.calendario__pie .boton:disabled { border-color: var(--regla); background: var(--papel); color: var(--regla); cursor: default; }
+/* En el panel y la franja el foco es blanco; sobre el papel del calendario, naranja. */
+.panel .calendario :focus-visible { outline: 3px solid var(--naranja); outline-offset: -1px; }
+
+/* Vistas guardadas: un desplegable PROPIO (09-10, Luismi) con la cara del de «Periodo» y el disquete
+   suelto. No es un filtro más (solo guarda y vuelve a poner los otros), así que no lleva el borde
+   naranja de los segmentos: icono blanco sobre el azul, sin contorno, y el velo blanco de
+   `.boton-icono` al pasar por encima. */
+.vistas { display: flex; align-items: center; gap: var(--e-1); }
+.vistas__selector { position: relative; flex: 1 1 10rem; min-width: 0; margin-right: var(--e-1); }
+.vistas__abrir {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  width: 100%;
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--papel);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  font: 500 var(--t-texto) / 1 var(--f-texto);
+  text-align: left;
+  cursor: pointer;
+}
+.vistas__texto { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vistas__abrir .icono { transition: transform 0.15s var(--salida); }
+.vistas__abrir[aria-expanded="true"] .icono { transform: rotate(180deg); }
+/* La lista flota bajo el botón, al menos tan ancha como él. */
+.vistas__lista {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + var(--e-1));
+  left: 0;
+  width: max-content;
+  min-width: 100%;
+  max-width: 20rem;
+  padding-block: var(--e-1);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 16px 32px -12px rgb(8 38 84 / 0.55), 0 0 0 1px var(--regla);
+}
+.vistas__opciones { margin: 0; padding: 0; list-style: none; }
+.vistas__fila { position: relative; display: flex; align-items: center; padding-right: var(--e-1); }
+.vistas__opcion {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0 var(--e-3);
+  border: 0;
+  background: transparent;
+  color: var(--azul);
+  font: 600 var(--t-dato) / 1.2 var(--f-texto);
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+/* La de los filtros de ahora: con la raya naranja a la izquierda. */
+.vistas__opcion[aria-current="true"] { box-shadow: inset 3px 0 0 var(--naranja); font-weight: 700; }
+.vistas__mas {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  background: transparent;
+  color: var(--tinta-suave);
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+.vistas__opcion:hover, .vistas__mas:hover, .vistas__mas[aria-expanded="true"], .vistas__accion:hover { background: var(--naranja-tinte); color: var(--azul); }
+.vistas__renombrar { flex: 1; min-width: 0; min-height: 2.25rem; margin: var(--e-1) 0 var(--e-1) var(--e-2); font-size: var(--t-dato); }
+/* El menú del «⋯»: flota bajo su fila, pegado a la derecha. */
+.vistas__menu {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% - var(--e-1));
+  right: var(--e-1);
+  display: grid;
+  min-width: 9rem;
+  padding-block: var(--e-1);
+  border-radius: var(--radio);
+  background: var(--papel);
+  box-shadow: 0 12px 24px -10px rgb(8 38 84 / 0.55), 0 0 0 1px var(--regla);
+}
+.vistas__accion {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  min-height: 2.5rem;
+  padding: 0 var(--e-3);
+  border: 0;
+  background: transparent;
+  color: var(--azul);
+  font: 600 var(--t-dato) / 1 var(--f-texto);
+  text-align: left;
+  cursor: pointer;
+}
+.vistas__aviso { margin: 0; padding: var(--e-2) var(--e-3) var(--e-1); border-top: 1px solid var(--regla); color: var(--tinta-suave); font-size: var(--t-etiqueta); }
+.vistas__aviso:empty { display: none; }
+/* Sobre papel, el contorno de foco vuelve al naranja (en la cabecera y el panel es blanco). */
+.vistas__lista :focus-visible { outline: 3px solid var(--naranja); outline-offset: -3px; }
+/* Sin vistas ni nada que guardar, el bloque está vacío: fuera también su etiqueta «Vistas». */
+.cabecera__vistas:not(:has(.vistas > :not([hidden]))) .cabecera__etiqueta,
+.grupo--vistas:not(:has(.vistas > :not([hidden]))) { display: none; }
+.vistas__boton { border-color: transparent; color: var(--azul-claro); }
+.vistas__boton:hover { color: #fff; }
+.vistas__boton .icono { width: 1.125rem; height: 1.125rem; }
+.dialogo__cuerpo { display: grid; gap: var(--e-3); padding: var(--e-4); }
+.campo { display: grid; gap: var(--e-1); }
+.campo__nombre { color: var(--azul); font: 600 var(--t-etiqueta) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.08em; }
+.campo__entrada {
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 2px solid var(--azul-claro);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  font: 500 var(--t-texto) / 1 var(--f-texto);
+}
+.campo__entrada:focus-visible { border-color: var(--azul); outline: 3px solid var(--naranja); outline-offset: 1px; }
+.dialogo__nota { margin: 0; color: var(--tinta-suave); font-size: var(--t-dato); }
+/* Guardar viniendo de una vista (09-10): «Actualizar “X”» arriba y, debajo, guardar otra nueva. */
+.vista-origen { display: grid; gap: var(--e-3); }
+.vista-origen__o { margin: 0; padding-top: var(--e-3); border-top: 1px solid var(--regla); color: var(--azul); font: 600 var(--t-dato) / 1.2 var(--f-texto); }
+.dialogo__pie .boton { width: 100%; }
+
+/* ── Bandas y renglones ───────────────────────────────────────────────── */
+.dia, .pabellon, .subgrupo { margin: 0; }
+/* LISTA COMPACTA (21-10, Luismi: «que se vean más partidos de primeras sin hacer scroll»): bandas,
+   cabeceras de pabellón y renglones con menos relleno vertical, y en el PC la hora y el título del
+   día algo más pequeños y las líneas de cada celda más juntas. Medido en el PC: de 7 a más de 10
+   partidos enteros en la primera pantalla a 1440×900. */
+.banda {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-3);
+  margin: 0;
+  padding-block: var(--e-1);
+  padding-inline: var(--margen);
+  background: var(--banda);
+  color: var(--azul);
+  font: 700 var(--t-banda) / 1.1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  position: sticky;
+  top: var(--alto-fijo);
+  z-index: 10;
+}
+.banda__cuando, .partido__vivo {
+  align-self: center;
+  padding: 0.3125rem 0.5rem;
+  border-radius: var(--radio);
+  background: var(--naranja);
+  color: var(--tinta);
+  font: 700 var(--t-etiqueta) / 1 var(--f-cartel);
+  letter-spacing: 0.08em;
+}
+.banda__ciudad { color: var(--tinta-suave); font-weight: 600; }
+.banda__ciudad::before { content: " · "; }
+.cuenta { margin-left: auto; white-space: nowrap; font: 600 var(--t-dato) / 1 var(--f-cartel); letter-spacing: 0.06em; text-transform: uppercase; }
+/* El recuento del día manda: azul y más grande que el del pabellón, que va debajo en gris pequeño. */
+.banda .cuenta { color: var(--azul); font: 700 var(--t-equipo) / 1 var(--f-cartel); letter-spacing: 0.04em; }
+.subgrupo__cabeza {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-3);
+  margin: 0;
+  padding-block: var(--e-1);
+  padding-inline: var(--margen);
+  border-bottom: 1px solid var(--regla);
+  background: var(--hormigon);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1.15 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.subgrupo__cabeza .cuenta { color: var(--tinta-suave); }
+
+.lista { margin: 0; padding: 0; list-style: none; background: var(--papel); }
+.lista:empty { display: none; }
+/* Móvil estrecho (02-10, Luismi: «no se ven más de 3 partidos a la vez»): DOS filas. Arriba la hora
+   y, a su lado, el partido (un equipo por línea, escudo y nombre con elipsis); abajo, en UNA línea,
+   el pie: equipo + entrenador y, si caben, pista y jornada. Antes eran cinco filas: hora con la
+   categoría, el partido, el pabellón y la competición. */
+.partido {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr);
+  grid-template-areas:
+    "cuando encuentro"
+    "pie pie";
+  gap: var(--e-1) var(--e-3);
+  padding-block: var(--e-2);
+  padding-inline: var(--margen);
+  border-bottom: 1px solid var(--regla);
+  background: var(--papel);
+}
+/* En el móvil la hora comparte línea con la categoría: centrada con ella. En los demás anchos manda
+   la primera línea del bloque (ver más abajo). */
+.partido__cuando { grid-area: cuando; align-self: center; display: flex; flex-direction: column; gap: 0.125rem; }
+.partido__dia {
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1.1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.resultados[data-vista^="fecha"] .partido__dia { display: none; }
+.partido__hora {
+  color: var(--naranja);
+  font: 700 var(--t-hora) / 1 var(--f-cartel);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+/* Coincidencia: mismo pabellón, día y hora que otro partido de los que se ven. Los renglones van
+   seguidos (se ordenan por hora), así que el tinte los junta en un bloque. Solo el tinte: la
+   etiqueta y el filete de la primera versión apenas se veían en pantallas grandes (17-09). */
+.partido--coincide { background: var(--naranja-tinte); }
+/* EN JUEGO (03-10): debajo de la hora, la pastilla de «Hoy» con el minuto de la última actualización
+   («min. 24», en minúscula, como lo pidió Luismi). El tanteo, en naranja: todavía puede cambiar. */
+.partido__vivo { align-self: flex-start; white-space: nowrap; }
+/* Doble clase: la regla general de `.encuentro__tanteo` va más abajo y, con la misma, la pisaba. */
+.encuentro__tanteo.encuentro__tanteo--vivo { color: var(--naranja); }
+/* Sin hora todavía: en tinta suave, que no compita con las horas de verdad. */
+.partido__hora--sin { color: var(--tinta-suave); }
+.partido[data-estado="aplazado"] .partido__hora,
+.partido[data-estado="suspendido"] .partido__hora { color: var(--tinta-suave); text-decoration: line-through; text-decoration-thickness: 2px; }
+.partido__equipo {
+  grid-area: equipo;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.partido__categoria {
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1.15 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+/* El entrenador por su alias, debajo de la categoría: es como el club distingue dos equipos de la
+   misma categoría. Texto normal y en tinta suave para que la categoría siga mandando. */
+.partido__entrenador {
+  color: var(--tinta-suave);
+  font: 400 var(--t-dato) / 1.25 var(--f-texto);
+}
+/* El partido como en AND Scout: por cada lado escudo, nombre y tanteo, local primero. Móvil primero:
+   un equipo por línea con su tanteo a la derecha. Cuando el propio partido mide 24rem o más (container
+   query sobre él, ver abajo), una sola línea centrada en el marcador. El club en azul, mayúsculas y
+   peso 800 para encontrarlo de un vistazo; el tanteo en Saira. */
+.partido__encuentro { grid-area: encuentro; align-self: center; container: encuentro / inline-size; }
+.encuentro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--e-1) var(--e-3);
+  font-weight: 500;
+  line-height: 1.35;
+}
+.encuentro__lado { display: flex; align-items: center; gap: var(--e-2); min-width: 0; }
+.encuentro__lado--local { grid-area: 1 / 1; }
+.encuentro__lado--visitante { grid-area: 2 / 1; }
+.encuentro__lado--visitante .escudo { order: -1; }
+/* En dos líneas el nombre no se parte: el rival largo ya viene con su nombre corto (registro de
+   config/club.mjs o recorte automático) y, si ni así cabe en un móvil muy estrecho, elipsis. */
+.encuentro__nombre { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Siglas del rival (21-10): escondidas salvo que el nombre no quepa (site/filtros.js → siglasSiNoCabe);
+   entonces el nombre se esconde a la vista pero lo sigue leyendo el lector de pantalla. */
+.nombre__siglas, .nombre__reducido { display: none; }
+.encuentro__nombre--siglas .nombre__siglas, .encuentro__nombre--reducido .nombre__reducido { display: inline; }
+.encuentro__nombre--siglas .nombre__corto, .encuentro__nombre--reducido .nombre__corto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.encuentro__nombre--club { color: var(--azul); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; }
+/* En un derbi los dos lados son «CB El Palo»: cada uno lleva su entrenador para saber quién juega
+   contra quién. Con un equipo por línea (lo estrecho) va AL LADO del nombre, que hay sitio de sobra
+   y de otro modo el partido se comía cuatro líneas; cuando los dos equipos comparten línea, debajo
+   (ver el bloque de 24rem). */
+.encuentro__tecnico {
+  margin-left: var(--e-2);
+  color: var(--tinta-suave);
+  font: 400 var(--t-dato) / 1.2 var(--f-texto);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.encuentro__tanteo { color: var(--tinta); font: 700 var(--t-equipo) / 1 var(--f-cartel); font-variant-numeric: tabular-nums; text-align: end; }
+.encuentro__tanteo--local { grid-area: 1 / 2; }
+.encuentro__tanteo--visitante { grid-area: 2 / 2; }
+/* En dos líneas el guion sobra; la marca de aplazado o suspendido ocupa la columna de los tanteos. */
+.encuentro__guion { display: none; color: var(--tinta-suave); }
+.encuentro__centro.marca-estado { grid-area: 1 / 2 / 3 / 3; justify-self: end; }
+/* 1.5rem en el móvil (21-10, antes 1.75rem): con un equipo por línea, el escudo marcaba el alto de cada una. */
+.escudo { flex: none; width: 1.5rem; height: 1.5rem; object-fit: contain; }
+/* Dónde y qué se leen seguidos (y en el escritorio van en la misma columna, uno encima del otro):
+   se distinguen por la letra, no por el color. El sitio en condensada, la competición en Asap. */
+.partido__sitio, .partido__competicion { font-size: var(--t-dato); line-height: 1.35; color: var(--tinta-suave); }
+.partido__sitio { grid-area: sitio; font-family: var(--f-cartel); font-weight: 600; letter-spacing: 0.02em; }
+.partido__competicion { grid-area: competicion; }
+/* La liga, en azul y negrita (09-10, Luismi: «que destaque bien»): de un vistazo, de qué competición
+   es cada partido. La jornada, gris y normal. */
+.competicion__nombre { color: var(--azul); font-weight: 700; }
+/* La fase, en azul pero sin negrita (09-10, Luismi: «¿podemos poner la fase?»): acompaña a la liga
+   sin competir con ella. El «·» que la precede, gris como el de la jornada. */
+.fase { color: var(--azul); }
+.partido__sitio > span + span::before { content: " · "; }
+/* El pie del móvil: una sola línea de alto fijo con DOS lados (02-10, Luismi: «separar equipo de
+   pista y jornada»). A la izquierda el equipo y su entrenador; a la derecha la pista
+   (`.partido__datos`), la LIGA y la jornada. La liga se ve SIEMPRE (09-10, Luismi: «tenemos que
+   poner la liga en móvil»). Cuando falta sitio cede, por este orden: la jornada, la pista y el
+   entrenador (con elipsis); la categoría y la liga nunca. Lo que se va, se va ENTERO: salta a una
+   segunda línea que el `overflow` esconde. Todo alineado por la LÍNEA BASE: mezcla Saira y Asap, y
+   centradas caían a alturas distintas.
+   Dos niveles: el pie se parte en `.partido__linea` (equipo, pista y liga) y `.partido__jornada`.
+   La jornada va la última, así que es la primera que salta, y salta si no cabe con TODO lo demás
+   a tamaño entero. Dentro de la línea, la pista encoge antes que el equipo. La jornada del móvil es
+   una copia de la de `.competicion__jornada`, que en el escritorio va con la liga en su celda: solo
+   una de las dos se ve (y se lee) a cada ancho. */
+.partido__pie {
+  grid-area: pie;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--e-1);
+  height: 1.375rem;
+  overflow: hidden;
+}
+.partido__linea, .partido__datos { display: contents; }
+.partido__fase, .partido__jornada { display: none; }
+/* Solo por debajo de 64rem (móvil y tableta): por encima, el pie, la línea y los datos son
+   `display: contents` y estas piezas son las de siempre (con estas reglas sueltas, el escritorio
+   heredaría el `nowrap` y el alto). */
+@container marco (width < 64rem) {
+  /* Alto fijo en CADA pieza, no solo en el pie: la categoría trae su propio alto de línea (1.15) y
+     la primera línea medía 18px; la segunda empezaba 4px antes del corte y asomaba. */
+  .partido__pie > *, .partido__linea > *, .partido__datos > * { flex: none; height: 1.375rem; line-height: 1.375rem; white-space: nowrap; }
+  /* La línea es la primera del pie: nunca salta. Llena lo que deja la jornada (o todo, si saltó). */
+  .partido__pie > .partido__linea { display: flex; flex: 1 1 auto; min-width: 0; align-items: baseline; column-gap: var(--e-1); }
+  /* Dentro de la línea, el ORDEN en que cede cada pieza lo dan los `flex-shrink`: la pista un millón
+     de veces antes que el equipo. Con factores tan dispares, mientras la pista no llega a cero el
+     entrenador no encoge ni una fracción de píxel (con 1000 de diferencia perdía una décima y le
+     salía la elipsis con la línea a medio llenar). */
+  .partido__linea > .partido__equipo { flex: 0 1 auto; min-width: 0; flex-direction: row; align-items: baseline; gap: var(--e-2); margin-inline-end: var(--e-2); }
+  /* El mismo alto de línea en todo el pie: la categoría (1.15) y el entrenador (1.25) traían el suyo. */
+  .partido__pie .partido__categoria { flex: none; line-height: 1.375rem; }
+  .partido__pie .partido__entrenador { line-height: 1.375rem; }
+  .partido__datos {
+    display: flex;
+    /* Crece con el sitio que sobra (la pista se pega a la liga) y encoge antes que el equipo. */
+    flex: 1 1e6 auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    column-gap: var(--e-1);
+    min-width: 0;
+    height: 1.375rem;
+    /* `clip` y no `hidden`: con `hidden` el bloque pasa a ser contenedor de scroll y el navegador se
+       inventa su línea base (el borde inferior), así que los datos ya no casan con el equipo. */
+    overflow: clip;
+  }
+  /* Un primer elemento de ancho cero: en un flex que se parte, el PRIMER elemento de una línea nunca
+     salta, así que sin él una pista larga se quedaría en la línea visible, cortada. Con el ALTO de
+     una línea entera: con alto 0, la primera línea medía 0 y la segunda (la que debía esconderse)
+     empezaba arriba del todo, a la vista. Con un espacio de ancho cero DENTRO y la letra de los
+     datos: así tiene línea base y los datos la conservan aunque la pista salte (09-10: sin ella, el
+     navegador se inventaba la del borde inferior y bajaba la liga 7px). */
+  .partido__datos::before { content: "\200b"; flex: none; width: 0; height: 1.375rem; font: 400 var(--t-etiqueta) / 1.375rem var(--f-texto); }
+  .partido__datos > *, .partido__linea > .partido__competicion, .partido__pie > .partido__fase, .partido__pie > .partido__jornada { color: var(--tinta-suave); font: 400 var(--t-etiqueta) / 1.375rem var(--f-texto); letter-spacing: 0; }
+  /* El «·» entre pista y liga va con la pista: si ella salta, él también. */
+  .partido__datos .partido__sitio::after { content: "\00a0·"; }
+  /* Por pabellón y sin pista, el sitio queda vacío: fuera, para que no deje hueco ni un «·» suelto. */
+  .resultados[data-vista$="pabellon"] .partido__sitio:not(:has(.sitio__pista)) { display: none; }
+  /* Fuera de las vistas por pabellón, el sitio es el pabellón entero (con pista y ciudad): casi nunca
+     cabe, y contarlo hacía saltar la jornada aunque luego él tampoco se viera. Ahí la jornada va
+     antes y el sitio solo ocupa lo que sobre. */
+  .resultados:not([data-vista$="pabellon"]) .partido__datos { width: 0; }
+  /* La liga no encoge nunca; su jornada de escritorio, fuera (la del móvil es `.partido__jornada`). */
+  .partido__linea > .partido__competicion { flex: none; }
+  /* La fase va igual que la jornada (09-10): su copia, `.partido__fase`, entre la línea y la jornada.
+     Como el pie se parte en orden, la jornada salta primero; la fase, cuando ya no cabe con la línea
+     a tamaño entero (con la pista), es decir, antes de que la pista ceda nada. */
+  .partido__competicion .competicion__jornada, .partido__competicion > .competicion__con-fase { display: none; }
+  .partido__pie > .partido__fase, .partido__pie > .partido__jornada { display: block; }
+  .partido__pie .partido__entrenador { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  /* Un derbi lleva dos categorías: en la línea van separadas por un guion. */
+  .partido--derbi .partido__pie .partido__categoria + .partido__categoria::before { content: "– "; }
+  /* Las dos juntas no caben («Provincial Masculino A – Provincial Masculino B»): encogen con elipsis. */
+  .partido--derbi .partido__pie .partido__categoria { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+}
+/* Versión corta de la categoría, la liga y la jornada (09-10, Luismi: «vamos a intentar hacer hueco
+   para la competición y fase al menos, y si es posible la jornada»): «INF FEM 13 · INF · Fase
+   Previa · J3». El build pone las dos (site/paginas.mjs, `abreviar` en site/vistas.mjs); fuera del
+   móvil estrecho la corta no existe, así que tableta y PC no cambian ni un píxel. */
+.abrev-corto, .competicion__fase { display: none; }
+@container marco (width < 40rem) {
+  .partido__pie .abrev-largo { display: none; }
+  .partido__pie .abrev-corto { display: inline; }
+  /* Sin pista (Luismi: «quita la Pista de juego»): ni por pabellón, donde era lo único del sitio. */
+  .partido__pie .partido__datos { display: none; }
+  /* Orden en que cede el pie: la jornada, luego el entrenador (con elipsis) y luego la fase; la
+     categoría y la liga nunca. La jornada sigue siendo la última pieza del pie: salta si no cabe con
+     TODO lo demás entero. La fase ya no va suelta en el pie sino con la liga, en su copia
+     `.competicion__fase`: la celda de la liga es un flex de una línea que se parte y esconde lo que
+     salta, así que la fase se va ENTERA cuando la celda no le deja sitio. Y la celda solo encoge
+     cuando el entrenador ya no puede más: categoría y entrenador pasan a ser piezas de la línea
+     (el equipo, `display: contents`) para que el entrenador encoja solo, con un factor un millón de
+     veces mayor que la celda (con factores parecidos, la celda perdía una fracción de píxel y la
+     fase saltaba con el entrenador entero). */
+  .partido__linea > .partido__equipo { display: contents; }
+  /* Dos lados (09-10, Luismi: «alinea equipo+entrenador a la izquierda y categoría+fase+jornada a la
+     derecha»): la línea crece con lo que sobra y su margen automático empuja la liga contra la
+     jornada, que va al borde derecho; si la jornada saltó, la liga es la que toca el borde. El
+     hueco va en medio. Qué cabe no cambia: el flex reparte las piezas por líneas con su ancho de
+     contenido, ANTES de crecer. */
+  .partido__linea > .partido__competicion { margin-inline-start: auto; }
+  /* Arriba, no por la línea base: así estaban dentro del equipo, y alineadas por la base la liga y la
+     jornada bajaban 1px y asomaban por debajo del pie. */
+  .partido__pie .partido__categoria, .partido__pie .partido__entrenador { align-self: flex-start; }
+  .partido__pie .partido__categoria { margin-inline-end: var(--e-1); }
+  .partido__pie .partido__entrenador { flex: 0 1e6 auto; margin-inline-end: var(--e-2); }
+  .partido--derbi .partido__pie .partido__categoria { flex-shrink: 1e6; margin-inline-end: 0; }
+  /* Sin margen delante: el hueco de la línea ya separa el guion (09-10: con margen, «A   – PROV»). */
+  .partido--derbi .partido__pie .partido__categoria + .partido__categoria { margin-inline-end: var(--e-2); }
+  /* Sin fase, la celda sigue siendo el bloque de siempre, que no encoge: no hay nada que esconder. */
+  .partido__linea > .competicion--con-fase {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--e-1);
+    min-width: 0;
+    overflow: clip;
+  }
+  .competicion--con-fase > * { flex: none; height: 1.375rem; white-space: nowrap; }
+  .competicion--con-fase > .competicion__fase { display: block; }
+  .partido__pie > .partido__fase { display: none; }
+}
+/* Por pabellón, el pabellón y la ciudad ya están en la cabeza del grupo: el renglón solo dice la
+   pista, y si no se sabe, la celda se queda vacía y manda la competición de debajo. */
+.resultados[data-vista$="pabellon"] .sitio__pabellon,
+.resultados[data-vista$="pabellon"] .sitio__ciudad { display: none; }
+.resultados[data-vista$="pabellon"] .sitio__pista::before { content: none; }
+.marca-estado {
+  display: inline-block;
+  padding: 0.3125rem 0.5rem;
+  border: 1.5px solid var(--azul);
+  border-radius: var(--radio);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.marca-estado { border-style: dashed; }
+
+/* ── Sin partidos ─────────────────────────────────────────────────────── */
+.vacio { padding-block: var(--e-7); padding-inline: var(--margen); background: var(--papel); border-block: 1px solid var(--regla); }
+.vacio__texto {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--azul);
+  font: 700 var(--t-banda) / 1.15 var(--f-cartel);
+  text-wrap: balance;
+}
+.vacio__ayuda { max-width: 60ch; margin: var(--e-2) 0 0; color: var(--tinta-suave); }
+.vacio__acciones { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-top: var(--e-4); }
+.boton {
+  min-height: 2.75rem;
+  padding-inline: var(--e-4);
+  border: 2px solid var(--azul);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--azul);
+  font: 700 var(--t-equipo) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s var(--salida), color 0.15s var(--salida);
+}
+.boton:hover { background: var(--azul); color: #fff; }
+.boton--pequeno { min-height: 2.25rem; padding-inline: var(--e-3); font-size: var(--t-dato); }
+.boton--primario { width: 100%; border-color: var(--naranja); background: var(--naranja); color: var(--tinta); }
+.boton--primario:hover { border-color: var(--azul); background: var(--azul); color: #fff; }
+
+/* ── Ventanas (equipos, crónica, guardar vista) ───────────────────────── */
+html:has(.dialogo[open]) { overflow: hidden; }
+/* TODAS con el mismo ancho y el mismo alto máximo (28-09, Luismi: «normaliza alto/ancho de los
+   modals»). El alto sale de la pantalla: en el PC había sitio de sobra y la crónica iba con scroll.
+   Una ventana con mucho contenido (equipos desplegados, la crónica) llega a ese alto; la de guardar
+   vista, que es una línea, se queda con el suyo. */
+.dialogo {
+  --dialogo-alto: min(100dvh - 4rem, 56rem);
+  width: min(100% - 2rem, 40rem);
+  max-width: none;
+  max-height: var(--dialogo-alto);
+  padding: 0;
+  /* Borde blanco (28-09, Luismi): la cabecera azul se confundía con la web de detrás, que es del
+     mismo azul. Blanco y no naranja: el naranja ya es la raya bajo la cabecera. */
+  border: 2px solid var(--papel);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 24px 48px -16px rgb(8 38 84 / 0.5);
+}
+.dialogo[open] { display: flex; }
+.dialogo::backdrop { background: rgb(8 38 84 / 0.6); }
+.dialogo__caja { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+.dialogo__cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding: var(--e-3) var(--e-3) var(--e-3) var(--e-4);
+  border-bottom: 3px solid var(--naranja);
+  background: var(--azul);
+  color: #fff;
+}
+.dialogo__titulo { margin: 0; font: 700 var(--t-banda) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.02em; }
+.dialogo__cabeza .boton-icono:focus-visible { outline-color: #fff; }
+.dialogo__atajos { display: flex; gap: var(--e-2); padding: var(--e-3) var(--e-4); border-bottom: 1px solid var(--regla); }
+.dialogo__lista { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 0 var(--e-2); }
+.familia { margin: 0; padding: 0; border: 0; }
+.familia__nombre {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  background: var(--banda);
+  color: var(--azul);
+  font: 700 var(--t-etiqueta) / 1.2 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+/* La fila gris de cada familia es también una casilla: marca o desmarca sus equipos de una vez, y
+   se queda a medias («indeterminate», lo pone el JS) cuando solo hay algunos. */
+.familia__todos {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-2) var(--e-4);
+  cursor: pointer;
+}
+.familia__todos:hover { background: var(--naranja-tinte); }
+/* Plegada, la cabecera dice cuántos de sus equipos hay marcados («2 de 7»); abierta ya se ven. */
+.familia__resumen { color: var(--tinta-suave); font: 600 var(--t-etiqueta) / 1 var(--f-texto); letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.familia:not(.familia--plegada) .familia__resumen { display: none; }
+/* Chevron de plegar: el mismo «chevron-up» de la cabecera, girado cuando la familia está plegada. */
+.familia__plegar {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.25rem;
+  margin-left: var(--e-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--azul);
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+.familia__plegar:hover { background: var(--naranja-tinte); }
+.familia__plegar .icono { transition: transform 0.2s var(--salida); }
+.familia--plegada .familia__plegar .icono { transform: rotate(180deg); }
+.familia__equipos[hidden] { display: none; }
+.familia__control { width: 1.125rem; height: 1.125rem; margin: 0; flex: none; accent-color: var(--naranja); cursor: pointer; }
+/* Atajo encendido: el que coincide con lo elegido ahora (todos, o todo un género). */
+.dialogo__atajos .boton[aria-pressed="true"] { border-color: var(--naranja); background: var(--naranja); color: var(--tinta); }
+/* La fila es el equipo (casilla) y, a su derecha, el botón del calendario: hermanos, porque un
+   botón dentro del label marcaría la casilla. */
+.equipo-fila { display: flex; border-bottom: 1px solid var(--regla); }
+.equipo {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 3rem;
+  padding: var(--e-2) var(--e-3) var(--e-2) var(--e-4);
+  cursor: pointer;
+  /* «Solo este equipo» es doble clic (PC) o pulsación larga (táctil): ninguno de los dos debe
+     seleccionar el texto ni abrir el menú de copiar del móvil. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.equipo:hover { background: var(--naranja-tinte); }
+/* Mientras dura la pulsación larga, la fila se tiñe: así se nota que el gesto va a hacer algo. */
+.equipo--pulsando { background: var(--naranja-claro); transition: background-color 0.45s linear; }
+/* La ayuda del gesto dice el que toca: doble clic con ratón, mantener pulsado en táctil. */
+.dialogo__ayuda { margin: 0; padding: var(--e-2) var(--e-4); border-bottom: 1px solid var(--regla); color: var(--tinta-suave); font-size: var(--t-dato); }
+.ayuda--raton { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .ayuda--raton { display: inline; }
+  .ayuda--tactil { display: none; }
+}
+.equipo__control { width: 1.25rem; height: 1.25rem; margin: 0; flex: none; accent-color: var(--naranja); cursor: pointer; }
+.equipo__nombre { flex: 1; display: grid; gap: 0.125rem; color: var(--azul); font: 700 var(--t-equipo) / 1.15 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+/* El entrenador debajo del equipo, igual que en el renglón: es lo que separa dos «Senior Masculino». */
+.equipo__tecnico { color: var(--tinta-suave); font: 400 var(--t-dato) / 1.25 var(--f-texto); text-transform: none; letter-spacing: 0; }
+.equipo__cuenta {
+  min-width: 1.5rem;
+  padding: 0.1875rem 0.375rem;
+  border-radius: 999px;
+  background: var(--regla);
+  color: var(--azul);
+  font: 600 var(--t-etiqueta) / 1 var(--f-texto);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+/* SEGUNDO NIVEL (09-10, Luismi): las ligas de un equipo que juega varias, debajo de su fila. Es la
+   misma fila de equipo, más baja y sangrada hasta el nombre del equipo (casilla de 1.25rem + hueco). */
+.equipo-ligas { border-bottom: 1px solid var(--regla); }
+.equipo--liga {
+  min-height: 2.5rem;
+  /* A la derecha, el hueco del botón del calendario (3rem): las cuentas caen bajo la del equipo. */
+  padding: var(--e-1) calc(var(--e-3) + 3rem) var(--e-1) calc(var(--e-4) + 1.25rem + var(--e-3));
+  border-top: 1px dashed var(--regla);
+}
+.equipo__control--liga { width: 1.125rem; height: 1.125rem; }
+.equipo__nombre--liga { color: var(--tinta); font: 600 var(--t-dato) / 1.2 var(--f-texto); text-transform: none; letter-spacing: 0; }
+.equipo-fila:has(+ .equipo-ligas) { border-bottom: 0; }
+.equipo__calendario {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 3rem;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--regla);
+  background: transparent;
+  color: var(--azul);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.equipo__calendario:hover { background: var(--naranja-tinte); color: var(--naranja); }
+.equipo__calendario:focus-visible { outline: 3px solid var(--naranja); outline-offset: -3px; }
+.dialogo__pie { padding: var(--e-3) var(--e-4); border-top: 1px solid var(--regla); background: var(--papel); }
+
+/* Añadir al calendario: los dos destinos son enlaces con cara de botón. */
+a.boton { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.calendario__equipo { margin: 0; color: var(--azul); font: 700 var(--t-equipo) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.calendario__enlace { display: flex; gap: var(--e-2); }
+.calendario__enlace .campo__entrada { flex: 1; min-width: 0; font-size: var(--t-dato); }
+.calendario__enlace .boton { display: grid; flex: none; place-items: center; padding-inline: var(--e-3); font-size: 1.25rem; }
+.calendario__estado { margin: 0; color: var(--azul); font: 600 var(--t-dato) / 1.3 var(--f-texto); }
+
+/* ── Reagrupar: un solo fundido corto ─────────────────────────────────── */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.18s; animation-timing-function: var(--salida); }
+@media (prefers-reduced-motion: reduce) {
+  .panel, .panel--abierto, .velo, .panel--abierto + .velo { transition: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+/* ── Filtros según lo que mide su sitio (el panel en el móvil, la franja en el PC) ── */
+/* En los móviles más estrechos los unidos aprietan el relleno para que «7 · 14 · 1 mes · Custom» quepa. */
+@container mando (min-width: 24rem) {
+  .segmentos--unidos .segmento { padding-inline: var(--e-3); }
+}
+/* La FRANJA del PC pregunta a `marco` (60rem, donde el panel deja de ser cajón), no a `mando`: el ancho
+   de `mando` depende de otra consulta de contenedor y Firefox, al cargar, la evaluaba con el cajón de
+   26rem y no volvía a mirar: filtros de móvil estirados en el PC hasta redimensionar (27-11, Luismi).
+   Es la misma condición: con `marco` por debajo de 60rem el panel mide 26rem como mucho. */
+@container marco (min-width: 60rem) {
+  .grupo { flex: 0 1 auto; }
+  /* «Mes · Desde · Hasta» baja a una línea entera al final de la franja: así abrirla no mueve de
+     sitio a «Tipo», «Agrupar» ni «Equipos», y tampoco se cruza con el interruptor de coincidencias
+     (antes se salía por la derecha, por debajo de los otros grupos, y lo tapaba). En el móvil no
+     hay `order`: van en el orden del HTML, justo debajo de los botones de rango. */
+  .fechas, .fechas__error, .interruptor { order: 9; }
+  .fechas { flex: 0 1 auto; flex-wrap: nowrap; margin-top: 0; }
+  /* El interruptor cierra la primera línea y, con las fechas a medida abiertas, baja con ellas a la
+     segunda, alineado con los campos. */
+  .interruptor { align-self: end; margin-top: 0; }
+  .fechas > * { flex: none; }
+  .segmento__unidad { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+  /* «Local» y «Visitante» se quedan en icono (casa y autobús, con la palabra en el title y para el
+     lector de pantalla): en la franja del PC hacían falta esos ~120px para el botón de equipos, que
+     lleva «Equipo · Entrenador». En el panel del móvil se sigue leyendo la palabra. */
+  .segmento--con-icono { width: 2.75rem; padding-inline: 0; gap: 0; }
+  .segmentos--unidos .segmento--con-icono { flex: 0 0 auto; padding-inline: 0; }
+  .segmento--con-icono .segmento__texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+/* ── Partido en una línea cuando cabe ─────────────────────────────────── */
+/* escudo · local · 57 – 53 · visitante · escudo, con los lados de igual ancho para que el marcador
+   quede centrado y los de todos los renglones caigan en la misma vertical. Escudo y nombre son un
+   bloque centrado en vertical en la fila, con el escudo más grande (la fila la marca la hora, de
+   2.25rem). Un nombre corto se pega al marcador; uno que se parte llena su lado y se alinea hacia
+   SU escudo, así nunca se separa de él (alineado hacia el marcador, el escudo se iba al borde). */
+/* El marcador centrado con los lados iguales es de la fila de escritorio (≥72rem, más abajo): ahí
+   el partido tiene columna propia. En lo demás la línea arranca a la izquierda, como la categoría
+   y el pabellón; centrada dentro de un bloque ancho parecía descolgada del renglón (18-09). */
+@container encuentro (min-width: 24rem) {
+  .encuentro { grid-template-columns: minmax(0, auto) auto auto auto minmax(0, 1fr); column-gap: var(--e-2); }
+  /* 2rem (21-10; antes 2.25rem): en el PC el escudo marcaba el alto del renglón. */
+  .escudo { width: 2rem; height: 2rem; }
+  .encuentro__lado--visitante .escudo { order: 0; }
+  /* Los dos equipos en una línea: el entrenador ya no cabe al lado, va debajo de su nombre. */
+  .partido--derbi .encuentro__nombre { display: grid; gap: 0.125rem; white-space: normal; }
+  .partido--derbi .encuentro__tecnico { margin-left: 0; }
+  .encuentro__tanteo--local { grid-area: 1 / 2; }
+  .encuentro__guion { display: block; }
+  .encuentro__centro, .encuentro__centro.marca-estado { grid-area: 1 / 3; justify-self: center; }
+  .encuentro__tanteo--visitante { grid-area: 1 / 4; }
+  .encuentro__lado--visitante { grid-area: 1 / 5; }
+}
+
+/* ── Tableta y pantallas medianas (40–72rem) ──────────────────────────── */
+/* Tableta (02-10, Luismi: «algo parecido entre 640 y 1024 para ver más partidos»): como el móvil, DOS
+   filas, pero con la hora en su columna a la izquierda de las dos. Arriba el partido, ya en una
+   línea; abajo el pie (equipo + entrenador | pista · jornada). Antes eran cuatro: categoría,
+   partido, pabellón y competición, apilados a la derecha de la hora. */
+@container marco (min-width: 40rem) {
+  .resultados { --t-banda: 1.75rem; }
+  .partido {
+    grid-template-columns: 6rem minmax(0, 1fr);
+    grid-template-areas:
+      "cuando encuentro"
+      "cuando pie";
+    column-gap: var(--e-4);
+  }
+}
+
+/* ── Escritorio: cabecera y barra fijas, un renglón por partido ───────── */
+/* Al hacer scroll se quedan arriba las DOS: la cabecera (escudo y vistas) y debajo la franja de
+   filtros, que se pega justo bajo ella con `--alto-cabecera` (lo mide el JS). Sin hamburguesa ni
+   velo. El botón de plegar esconde la franja y deja solo la cabecera. */
+@container marco (min-width: 60rem) {
+  .cabecera { position: sticky; top: 0; z-index: 30; flex-wrap: wrap; padding-block: var(--e-3); border-bottom: 0; }
+  .cabecera__plegar { display: inline-grid; width: 2.25rem; height: 2.25rem; margin-left: var(--e-2); border-color: transparent; color: var(--azul-claro); }
+  .cabecera__plegar:hover { color: #fff; }
+  .cabecera__plegar .icono { width: 1.125rem; height: 1.125rem; transition: transform 0.15s var(--salida); }
+  .marco--sin-filtros .cabecera__plegar .icono { transform: rotate(180deg); }
+  .marco--sin-filtros .mando { display: none; }
+  .cabecera__vistas { display: flex; }
+  /* Ancho fijo, como tenía el <select>: el bloque mide lo que su contenido y, con `flex-basis`, un
+     nombre corto («A») dejaba el botón en nada. */
+  .cabecera__vistas .vistas__selector { flex: 0 1 auto; width: 13rem; }
+  /* En la fila del escudo, más bajo que los filtros: es un atajo, no el mando principal. La lista se
+     abre hacia la izquierda, que a la derecha está el borde. */
+  .cabecera__vistas .vistas__abrir { min-height: 2.25rem; font-size: var(--t-dato); }
+  .cabecera__vistas .vistas__lista { left: auto; right: 0; }
+  .cabecera__vistas .vistas__boton { width: 2.25rem; height: 2.25rem; }
+  .cabecera__menu, .panel__cabeza, .velo, .grupo--vistas { display: none; }
+  .panel {
+    position: sticky;
+    inset: auto;
+    top: var(--alto-cabecera, 0px);
+    z-index: 20;
+    width: auto;
+    overflow: visible;
+    transform: none;
+    visibility: visible;
+    transition: none;
+    box-shadow: 0 8px 18px -14px rgb(8 38 84 / 0.45);
+  }
+  .mando { border-top: 1px solid rgb(255 255 255 / 0.12); border-bottom: 3px solid var(--naranja); }
+}
+/* ── Escritorio: un renglón por partido, el marcador centrado en su columna ── */
+/* CUATRO columnas, no cinco: el dónde (pabellón y pista) va ENCIMA de la competición, compartiendo
+   columna. Con cinco, la del partido se quedaba por debajo de 24rem hasta los 1150px y el marcador
+   se partía en dos líneas; apilándolas cabe entero desde 64rem (18-09). Todo centrado en vertical,
+   que las celdas tienen distinto número de líneas. */
+@container marco (min-width: 64rem) {
+  .resultados { --t-banda: 1.75rem; --t-hora: 2rem; }
+  .partido {
+    /* 2.4fr para el partido: con 2fr cabía en una línea, pero los nombres de rival se partían en dos
+       (16 de ellos con el marco en 64rem, hasta «CB Benalmádena»); con 2.4fr, ninguno. Lo que pierde
+       la columna del dónde y el qué se paga en una línea más de pabellón, que es dato secundario. */
+    grid-template-columns: 6.5rem minmax(9rem, 0.7fr) minmax(0, 2.4fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      "cuando equipo encuentro sitio"
+      "cuando equipo encuentro competicion";
+    align-items: center;
+    row-gap: 0;
+    /* El mismo relleno que en el móvil y la tableta (21-10; antes --e-3): la lista compacta. */
+    padding-block: var(--e-2);
+  }
+  /* Las dos líneas de cada celda, más juntas (21-10): equipo y entrenador, sitio y competición. */
+  .partido__equipo { gap: 0; }
+  .partido__categoria { line-height: 1.05; }
+  .partido__entrenador { line-height: 1.15; }
+  .partido__sitio, .partido__competicion { line-height: 1.15; }
+  /* El pie solo existe por debajo: aquí cada pieza vuelve a su propia `grid-area`. */
+  .partido__pie, .partido__datos { display: contents; }
+  .partido__cuando { align-self: center; }
+  /* Las dos mitades de la columna del dónde y el qué, pegadas entre sí en el centro del renglón. */
+  .partido__sitio { align-self: end; }
+  .partido__competicion { align-self: start; }
+  /* La FASE, solo si cabe (09-10, Luismi: «¿podemos poner la fase?»; el renglón no crece por ella).
+     La celda trae dos versiones (site/paginas.mjs): sin fase, de ancho cero y con su texto
+     desbordando, y con fase, de una pieza. La celda es un flex de UNA línea de alto que se parte y
+     esconde lo que salta: si la versión con fase cabe entera, se pone al lado (encima, con ancho
+     cero la otra) y, al medir DOS líneas (su relleno inferior), empuja la de reserva abajo, al
+     `flex-end`, fuera de la vista; si no cabe, salta a la segunda línea y queda la de reserva. */
+  .competicion--con-fase { display: flex; flex-wrap: wrap; align-items: flex-start; height: 1lh; overflow: hidden; }
+  .competicion__sin-fase { width: 0; min-width: 0; white-space: nowrap; align-self: flex-end; }
+  .competicion__con-fase { white-space: nowrap; padding-block-end: 1lh; }
+  /* Lados de igual ancho: el marcador cae en la misma vertical en todos los renglones. */
+  .encuentro { grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); }
+  .encuentro__lado--local { justify-content: flex-end; }
+  .encuentro__lado--visitante .encuentro__nombre { text-align: end; }
+  /* En el derbi, nombre y entrenador de cada lado alineados con el marcador: el local cierra a la
+     derecha y el visitante abre a la izquierda. Si no, el nombre (más corto que el entrenador)
+     bailaba dentro de su caja. */
+  .partido--derbi .encuentro__lado--local .encuentro__nombre { text-align: end; }
+  .partido--derbi .encuentro__lado--visitante .encuentro__nombre { text-align: start; }
+  /* Aquí un nombre que no quepa se parte, en líneas parejas, en vez de recortarse. */
+  .encuentro__nombre { white-space: normal; overflow: visible; overflow-wrap: break-word; text-wrap: balance; }
+}
+
+/* ── Acciones: crónica (web local) y AND Scout ────────────────────────── */
+/* Una MINI COLUMNA de iconos a la derecha del resultado (03-10, Luismi: el de AND Scout «al lado del
+   icono de la crónica»). Solo existe con `con-acciones` en <html>: la web local la lleva siempre
+   (crónica + AND Scout local, 4rem) y la publicada solo cuando Chrome dice que AND Scout está
+   instalada (site/filtros.js; solo el icono de la app, 2rem). Sin ella, la rejilla de siempre.
+   Las reglas van con `.con-acciones` delante (más específicas que las de `.partido` de arriba) y en
+   el MISMO orden de puntos de corte. */
+.partido__acciones { display: none; }
+.con-acciones { --acciones: 2rem; }
+.con-cronica { --acciones: 4rem; }
+.con-acciones .partido__acciones { grid-area: acciones; display: flex; align-self: center; justify-self: center; }
+.con-acciones .partido {
+  grid-template-columns: 4.25rem minmax(0, 1fr) var(--acciones);
+  grid-template-areas:
+    "cuando encuentro acciones"
+    "pie pie pie";
+}
+@container marco (min-width: 40rem) {
+  .con-acciones .partido {
+    grid-template-columns: 6rem minmax(0, 1fr) var(--acciones);
+    grid-template-areas:
+      "cuando encuentro acciones"
+      "cuando pie pie";
+  }
+}
+@container marco (min-width: 64rem) {
+  /* Equipo y dónde/qué con el MISMO ancho que sin la columna (0.7 y 1.2 de 4.3 partes del ancho
+     que dejan la hora y los TRES huecos de la rejilla normal); la columna y su hueco salen de los
+     huecos (cuatro de 8px en vez de tres de 16px), de la hora (5.75rem en vez de 6.5rem: «20:00»,
+     la más ancha, mide 79px de 92) y del partido, que es la columna holgada (medido el 28-09 con
+     la de 2rem: 0 renglones crecen). */
+  .con-acciones .partido {
+    /* El % se resuelve donde se usa (la rejilla del renglón), no aquí: var() sustituye texto. */
+    --reparto: calc(100% - 6.5rem - 3 * var(--e-4));
+    column-gap: var(--e-2);
+    grid-template-columns: 5.75rem minmax(9rem, calc(var(--reparto) * 0.7 / 4.3)) minmax(0, 1fr) var(--acciones) calc(var(--reparto) * 1.2 / 4.3);
+    grid-template-areas:
+      "cuando equipo encuentro acciones sitio"
+      "cuando equipo encuentro acciones competicion";
+  }
+}
+.partido__hueco { display: grid; place-items: center; width: 2rem; height: 2rem; }
+/* El logo de AND Scout (img/andscout.svg, su rosa de los vientos verde). Sin borde, como la crónica:
+   el área de pulsación es la celda entera. */
+.partido__app {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radio);
+  background: url("img/andscout.svg") center / 1.25rem no-repeat;
+  transition: background-color 0.15s var(--salida);
+}
+a.partido__app:hover { background-color: var(--naranja-tinte); }
+a.partido__app:focus-visible { outline: 2px solid var(--naranja); outline-offset: 2px; }
+/* Partido sin ids de la FAB: el hueco, sin logo. */
+span.partido__app { background: none; }
+/* Web local: los dos iconos a 1.5rem (columna de 3rem), el equipo con un mínimo de 8.5rem en vez
+   de 9 y la hora en 5.25rem («20:00», la más ancha, mide 79px de 84): con 2rem cada uno, entre 1024 y 1060px se partían en dos líneas los rivales largos («CB
+   Salliver Fuengirola», «CB Rincón de la Victoria») y crecían 3-9 renglones (medido el 03-10). */
+.con-cronica { --acciones: 2.75rem; }
+.con-cronica .partido__hueco, .con-cronica .partido__app, .con-cronica .partido__cronica-boton { width: 1.375rem; height: 1.375rem; }
+.con-cronica .partido__app { background-size: 1.125rem; }
+@container marco (min-width: 64rem) {
+  .con-cronica .partido { grid-template-columns: 5.25rem minmax(8.5rem, calc(var(--reparto) * 0.7 / 4.3)) minmax(0, 1fr) var(--acciones) calc(var(--reparto) * 1.2 / 4.3); }
+}
+/* ASIGNAR PISTAS (27-11) — la página asignar.html (site/paginas.mjs → paginaAsignar), que lleva
+   estilo.css delante: reutiliza .cabecera, .boton, .segmentos, .grupo, .dialogo y .oculto. Aquí solo lo
+   suyo: los mandos (campo y día), la bandeja «Sin pista», el cuadrante (horas × pistas), las fichas,
+   la nota y la imagen. Primero el móvil; con sitio (container queries), más ancho. */
+
+.asignar { container: asignar / inline-size; flex: 1 0 auto; width: 100%; max-width: 72rem; margin-inline: auto; padding: var(--e-5) var(--e-4) var(--e-6); }
+.asignar__cabeza { display: grid; gap: var(--e-2); margin-bottom: var(--e-4); }
+.asignar__titulo { margin: 0; color: var(--azul); font: 700 var(--t-banda) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.02em; }
+.asignar__ayuda { margin: 0; color: var(--tinta-suave); }
+.asignar__seccion { display: flex; gap: var(--e-2); align-items: baseline; margin: var(--e-5) 0 var(--e-2); color: var(--azul); font: 700 var(--t-equipo) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.asignar__cuenta { color: var(--naranja); }
+.asignar__etiqueta { color: var(--tinta-suave); font: 700 var(--t-etiqueta) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.04em; }
+.asignar input[type='text'], .asignar input[type='time'], .asignar select {
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 1px solid var(--regla);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+}
+.asignar input:focus-visible, .asignar select:focus-visible { outline: 3px solid var(--naranja); outline-offset: 1px; }
+
+/* Campo y día: los segmentos de los filtros, aquí sobre fondo claro. */
+.asignar__mandos { display: flex; flex-wrap: wrap; gap: var(--e-3) var(--e-4); align-items: end; }
+.asignar__mandos .grupo { flex: 1 1 14rem; display: grid; gap: var(--e-1); }
+.asignar__mandos .grupo__nombre { color: var(--tinta-suave); }
+.asignar__mandos .segmento { border-color: var(--azul-claro); }
+.asignar__mandos .segmento__control:disabled + .segmento { opacity: 0.45; cursor: not-allowed; background: var(--hormigon); }
+
+/* «Sin pista»: las fichas sueltas. Con una elegida, tocar aquí la deja sin pista. */
+.asignar__bandeja {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  min-height: 4.5rem;
+  padding: var(--e-2);
+  border: 2px dashed var(--regla);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+.asignar__bandeja .ficha { flex: 1 1 11rem; max-width: 16rem; }
+.asignar__vacia { margin: auto; color: var(--tinta-suave); font-size: var(--t-dato); }
+.asignar__acciones { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-top: var(--e-2); }
+.asignar__acciones .boton, .asignar__hora .boton { display: inline-flex; gap: var(--e-2); align-items: center; width: auto; }
+.asignar--eligiendo .asignar__bandeja { border-color: var(--naranja-claro); }
+
+/* El cuadrante: hora + una columna por pista. Si no cabe, se desplaza él, no la página. */
+.asignar__cuadrante { overflow-x: auto; }
+.asignar__zona {
+  display: inline-block;
+  margin: var(--e-4) 0 var(--e-2);
+  padding: var(--e-1) var(--e-3);
+  border-radius: var(--radio);
+  background: var(--azul);
+  color: #fff;
+  font: 700 var(--t-equipo) / 1.3 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+/* Las columnas las pone pagina.mjs (hora, pistas y el hueco de la Pista 2) con estas medidas. */
+.cuadrante { --col-hora: 3rem; --col-hueco: 1.5rem; --col-min: 5.5rem; }
+.cuadrante { display: grid; gap: var(--e-1); }
+/* En el móvil la columna es estrecha: nombre y equipo en dos líneas, y el lápiz ENCIMA del texto (una
+   franja arriba) en vez de comerle el ancho por la derecha. */
+.cuadrante .ficha__elegir { padding: 1.5rem var(--e-2) var(--e-2); }
+.cuadrante .ficha__nombre, .cuadrante .ficha__debajo { white-space: normal; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.cuadrante .ficha__nombre { font-size: var(--t-dato); }
+.cuadrante__pista {
+  display: grid;
+  place-items: center;
+  min-height: 2.25rem;
+  padding: var(--e-1);
+  border-radius: var(--radio);
+  background: var(--naranja);
+  color: var(--tinta);
+  font: 700 var(--t-etiqueta) / 1.1 var(--f-cartel);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.cuadrante__hora { display: grid; place-items: center; border-radius: var(--radio); background: var(--banda); color: var(--azul); font: 700 var(--t-equipo) / 1 var(--f-cartel); }
+.cuadrante__celda { display: grid; min-height: 4.5rem; border-radius: var(--radio); }
+.cuadrante__celda.sobre { outline: 3px solid var(--naranja); outline-offset: 1px; }
+/* La Mosca: el partido a lo largo (Pista central) ocupa toda la fila; la hora es el botón para ponerlo ahí. */
+/* La Mosca: la Pista 2 (banquillos) es una columna estrecha rayada donde no se juega (27-11, Luismi). */
+.cuadrante__pista--hueco { background: var(--azul-claro); color: var(--azul); cursor: help; }
+.cuadrante__hueco { border-radius: var(--radio); background: repeating-linear-gradient(135deg, var(--banda) 0 6px, transparent 6px 12px); }
+/* Pista central: cabecera naranja como las otras; su hueco libre lleva el texto de dónde soltar. */
+.cuadrante__libre--central { min-height: 3rem; color: var(--tinta-suave); font-size: var(--t-dato); }
+/* El asa para ampliar (o devolver) a pista completa: una franja en el borde de la ficha que da a la otra pista. */
+.ficha__estirar {
+  position: absolute;
+  top: 1.75rem;
+  bottom: var(--e-1);
+  width: 0.875rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  background: rgb(255 255 255 / 0.12);
+  cursor: ew-resize;
+  touch-action: none;
+}
+.ficha__estirar::after { content: ''; position: absolute; inset: 30% 40%; border-inline: 1px solid currentColor; opacity: 0.7; }
+.ficha__estirar--derecha { right: 0; }
+.ficha__estirar--izquierda { left: 0; }
+.ficha__estirar:hover, .ficha__estirar:focus-visible { background: var(--naranja); color: var(--tinta); outline: none; }
+.ficha--entreno .ficha__estirar { background: var(--hormigon); }
+.ficha--estirando { z-index: 3; box-shadow: 0 0 0 3px var(--naranja); }
+/* La hora de cada partido cuando en su franja empiezan a horas distintas: el mismo cuadrado que la de la fila. */
+/* En el móvil, una etiqueta arriba (en la franja del lápiz) para no comerle el ancho al nombre; con sitio, el cuadrado. */
+.ficha__hora { position: absolute; top: var(--e-1); left: var(--e-2); display: grid; place-items: center; height: 1.25rem; padding-inline: var(--e-1); border-radius: var(--radio); background: var(--banda); color: var(--azul); font: 700 var(--t-etiqueta) / 1 var(--f-cartel); }
+.ficha:has(.ficha__estirar--izquierda) .ficha__hora { left: 1.25rem; }
+.cuadrante__celda { position: relative; }
+.ficha:has(.ficha__estirar--derecha) .ficha__elegir { padding-right: 1.25rem; }
+.ficha:has(.ficha__estirar--izquierda) .ficha__elegir { padding-left: 1.25rem; }
+
+/* Fuera de la pista que dice la FAB: asterisco en el nombre y la nota debajo. */
+.ficha__nota { display: none; color: var(--naranja-claro); font-size: var(--t-etiqueta); font-weight: 700; line-height: 1.2; }
+.ficha--movida .ficha__nota { display: block; }
+.ficha--entreno .ficha__nota { color: var(--naranja); }
+.cuadrante__libre { width: 100%; border: 2px dashed var(--regla); border-radius: var(--radio); background: transparent; cursor: default; }
+.asignar--eligiendo .cuadrante__libre { border-color: var(--naranja); background: var(--naranja-tinte); cursor: pointer; }
+.asignar--eligiendo .cuadrante__libre:hover { background: var(--naranja-claro); }
+.cuadrante__libre:focus-visible { outline: 3px solid var(--naranja); outline-offset: 1px; }
+
+/* La ficha: el partido en azul; el entreno en blanco con borde naranja (como en el cartel). */
+.ficha { position: relative; display: flex; min-width: 0; border-radius: var(--radio); background: var(--azul); color: #fff; }
+.ficha__elegir {
+  display: grid;
+  flex: 1;
+  align-content: center;
+  gap: 0.125rem;
+  min-width: 0;
+  padding: var(--e-2) 1.75rem var(--e-2) var(--e-2);
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: grab;
+}
+.ficha__nombre { overflow: hidden; font: 700 var(--t-equipo) / 1.05 var(--f-cartel); text-transform: uppercase; text-overflow: ellipsis; white-space: nowrap; }
+.ficha__debajo, .ficha__meta { overflow: hidden; font-size: var(--t-etiqueta); line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.ficha__debajo { color: var(--azul-claro); }
+.ficha__meta { color: var(--naranja-claro); }
+/* En el cuadrante ya se ve la hora y la pista: fuera la línea del rival y la hora. */
+.cuadrante .ficha__meta, .completas .ficha__meta { display: none; }
+.cuadrante .ficha--entreno .ficha__meta, .completas .ficha--entreno .ficha__meta { display: block; }
+.ficha__editar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0;
+  border-radius: var(--radio);
+  background: none;
+  color: inherit;
+  opacity: 0.75;
+  cursor: pointer;
+}
+.ficha__editar .icono { width: 0.875rem; height: 0.875rem; }
+.ficha__editar:hover, .ficha__editar:focus-visible { opacity: 1; background: rgb(255 255 255 / 0.15); }
+.ficha--entreno { box-shadow: inset 0 0 0 2px var(--naranja); background: var(--papel); color: var(--azul); }
+.ficha--entreno .ficha__debajo { color: var(--tinta-suave); }
+.ficha--entreno .ficha__meta { color: var(--naranja); font-weight: 700; text-transform: uppercase; }
+.ficha--entreno .ficha__editar:hover { background: var(--hormigon); }
+.ficha:has(.ficha__elegir[aria-pressed='true']) { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.ficha__elegir:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.ficha--arrastrando { opacity: 0.5; }
+
+.asignar__hora { display: flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; margin-top: var(--e-3); }
+.asignar__nada { margin: var(--e-3) 0 0; color: var(--tinta-suave); }
+
+.asignar__nota { display: grid; gap: var(--e-1); max-width: 36rem; }
+.asignar__nota input + .asignar__etiqueta { margin-top: var(--e-2); }
+
+/* La imagen: la vista previa y, al lado o debajo, los botones. */
+.asignar__salida { display: grid; gap: var(--e-4); }
+.asignar__previa { margin: 0; }
+.asignar__previa img { display: block; width: 100%; max-width: 30rem; height: auto; border: 1px solid var(--regla); border-radius: var(--radio); background: var(--papel); box-shadow: 0 8px 24px -16px rgb(8 38 84 / 0.5); }
+.asignar__botones { display: grid; gap: var(--e-2); align-content: start; }
+.asignar__botones .boton { display: inline-flex; gap: var(--e-2); align-items: center; justify-content: center; }
+.asignar__cero { margin-top: var(--e-3); }
+.asignar__aviso { margin: 0; padding: var(--e-2) var(--e-3); border-left: 3px solid var(--naranja); background: var(--naranja-tinte); color: var(--tinta); font-size: var(--t-dato); }
+
+.dialogo--ficha .dialogo__cuerpo { gap: var(--e-1); }
+.dialogo--ficha input { min-height: 2.75rem; padding-inline: var(--e-3); border: 1px solid var(--regla); border-radius: var(--radio); }
+.dialogo--ficha input + .asignar__etiqueta { margin-top: var(--e-2); }
+.asignar__pie-ficha { display: grid; gap: var(--e-2); }
+.asignar__pie-ficha .boton { display: inline-flex; gap: var(--e-2); align-items: center; justify-content: center; }
+
+@container asignar (width >= 40rem) {
+  /* Hora cuadrada: tan ancha como alta la fila (27-11, Luismi). Van en .cuadrante, no en .asignar: una consulta de
+     contenedor no estiliza al propio contenedor. */
+  .cuadrante { --col-hora: 5rem; --col-hueco: 2.5rem; --col-min: 0px; }
+  .cuadrante { gap: var(--e-2); }
+  .cuadrante__celda { min-height: 5rem; }
+  .cuadrante .ficha__elegir { padding: var(--e-2) 1.75rem var(--e-2) var(--e-2); }
+  .cuadrante .ficha__nombre { font-size: 1.25rem; }
+  .ficha__hora { position: static; flex: none; align-self: center; width: 2.75rem; height: 2.75rem; margin-left: var(--e-2); padding: 0; font-size: var(--t-dato); }
+  .ficha:has(.ficha__estirar--izquierda) .ficha__hora { margin-left: 1.25rem; }
+  .cuadrante__hora { font-size: var(--t-banda); }
+  .ficha__nombre { font-size: 1.25rem; }
+  .ficha__debajo { font-size: var(--t-dato); }
+  .asignar__salida { grid-template-columns: minmax(0, 1fr) 18rem; }
+}
+
+</style>
+</head>
+<body>
+<div class="marco">
+<header class="cabecera">
+<a class="cabecera__marca" href="./?asignar"><img src="img/escudo-160.png" alt="" width="44" height="44"><span>CB El Palo</span></a>
+<a class="boton-icono cabecera__carteles" href="./?asignar"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span class="cabecera__carteles-texto">Partidos</span><span class="oculto">: volver a los partidos</span></a>
+</header>
+
+<main class="asignar">
+<div class="asignar__cabeza">
+<h1 class="asignar__titulo">Asignar pistas</h1>
+<p class="asignar__ayuda">Toca un partido y después su pista, o arrástralo. Tocar una pista ocupada los cambia de sitio. En La Mosca, estira la ficha por su borde (o suéltala en «Pista central») para jugarlo a pista completa.</p>
+</div>
+
+<div class="asignar__mandos">
+<fieldset class="grupo asignar__campo">
+<legend class="grupo__nombre">Campo</legend>
+<div class="segmentos segmentos--unidos">
+<input class="segmento__control" type="radio" name="campo" value="ceip-ramon-del-valle-inclan" id="campo-ceip-ramon-del-valle-inclan" checked><label class="segmento" for="campo-ceip-ramon-del-valle-inclan"><span>Valle-Inclán</span></label>
+<input class="segmento__control" type="radio" name="campo" value="la-mosca" id="campo-la-mosca"><label class="segmento" for="campo-la-mosca"><span>La Mosca</span></label>
+</div>
+</fieldset>
+<label class="grupo asignar__dia"><span class="grupo__nombre">Día</span><select id="asignar-dia"></select></label>
+</div>
+
+<h2 class="asignar__seccion">Sin pista <span class="asignar__cuenta" id="asignar-cuenta"></span></h2>
+<div class="asignar__bandeja" id="asignar-bandeja" data-destino="">
+<p class="asignar__vacia" id="asignar-vacia">Todos los partidos tienen pista.</p>
+</div>
+<div class="asignar__acciones">
+<button class="boton boton--pequeno" type="button" id="asignar-repartir"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>Repartir los que faltan</button>
+<button class="boton boton--pequeno" type="button" id="asignar-entreno"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Añadir entreno</button>
+</div>
+
+<p class="asignar__aviso" id="asignar-choques" role="status" hidden></p>
+<div class="asignar__cuadrante" id="asignar-cuadrante" aria-live="polite"></div>
+<form class="asignar__hora" id="asignar-hora">
+<label class="asignar__etiqueta" for="asignar-hora-nueva">Otra hora</label>
+<input type="time" id="asignar-hora-nueva" step="900" required>
+<button class="boton boton--pequeno" type="submit"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Añadir fila</button>
+</form>
+
+<h2 class="asignar__seccion">Nota de abajo</h2>
+<div class="asignar__nota">
+<label class="asignar__etiqueta" for="asignar-nota-titulo">Título</label>
+<input type="text" id="asignar-nota-titulo" maxlength="40" placeholder="DOMINGO 29">
+<label class="asignar__etiqueta" for="asignar-nota-texto">Texto</label>
+<input type="text" id="asignar-nota-texto" maxlength="90" placeholder="Sin partidos en Valle-Inclán">
+<p class="dialogo__nota">Si los dejas en blanco, el cartel no lleva nota.</p>
+</div>
+
+<h2 class="asignar__seccion">Imagen</h2>
+<div class="asignar__salida">
+<figure class="asignar__previa"><img id="asignar-previa" alt="Vista previa del cuadrante" width="1080" height="1350"></figure>
+<div class="asignar__botones">
+<p class="asignar__aviso" id="asignar-aviso" role="status" hidden></p>
+<button class="boton boton--primario" type="button" id="asignar-descargar"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Descargar imagen</button>
+<button class="boton" type="button" id="asignar-compartir" hidden><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>Compartir</button>
+<button class="boton boton--pequeno asignar__cero" type="button" id="asignar-cero"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>Empezar de cero este día</button>
+<p class="dialogo__nota">Lo que colocas se guarda en este navegador (no en la web): en otro móvil u ordenador empieza vacío.</p>
+</div>
+</div>
+</main>
+
+<dialog class="dialogo dialogo--ficha" id="ficha-dialogo" aria-labelledby="ficha-titulo">
+<form class="dialogo__caja" method="dialog">
+<div class="dialogo__cabeza">
+<h2 class="dialogo__titulo" id="ficha-titulo">Ficha</h2>
+<button class="boton-icono" type="submit" value="cerrar" aria-label="Cerrar"><svg class="icono" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+</div>
+<div class="dialogo__cuerpo">
+<p class="dialogo__nota" id="ficha-partido"></p>
+<label class="asignar__etiqueta" for="ficha-nombre">Nombre grande</label>
+<input type="text" id="ficha-nombre" maxlength="30" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false">
+<label class="asignar__etiqueta" for="ficha-debajo">Debajo</label>
+<input type="text" id="ficha-debajo" maxlength="40" data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false">
+<p class="dialogo__nota" id="ficha-recuerda">Se recuerda para este equipo en los próximos partidos.</p>
+</div>
+<div class="dialogo__pie asignar__pie-ficha">
+<button class="boton" type="submit" value="quitar" id="ficha-quitar">Quitar de la pista</button>
+<button class="boton" type="submit" value="borrar" id="ficha-borrar"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Borrar entreno</button>
+<button class="boton boton--primario" type="submit" value="guardar">Guardar</button>
+</div>
+</form>
+</dialog>
+
+<template id="ficha-plantilla"><div class="ficha" draggable="true"><button class="ficha__elegir" type="button" aria-pressed="false"><span class="ficha__nombre"></span><span class="ficha__debajo"></span><span class="ficha__meta"></span><span class="ficha__nota"></span></button><button class="ficha__editar" type="button" aria-label="Editar"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button></div></template>
+</div>
+<script type="application/json" id="asignar-datos">{"hoy":"2026-11-28","club":"CB El Palo","partidos":{"ceip-ramon-del-valle-inclan":{"2026-11-21":[{"id":"528250","hora":"09:30","fab":null,"equipo":"infantil-femenino-14","genero":"F","nombre":"RUBÉN RUS","debajo":"Infantil Fem 14","rival":"CD Gamarra"},{"id":"529353","hora":"09:30","fab":null,"equipo":"minibasket-femenino-15","genero":"F","nombre":"JAVI ARIZA","debajo":"Minibasket Fem 15","rival":"EBG Málaga´16"},{"id":"529808","hora":"09:30","fab":null,"equipo":"minibasket-masculino-15-b","genero":"M","nombre":"ALEJANDRO SÁNCHEZ","debajo":"Minibasket Masc 15","rival":"CB Benalmádena´15"},{"id":"532241","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"EDFV La Presentación"},{"id":"527578","hora":"11:30","fab":null,"equipo":"infantil-masculino-13","genero":"M","nombre":"QUIVILA","debajo":"Infantil Masc 13","rival":"Salliver Azul"},{"id":"528570","hora":"11:30","fab":null,"equipo":"infantil-masculino-14-b","genero":"M","nombre":"ALBERTO GÓMEZ","debajo":"Infantil Masc 14","rival":"CP Mijas"},{"id":"529853","hora":"11:30","fab":null,"equipo":"minibasket-masculino-17","genero":"M","nombre":"CARLOS ALMARCHA","debajo":"Minibasket Masc 17","rival":"CB Algazara´16"},{"id":"531525","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"San Estanislao´18"},{"id":"529396","hora":"13:30","fab":null,"equipo":"minibasket-femenino-15-b","genero":"F","nombre":"CRISTI OLIVER","debajo":"Minibasket Fem 15","rival":"CD La Goleta 15-16"},{"id":"529322","hora":"13:30","fab":null,"equipo":"minibasket-femenino-16","genero":"F","nombre":"ANITA MUÑOZ","debajo":"Minibasket Fem 16","rival":"CAB Estepona 2016"}],"2026-11-22":[{"id":"532954","hora":"09:30","fab":null,"equipo":"babybasket-femenino-20-21","genero":"F","nombre":"ANA AYLLÓN / HELENA MENDOZA","debajo":"Babybasket Fem 20-21","rival":"AD Asunción Málaga B"},{"id":"532869","hora":"09:30","fab":null,"equipo":"babybasket-masculino-20-21","genero":"X","nombre":"BELÉN ÁLVAREZ / MARTA BANDRÉS","debajo":"Babybasket Masc 20-21","rival":"Teresianas´20"},{"id":"532952","hora":"09:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"Maristas Champagnat"},{"id":"532873","hora":"11:00","fab":null,"equipo":"babybasket-masculino-20-21","genero":"X","nombre":"BELÉN ÁLVAREZ / MARTA BANDRÉS","debajo":"Babybasket Masc 20-21","rival":"EB Cártama´20"},{"id":"532782","hora":"11:00","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"EBG Málaga"},{"id":"532955","hora":"12:30","fab":null,"equipo":"babybasket-femenino-20-21","genero":"F","nombre":"ANA AYLLÓN / HELENA MENDOZA","debajo":"Babybasket Fem 20-21","rival":"Premini Femenino 19"},{"id":"532785","hora":"12:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"AD Asunción Málaga"},{"id":"531638","hora":"13:00","fab":null,"equipo":"premini-masculino-18","genero":"X","nombre":"RODRI MONCADA","debajo":"Premini Masc 18","rival":"Teresianas´18"}],"2026-11-24":[{"id":"528359","hora":"19:15","fab":null,"equipo":"infantil-femenino-13-b","genero":"F","nombre":"ÁLVARO GONZÁLEZ","debajo":"Infantil Fem 13","rival":"Teresianas"}],"2026-11-27":[{"id":"531865","hora":"16:50","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"CB Novaschool"}],"2026-11-28":[{"id":"528279","hora":"09:30","fab":null,"equipo":"infantil-femenino-13-14","genero":"F","nombre":"RUBÉN PÉREZ","debajo":"Infantil Fem 13-14","rival":"CB Novaschool"},{"id":"527787","hora":"09:30","fab":null,"equipo":"infantil-masculino-13-b","genero":"M","nombre":"DANI GARRIDO","debajo":"Infantil Masc 13","rival":"Alhaurín el Grande"},{"id":"527672","hora":"09:30","fab":null,"equipo":"infantil-masculino-13-14","genero":"M","nombre":"ALE CASER","debajo":"Infantil Masc 13-14","rival":"CD Basket Norte"},{"id":"527731","hora":"09:30","fab":null,"equipo":"infantil-masculino-14","genero":"M","nombre":"QUIVILA","debajo":"Infantil Masc 14","rival":"CD Málaga Oeste"},{"id":"529446","hora":"09:30","fab":null,"equipo":"minibasket-femenino-17","genero":"F","nombre":"ANDREA SÁNCHEZ","debajo":"Minibasket Fem 17","rival":"San Agustín"},{"id":"525772","hora":"11:30","fab":null,"equipo":"cadete-femenino-11-12","genero":"F","nombre":"RUBÉN RUS","debajo":"Cadete Fem 11-12","rival":"CD Marbella Basket´11"},{"id":"528002","hora":"11:30","fab":null,"equipo":"infantil-femenino-13","genero":"F","nombre":"LUISMI MONTIEL","debajo":"Infantil Fem 13","rival":"MBK Azul´13"},{"id":"529754","hora":"11:30","fab":null,"equipo":"minibasket-masculino-16","genero":"M","nombre":"MARIO MARTÍNEZ","debajo":"Minibasket Masc 16","rival":"Salliver Blanco"},{"id":"529797","hora":"11:30","fab":null,"equipo":"minibasket-masculino-16-b","genero":"M","nombre":"AURORA SOLA","debajo":"Minibasket Masc 16","rival":"Torrebasket"},{"id":"529614","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"CD Marbella Basket´15"},{"id":"531639","hora":"13:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"Victoria Maristas"}],"2026-12-04":[{"id":"527585","hora":"19:30","fab":null,"equipo":"infantil-masculino-13","genero":"M","nombre":"QUIVILA","debajo":"Infantil Masc 13","rival":"MBK Azul´13"}],"2026-12-09":[{"id":"531861","hora":"19:45","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"AD Asunción Málaga A"}],"2026-12-10":[{"id":"517165","hora":"20:15","fab":null,"equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"MBK"}],"2026-12-12":[{"id":"532250","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"CB Rincón de la Victoria 17/18"},{"id":"531641","hora":"09:30","fab":null,"equipo":"premini-masculino-18","genero":"X","nombre":"RODRI MONCADA","debajo":"Premini Masc 18","rival":"EBG Málaga´18"},{"id":"531529","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"Premini Femenino 18"}],"2026-12-19":[{"id":"525779","hora":"11:30","fab":null,"equipo":"cadete-femenino-11-12","genero":"F","nombre":"RUBÉN RUS","debajo":"Cadete Fem 11-12","rival":"CB Alhaurín de la Torre"},{"id":"527586","hora":"11:30","fab":null,"equipo":"infantil-masculino-13","genero":"M","nombre":"QUIVILA","debajo":"Infantil Masc 13","rival":"EBG Málaga´13"},{"id":"531870","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"Premini Femenino 18"},{"id":"529625","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"MBK´15"}],"2027-01-09":[{"id":"531532","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"AD Asunción Málaga B"}],"2027-01-16":[{"id":"532259","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"Rincón Basket 17-18"},{"id":"531644","hora":"09:30","fab":null,"equipo":"premini-masculino-18","genero":"X","nombre":"RODRI MONCADA","debajo":"Premini Masc 18","rival":"Premini Masculino 19"},{"id":"531879","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"Teresianas"},{"id":"529636","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"EDM Teatinos´15"},{"id":"531875","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"Rincón Basket 17-18"}],"2027-01-21":[{"id":"517571","hora":"20:15","fab":null,"equipo":"sub22-masculino","genero":"M","nombre":"ANTONIO NAVAJAS","debajo":"Sub22 Masc","rival":"San Agustín"}],"2027-01-23":[{"id":"528013","hora":"11:30","fab":null,"equipo":"infantil-femenino-13","genero":"F","nombre":"LUISMI MONTIEL","debajo":"Infantil Fem 13","rival":"Rincón Basket´13"},{"id":"531536","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"CDC Los Olivos´18"},{"id":"531880","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"Teresianas"}],"2027-01-30":[{"id":"531649","hora":"13:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"San Agustín´18"}],"2027-02-06":[{"id":"532268","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"CB Novaschool"},{"id":"528022","hora":"11:30","fab":null,"equipo":"infantil-femenino-13","genero":"F","nombre":"LUISMI MONTIEL","debajo":"Infantil Fem 13","rival":"Unicaja´14"},{"id":"531888","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"CB Rincón de la Victoria"},{"id":"529655","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"CB Mijas UB´15 Verde"}],"2027-02-13":[{"id":"532276","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"CD Estudiantes Nerja"},{"id":"528023","hora":"11:30","fab":null,"equipo":"infantil-femenino-13","genero":"F","nombre":"LUISMI MONTIEL","debajo":"Infantil Fem 13","rival":"CAB Estepona"},{"id":"531892","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"CB Novaschool"},{"id":"531546","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"EBG Málaga´18"},{"id":"531543","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"EDM Teatinos´18"},{"id":"531651","hora":"13:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"EBG Málaga´18"}],"2027-02-20":[{"id":"529668","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"Academia 675 Negro"}],"2027-03-06":[{"id":"531653","hora":"09:30","fab":null,"equipo":"premini-masculino-18","genero":"X","nombre":"RODRI MONCADA","debajo":"Premini Masc 18","rival":"Teresianas´18"},{"id":"528032","hora":"11:30","fab":null,"equipo":"infantil-femenino-13","genero":"F","nombre":"LUISMI MONTIEL","debajo":"Infantil Fem 13","rival":"Salliver Azul"},{"id":"531548","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"CDC Los Olivos´18"},{"id":"531895","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"AD Asunción Málaga A"}],"2027-03-13":[{"id":"531903","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"Torrebasket"},{"id":"531552","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"CAB Estepona´18"},{"id":"531658","hora":"13:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"Teresianas´18"}],"2027-03-20":[{"id":"529682","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"CB Algazara´15"}],"2027-04-03":[{"id":"532288","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"Torrebasket"},{"id":"531557","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"Premini Femenino 19"},{"id":"531905","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"EDFV La Presentación"}],"2027-04-04":[{"id":"532977","hora":"09:45","fab":null,"equipo":"babybasket-femenino-20-21","genero":"F","nombre":"ANA AYLLÓN / HELENA MENDOZA","debajo":"Babybasket Fem 20-21","rival":"Maristas Champagnat"},{"id":"532976","hora":"09:45","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"San Estanislao"},{"id":"532980","hora":"11:15","fab":null,"equipo":"babybasket-femenino-20-21","genero":"F","nombre":"ANA AYLLÓN / HELENA MENDOZA","debajo":"Babybasket Fem 20-21","rival":"AD Asunción Málaga A"},{"id":"532979","hora":"11:15","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"AD Asunción Málaga B"}],"2027-04-10":[{"id":"531914","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"EDFV La Presentación"},{"id":"529695","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"EBG Málaga´15"},{"id":"531659","hora":"13:30","fab":null,"equipo":"premini-masculino-19","genero":"X","nombre":"PACO COBOS","debajo":"Premini Masc 19","rival":"Premini Masculino 18"}],"2027-04-17":[{"id":"531561","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"EBG Málaga´18"}],"2027-04-24":[{"id":"532299","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"AD Asunción Málaga"},{"id":"531662","hora":"09:30","fab":null,"equipo":"premini-masculino-18","genero":"X","nombre":"RODRI MONCADA","debajo":"Premini Masc 18","rival":"Victoria Maristas"},{"id":"531566","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"CAB Estepona´18"},{"id":"529708","hora":"13:30","fab":null,"equipo":"minibasket-masculino-15","genero":"M","nombre":"ANTONIO GARCÍA","debajo":"Minibasket Masc 15","rival":"Miramar Torremolinos´15 Negro"},{"id":"531915","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"Premini Femenino 17"}],"2027-05-08":[{"id":"531567","hora":"11:30","fab":null,"equipo":"premini-femenino-18-b","genero":"F","nombre":"MIGUEL BERNIER","debajo":"Premini Fem 18","rival":"EDM Teatinos´18"},{"id":"531570","hora":"11:30","fab":null,"equipo":"premini-femenino-19","genero":"F","nombre":"AITANA NUEVO / ANA AYLLÓN","debajo":"Premini Fem 19","rival":"San Estanislao´18"}],"2027-05-15":[{"id":"532310","hora":"09:30","fab":null,"equipo":"premini-masculino-17","genero":"X","nombre":"VÍCTOR MARTÍN","debajo":"Premini Masc 17","rival":"Teresianas"},{"id":"531926","hora":"11:30","fab":null,"equipo":"premini-femenino-17","genero":"F","nombre":"ARAN POSTIGO / ALEX","debajo":"Premini Fem 17","rival":"San Estanislao"}],"2027-05-22":[{"id":"531930","hora":"13:30","fab":null,"equipo":"premini-femenino-18","genero":"F","nombre":"JAVI ARIZA","debajo":"Premini Fem 18","rival":"Torrebasket"}]},"la-mosca":{"2026-11-21":[{"id":"526856","hora":"09:15","fab":"3","equipo":"cadete-masculino-12-b","genero":"M","nombre":"CARLOS MONCADA","debajo":"Cadete Masc 12","rival":"Teresianas´12"},{"id":"522631","hora":"09:30","fab":"3","equipo":"junior-femenino-09-10","genero":"F","nombre":"ANTONIO SÁNCHEZ","debajo":"Junior Fem 09-10","rival":"EBG Málaga 09/10"},{"id":"525569","hora":"11:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"CAB Estepona"},{"id":"522129","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"Unicaja Academy"},{"id":"525405","hora":"13:30","fab":"3","equipo":"cadete-masculino-a","genero":"M","nombre":"MIKI AYLLÓN","debajo":"Cadete Masc","rival":"EBG Málaga´12"},{"id":"517360","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"Rincón Basket"}],"2026-11-22":[{"id":"525562","hora":"10:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"CP Mijas´12"},{"id":"517363","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"CDC Los Olivos"}],"2026-11-28":[{"id":"525828","hora":"09:30","fab":"3","equipo":"cadete-femenino-12","genero":"F","nombre":"MARÍA LEAL","debajo":"Cadete Fem 12","rival":"CD La Goleta 11-12"},{"id":"522380","hora":"09:30","fab":"1","equipo":"junior-masculino-09-10","genero":"M","nombre":"LUIS DIEGO","debajo":"Junior Masc 09-10","rival":"El Pinar Gris"},{"id":"525443","hora":"11:10","fab":"3","equipo":"cadete-masculino-12","genero":"M","nombre":"CRIS BAZALO","debajo":"Cadete Masc 12","rival":"Teresianas"},{"id":"517181","hora":"11:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"Academia 675"},{"id":"525422","hora":"13:30","fab":"3","equipo":"cadete-masculino-a","genero":"M","nombre":"MIKI AYLLÓN","debajo":"Cadete Masc","rival":"CD Gamarra"},{"id":"526761","hora":"13:30","fab":"3","equipo":"infantil-masculino-13","genero":"M","nombre":"QUIVILA","debajo":"Infantil Masc 13","rival":"CD La Goleta´12"},{"id":"512819","hora":"18:30","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"CAB Estepona"}],"2026-11-29":[{"id":"522491","hora":"10:30","fab":"3","equipo":"junior-femenino","genero":"F","nombre":"ALE GARCÍA","debajo":"Junior Fem","rival":"Salliver Azul"},{"id":"517562","hora":"10:30","fab":"3","equipo":"sub22-masculino","genero":"M","nombre":"ANTONIO NAVAJAS","debajo":"Sub22 Masc","rival":"CB Novaschool"},{"id":"517183","hora":"12:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"CD Marbella Basket"},{"id":"525835","hora":"13:00","fab":"3","equipo":"cadete-femenino-12","genero":"F","nombre":"MARÍA LEAL","debajo":"Cadete Fem 12","rival":"Rincón Basket´11"}],"2026-12-11":[{"id":"522498","hora":"17:00","fab":"3","equipo":"junior-femenino","genero":"F","nombre":"ALE GARCÍA","debajo":"Junior Fem","rival":"CAB Estepona"}],"2026-12-12":[{"id":"522642","hora":"09:30","fab":"3","equipo":"junior-femenino-09-10","genero":"F","nombre":"ANTONIO SÁNCHEZ","debajo":"Junior Fem 09-10","rival":"CB San Pedro"},{"id":"525576","hora":"11:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"EBG Málaga´11"},{"id":"522146","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"EBG Málaga 09/10"}],"2026-12-13":[{"id":"517372","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"EBG Málaga"}],"2026-12-19":[{"id":"522147","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"Unicaja 11-12"}],"2027-01-09":[{"id":"525582","hora":"13:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"CAB Estepona"},{"id":"512849","hora":"17:00","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"El Plantel GMASB"},{"id":"512350","hora":"19:15","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"Unicaja"}],"2027-01-10":[{"id":"522484","hora":"10:30","fab":"3","equipo":"junior-femenino","genero":"F","nombre":"ALE GARCÍA","debajo":"Junior Fem","rival":"Unicaja 11-12"}],"2027-01-16":[{"id":"522158","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"El Pinar Rojo"},{"id":"517190","hora":"11:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"MBK"},{"id":"517378","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"West Park"}],"2027-01-17":[{"id":"517192","hora":"12:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"Academia 675"},{"id":"517580","hora":"12:30","fab":"3","equipo":"sub22-masculino","genero":"M","nombre":"ANTONIO NAVAJAS","debajo":"Sub22 Masc","rival":"CD Marbella Basket"}],"2027-01-23":[{"id":"522653","hora":"09:30","fab":"3","equipo":"junior-femenino-09-10","genero":"F","nombre":"ANTONIO SÁNCHEZ","debajo":"Junior Fem 09-10","rival":"CB Novaschool"},{"id":"525592","hora":"11:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"Torrebasket"},{"id":"522120","hora":"11:30","fab":"1","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"MBK´10"},{"id":"517198","hora":"13:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"CB Alhaurín de la Torre"},{"id":"517380","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"Torrebasket"},{"id":"512363","hora":"17:00","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"CB Linares"}],"2027-01-30":[{"id":"522169","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"Salliver Azul"},{"id":"517589","hora":"13:30","fab":"3","equipo":"sub22-masculino","genero":"M","nombre":"ANTONIO NAVAJAS","debajo":"Sub22 Masc","rival":"El Pinar"}],"2027-01-31":[{"id":"517387","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"Provincial Masculino"}],"2027-02-06":[{"id":"525601","hora":"11:30","fab":"1","equipo":"cadete-femenino-a","genero":"F","nombre":"SERGIO RISOTO","debajo":"Cadete Fem","rival":"MBK Azul´11"},{"id":"517209","hora":"13:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"CP Mijas"},{"id":"517391","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"CDC Los Olivos"},{"id":"512376","hora":"17:00","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"El Pinar"},{"id":"512879","hora":"19:15","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"EBG Málaga"}],"2027-02-13":[{"id":"522180","hora":"11:30","fab":"3","equipo":"junior-masculino","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Junior Masc","rival":"CB Benalmádena"},{"id":"517212","hora":"11:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"CB Rincón de la Victoria"},{"id":"512317","hora":"18:30","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"EBG Málaga"}],"2027-02-14":[{"id":"517398","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"Torrebasket"}],"2027-02-20":[{"id":"517402","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"EBG Málaga"},{"id":"512894","hora":"17:00","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"Fundación CB Granada"},{"id":"512389","hora":"19:15","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"CB Benalmádena"}],"2027-02-21":[{"id":"517201","hora":"12:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"Provincial Femenino"}],"2027-03-06":[{"id":"517174","hora":"13:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"CD Basket Norte"}],"2027-03-13":[{"id":"517223","hora":"11:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"EBG Málaga"},{"id":"517221","hora":"13:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"CB Rincón de la Victoria"},{"id":"517413","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"CB Novaschool"},{"id":"512402","hora":"17:00","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"CB La Mota"},{"id":"512909","hora":"19:15","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"Presentación Granada"}],"2027-03-14":[{"id":"517410","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"CB Rincón de la Victoria"}],"2027-03-20":[{"id":"512339","hora":"18:30","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"CB Alhaurín de la Torre"}],"2027-04-03":[{"id":"517414","hora":"13:30","fab":"1","equipo":"provincial-masculino-a","genero":"M","nombre":"ENRIQUE LÓPEZ","debajo":"Provincial Masc","rival":"MBK"},{"id":"512832","hora":"17:00","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"Unicaja"},{"id":"512415","hora":"19:30","fab":"central","equipo":"n1-masculino","genero":"M","nombre":"JOSE ESTEBA","debajo":"N1 Masc","rival":"MBK"}],"2027-04-04":[{"id":"517242","hora":"","fab":"1","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"EBG Málaga"}],"2027-04-10":[{"id":"517234","hora":"11:30","fab":"3","equipo":"sub22-femenino","genero":"F","nombre":"ANTOÑIPI SÁNCHEZ","debajo":"Sub22 Fem","rival":"CB Alhaurín de la Torre"},{"id":"517232","hora":"13:30","fab":"1","equipo":"provincial-femenino","genero":"F","nombre":"SERGIO RISOTO","debajo":"Provincial Fem","rival":"EBG Málaga"},{"id":"512925","hora":"18:30","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"El Toyo Basket"}],"2027-04-11":[{"id":"517421","hora":"12:30","fab":"1","equipo":"provincial-masculino-b","genero":"M","nombre":"JUAN VASCO","debajo":"Provincial Masc","rival":"Rincón Basket"}],"2027-04-17":[{"id":"512845","hora":"18:30","fab":"central","equipo":"n1-femenino","genero":"F","nombre":"LUISMI MONTIEL","debajo":"N1 Fem","rival":"CD Roquetas BC"}]}}}</script>
+<script type="module" src="asignar/pagina.mjs"></script>
+</body>
+</html>

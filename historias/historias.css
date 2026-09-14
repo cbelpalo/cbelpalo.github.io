@@ -1,0 +1,221 @@
+/* HISTORIAS DE INSTAGRAM (25-11) — la página historias.html (site/paginas.mjs → paginaHistorias), que
+   lleva estilo.css delante: reutiliza .cabecera, .boton, .boton-icono, .dialogo y .oculto. Aquí solo
+   lo suyo: la cabeza de la página, las filas (una por foto: miniatura | crónica | botones), el pie con
+   «Generar todo» y el modal de la vista previa. */
+
+.historias { container: historias / inline-size; flex: 1 0 auto; width: 100%; max-width: 72rem; margin-inline: auto; padding: var(--e-5) var(--e-4) var(--e-6); }
+.historias__cabeza { display: grid; gap: var(--e-2) var(--e-4); align-items: center; margin-bottom: var(--e-4); }
+.historias__titulo { margin: 0; color: var(--azul); font: 700 var(--t-banda) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.02em; }
+.historias__ayuda { margin: 0; color: var(--tinta-suave); }
+.historias__anadir,
+.historias__anadir-mas { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-2); width: auto; cursor: pointer; }
+.historias__anadir:has(input:focus-visible),
+.historias__anadir-mas:has(input:focus-visible) { outline: 3px solid var(--naranja); outline-offset: 2px; }
+@container historias (width >= 40rem) {
+  .historias__cabeza { grid-template-columns: 1fr auto; }
+  .historias__ayuda { grid-column: 1; }
+  .historias__anadir { grid-column: 2; grid-row: 1 / span 2; }
+}
+/* Zona de soltar: clic = elegir fotos; soltar = añadirlas. Grande sin historias; con ellas, franja. */
+.historias__soltar {
+  display: grid;
+  justify-items: center;
+  gap: var(--e-2);
+  padding: var(--e-7) var(--e-4);
+  border: 2px dashed var(--azul-claro);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta-suave);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s var(--salida), border-color 0.15s var(--salida);
+}
+.historias__soltar .icono { width: 2.5rem; height: 2.5rem; color: var(--azul); }
+.historias__soltar-texto { color: var(--tinta); font-size: var(--t-texto); }
+.historias__soltar-texto strong { color: var(--azul); }
+.historias__soltar-nota { font-size: var(--t-dato); }
+.historias__soltar:hover,
+.historias__soltar--activa { border-color: var(--naranja); background: var(--naranja-tinte); }
+.historias__soltar:has(input:focus-visible) { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.historias__soltar--franja { grid-auto-flow: column; justify-content: center; align-items: center; margin-top: var(--e-3); padding: var(--e-4); }
+.historias__soltar--franja .icono { width: 1.5rem; height: 1.5rem; }
+.historias__soltar--franja .historias__soltar-nota { display: none; }
+
+/* ── Las filas ─────────────────────────────────────────────────────────────────────────────── */
+.historias__lista { display: grid; gap: var(--e-3); margin: 0; padding: 0; list-style: none; }
+.historias__lista:empty { display: none; }
+/* Móvil: miniatura y crónica arriba, botones debajo a todo el ancho. Con sitio, los botones en una
+   línea bajo la crónica, al lado de la foto: filas bajas para ver muchas a la vez. */
+.historia {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  grid-template-areas: "foto datos" "botones botones";
+  gap: var(--e-2) var(--e-3);
+  align-items: start;
+  padding: var(--e-3);
+  border: 1px solid var(--regla);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+@container historias (width >= 40rem) {
+  .historia { grid-template-columns: 9rem minmax(0, 1fr); grid-template-areas: "foto datos" "foto botones"; }
+}
+.historia[aria-busy="true"] .historia__miniatura { opacity: 0.5; }
+.historia--soltar { outline: 3px dashed var(--naranja); outline-offset: 2px; }
+.historia--aviso { border-color: var(--naranja); }
+
+/* La miniatura es la franja de la foto tal como sale en la historia (zoom y encuadre incluidos); el
+   número, en su esquina de arriba a la izquierda (así la crónica se alinea con el desplegable). */
+.historia__miniatura { grid-area: foto; position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radio); background: var(--hormigon); cursor: zoom-in; }
+.historia__miniatura canvas { display: block; width: 100%; height: auto; aspect-ratio: 1080 / 710; border-radius: var(--radio); }
+.historia__miniatura:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.historia__numero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding-inline: var(--e-1);
+  border-radius: var(--radio) 0 var(--radio) 0;
+  background: var(--azul);
+  color: #fff;
+  font: 700 var(--t-equipo) / 1 var(--f-cartel);
+}
+
+.historia__datos { grid-area: datos; display: grid; gap: var(--e-2); min-width: 0; }
+/* El editor de la crónica escribe con la letra y el color de la historia (Questrial, #46546a, la del
+   ejemplo del CM): lo que se ve al escribir, negrita, cursiva y colores incluidos, es lo que sale. La
+   letra la registra pintar.mjs (cargarRecursos) con FontFace; hasta entonces, la de reserva. */
+.historia__texto {
+  width: 100%;
+  min-width: 0;
+  min-height: 5.25rem; /* 3 líneas: una crónica de ~20 palabras se ve entera */
+  padding: var(--e-2) var(--e-3);
+  border: 1px solid var(--azul-claro);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: #46546a;
+  font: 400 1.0625rem / 1.45 'Questrial', var(--f-texto);
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+.historia__texto:focus-visible { outline: 3px solid var(--naranja); outline-offset: 0; border-color: var(--azul); }
+.editor:empty::before { content: attr(data-placeholder); color: var(--tinta-suave); opacity: 0.7; pointer-events: none; }
+
+/* Barra de formato de la vista previa: negrita, cursiva y colores. */
+.formato { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-1); }
+.formato__boton {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--azul-claro);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--azul);
+  font: 400 1.125rem / 1 'Questrial', var(--f-texto);
+  cursor: pointer;
+}
+.formato__boton--negrita { font-weight: 700; }
+.formato__boton--cursiva { font-style: italic; }
+.formato__boton:hover { border-color: var(--azul); background: var(--banda); }
+.formato__separador { width: 1px; height: 1.5rem; margin-inline: var(--e-1); background: var(--regla); }
+.formato__color {
+  position: relative;
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 2px solid var(--papel);
+  border-radius: 50%;
+  background: var(--muestra);
+  box-shadow: 0 0 0 1px var(--azul-claro);
+  cursor: pointer;
+}
+.formato__color:hover { box-shadow: 0 0 0 2px var(--azul); }
+.formato__boton:focus-visible,
+.formato__color:focus-visible,
+.formato__color:has(input:focus-visible) { outline: 3px solid var(--naranja); outline-offset: 2px; }
+/* «Otro color»: el arcoíris abre el selector del sistema (su <input> ocupa la muestra, invisible). */
+.formato__color--otro { background: conic-gradient(#e53935, #fdd835, #43a047, #1e88e5, #8e24aa, #e53935); overflow: hidden; }
+.formato__color--otro input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.historia__aviso { margin: 0; padding: var(--e-1) var(--e-2); border-left: 3px solid var(--azul-claro); color: var(--tinta-suave); font-size: var(--t-dato); }
+.historia--aviso .historia__aviso,
+.historia__aviso.historia--aviso { border-left-color: var(--naranja); background: var(--naranja-tinte); color: var(--tinta); }
+
+/* Resumen del revisor ortográfico (26-11): qué se ha corregido, con «Deshacer». */
+.historia__revision { margin: 0; padding: var(--e-1) var(--e-2); border-left: 3px solid var(--azul); background: var(--banda); color: var(--tinta); font-size: var(--t-dato); }
+.historia__revision[hidden] { display: none; }
+.historia__deshacer { padding: 0; border: 0; background: none; color: var(--azul); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.historia__deshacer:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.historias__pie .historias__revisar-todas { display: inline-flex; align-items: center; gap: var(--e-2); border-color: #fff; }
+.previa__revisar { justify-self: start; display: inline-flex; align-items: center; gap: var(--e-2); }
+.historia__botones { grid-area: botones; display: flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; }
+.historia__plantilla {
+  flex: 1 1 10rem;
+  max-width: 14rem;
+  min-height: 2.25rem;
+  padding-inline: var(--e-2);
+  border: 1px solid var(--azul-claro);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--azul);
+  font: 700 var(--t-dato) / 1 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.historia__botones .boton,
+.historia__acciones .boton { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-2); width: auto; }
+.historia__botones > .boton { flex: 0 1 auto; }
+.historia__acciones { display: flex; flex: 0 1 auto; flex-wrap: wrap; gap: var(--e-2); }
+.historia__acciones .boton { flex: 0 1 auto; }
+/* La papelera, al final de la línea. */
+.historia__botones .historia__quitar { margin-left: auto; }
+.historia__acciones .boton:disabled { opacity: 0.45; cursor: not-allowed; }
+.historia__quitar { flex: 0 0 auto !important; padding-inline: var(--e-2); }
+
+/* ── Pie: «Generar todo» debajo de la lista ───────────────────────────────────────────────── */
+.historias__pie { display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-3); align-items: center; margin-top: var(--e-4); padding: var(--e-3); border-radius: var(--radio); background: var(--azul); }
+.historias__pie[hidden] { display: none; }
+.historias__cuenta { flex: 1 1 14rem; color: var(--azul-claro); font-size: var(--t-dato); }
+.historias__pie .boton { flex: 0 1 auto; }
+.historias__pie .boton--primario { width: auto; display: inline-flex; align-items: center; gap: var(--e-2); }
+.historias__pie .boton:not(.boton--primario) { border-color: #fff; }
+.historias__pie .boton[aria-busy="true"] { cursor: progress; opacity: 0.7; }
+.historias__pie .boton:disabled { opacity: 0.5; cursor: not-allowed; }
+.historias__privacidad { margin: var(--e-3) 0 0; color: var(--tinta-suave); font-size: var(--t-dato); }
+
+/* ── Vista previa (modal) ─────────────────────────────────────────────────────────────────── */
+/* Más ancha que las demás ventanas: la historia a un lado y los mandos al otro. */
+.dialogo--previa { --dialogo-alto: calc(100dvh - 2rem); width: min(100% - 2rem, 56rem); overflow: clip; }
+/* El contenedor es el formulario: un elemento no puede consultarse a sí mismo. */
+.dialogo--previa .dialogo__caja { container: previa / inline-size; }
+.previa { display: grid; gap: var(--e-4); padding: var(--e-4); overflow-x: clip; }
+.previa__canvas {
+  display: block;
+  justify-self: center;
+  width: auto;
+  max-width: 100%;
+  /* Cabe entera con la cabeza y el pie de la ventana, también en pantallas bajas. */
+  height: clamp(16rem, 100dvh - 13rem, 40rem);
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radio);
+  background: var(--azul);
+  cursor: grab;
+  touch-action: none; /* arrastrar mueve la foto, no la ventana */
+}
+.previa__canvas:active { cursor: grabbing; }
+.previa__canvas:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.previa__mandos { display: grid; gap: var(--e-2); align-content: start; min-width: 0; }
+.previa__mandos .historia__texto { min-height: 7rem; }
+.previa__mandos .boton { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-2); }
+.previa__etiqueta { margin-top: var(--e-1); color: var(--azul); font: 700 var(--t-dato) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.previa__zoom { width: 100%; accent-color: var(--naranja); }
+@container previa (width >= 40rem) {
+  .previa { grid-template-columns: auto minmax(0, 1fr); align-items: start; }
+}
+.previa__pie { display: flex; flex-wrap: wrap; gap: var(--e-2); justify-content: flex-end; }
+.previa__pie > .boton { width: auto; }
+.previa__pie .historia__acciones { flex: 0 1 auto; }

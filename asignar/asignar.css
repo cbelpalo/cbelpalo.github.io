@@ -1,0 +1,209 @@
+/* ASIGNAR PISTAS (27-11) — la página asignar.html (site/paginas.mjs → paginaAsignar), que lleva
+   estilo.css delante: reutiliza .cabecera, .boton, .segmentos, .grupo, .dialogo y .oculto. Aquí solo lo
+   suyo: los mandos (campo y día), la bandeja «Sin pista», el cuadrante (horas × pistas), las fichas,
+   la nota y la imagen. Primero el móvil; con sitio (container queries), más ancho. */
+
+.asignar { container: asignar / inline-size; flex: 1 0 auto; width: 100%; max-width: 72rem; margin-inline: auto; padding: var(--e-5) var(--e-4) var(--e-6); }
+.asignar__cabeza { display: grid; gap: var(--e-2); margin-bottom: var(--e-4); }
+.asignar__titulo { margin: 0; color: var(--azul); font: 700 var(--t-banda) / 1 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.02em; }
+.asignar__ayuda { margin: 0; color: var(--tinta-suave); }
+.asignar__seccion { display: flex; gap: var(--e-2); align-items: baseline; margin: var(--e-5) 0 var(--e-2); color: var(--azul); font: 700 var(--t-equipo) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.asignar__cuenta { color: var(--naranja); }
+.asignar__etiqueta { color: var(--tinta-suave); font: 700 var(--t-etiqueta) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.04em; }
+.asignar input[type='text'], .asignar input[type='time'], .asignar select {
+  min-height: 2.75rem;
+  padding-inline: var(--e-3);
+  border: 1px solid var(--regla);
+  border-radius: var(--radio);
+  background: var(--papel);
+  color: var(--tinta);
+}
+.asignar input:focus-visible, .asignar select:focus-visible { outline: 3px solid var(--naranja); outline-offset: 1px; }
+
+/* Campo y día: los segmentos de los filtros, aquí sobre fondo claro. */
+.asignar__mandos { display: flex; flex-wrap: wrap; gap: var(--e-3) var(--e-4); align-items: end; }
+.asignar__mandos .grupo { flex: 1 1 14rem; display: grid; gap: var(--e-1); }
+.asignar__mandos .grupo__nombre { color: var(--tinta-suave); }
+.asignar__mandos .segmento { border-color: var(--azul-claro); }
+.asignar__mandos .segmento__control:disabled + .segmento { opacity: 0.45; cursor: not-allowed; background: var(--hormigon); }
+
+/* «Sin pista»: las fichas sueltas. Con una elegida, tocar aquí la deja sin pista. */
+.asignar__bandeja {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  min-height: 4.5rem;
+  padding: var(--e-2);
+  border: 2px dashed var(--regla);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+.asignar__bandeja .ficha { flex: 1 1 11rem; max-width: 16rem; }
+.asignar__vacia { margin: auto; color: var(--tinta-suave); font-size: var(--t-dato); }
+.asignar__acciones { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-top: var(--e-2); }
+.asignar__acciones .boton, .asignar__hora .boton { display: inline-flex; gap: var(--e-2); align-items: center; width: auto; }
+.asignar--eligiendo .asignar__bandeja { border-color: var(--naranja-claro); }
+
+/* El cuadrante: hora + una columna por pista. Si no cabe, se desplaza él, no la página. */
+.asignar__cuadrante { overflow-x: auto; }
+.asignar__zona {
+  display: inline-block;
+  margin: var(--e-4) 0 var(--e-2);
+  padding: var(--e-1) var(--e-3);
+  border-radius: var(--radio);
+  background: var(--azul);
+  color: #fff;
+  font: 700 var(--t-equipo) / 1.3 var(--f-cartel);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+/* Las columnas las pone pagina.mjs (hora, pistas y el hueco de la Pista 2) con estas medidas. */
+.cuadrante { --col-hora: 3rem; --col-hueco: 1.5rem; --col-min: 5.5rem; }
+.cuadrante { display: grid; gap: var(--e-1); }
+/* En el móvil la columna es estrecha: nombre y equipo en dos líneas, y el lápiz ENCIMA del texto (una
+   franja arriba) en vez de comerle el ancho por la derecha. */
+.cuadrante .ficha__elegir { padding: 1.5rem var(--e-2) var(--e-2); }
+.cuadrante .ficha__nombre, .cuadrante .ficha__debajo { white-space: normal; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.cuadrante .ficha__nombre { font-size: var(--t-dato); }
+.cuadrante__pista {
+  display: grid;
+  place-items: center;
+  min-height: 2.25rem;
+  padding: var(--e-1);
+  border-radius: var(--radio);
+  background: var(--naranja);
+  color: var(--tinta);
+  font: 700 var(--t-etiqueta) / 1.1 var(--f-cartel);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.cuadrante__hora { display: grid; place-items: center; border-radius: var(--radio); background: var(--banda); color: var(--azul); font: 700 var(--t-equipo) / 1 var(--f-cartel); }
+.cuadrante__celda { display: grid; min-height: 4.5rem; border-radius: var(--radio); }
+.cuadrante__celda.sobre { outline: 3px solid var(--naranja); outline-offset: 1px; }
+/* La Mosca: el partido a lo largo (Pista central) ocupa toda la fila; la hora es el botón para ponerlo ahí. */
+/* La Mosca: la Pista 2 (banquillos) es una columna estrecha rayada donde no se juega (27-11, Luismi). */
+.cuadrante__pista--hueco { background: var(--azul-claro); color: var(--azul); cursor: help; }
+.cuadrante__hueco { border-radius: var(--radio); background: repeating-linear-gradient(135deg, var(--banda) 0 6px, transparent 6px 12px); }
+/* Pista central: cabecera naranja como las otras; su hueco libre lleva el texto de dónde soltar. */
+.cuadrante__libre--central { min-height: 3rem; color: var(--tinta-suave); font-size: var(--t-dato); }
+/* El asa para ampliar (o devolver) a pista completa: una franja en el borde de la ficha que da a la otra pista. */
+.ficha__estirar {
+  position: absolute;
+  top: 1.75rem;
+  bottom: var(--e-1);
+  width: 0.875rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  background: rgb(255 255 255 / 0.12);
+  cursor: ew-resize;
+  touch-action: none;
+}
+.ficha__estirar::after { content: ''; position: absolute; inset: 30% 40%; border-inline: 1px solid currentColor; opacity: 0.7; }
+.ficha__estirar--derecha { right: 0; }
+.ficha__estirar--izquierda { left: 0; }
+.ficha__estirar:hover, .ficha__estirar:focus-visible { background: var(--naranja); color: var(--tinta); outline: none; }
+.ficha--entreno .ficha__estirar { background: var(--hormigon); }
+.ficha--estirando { z-index: 3; box-shadow: 0 0 0 3px var(--naranja); }
+/* La hora de cada partido cuando en su franja empiezan a horas distintas: el mismo cuadrado que la de la fila. */
+/* En el móvil, una etiqueta arriba (en la franja del lápiz) para no comerle el ancho al nombre; con sitio, el cuadrado. */
+.ficha__hora { position: absolute; top: var(--e-1); left: var(--e-2); display: grid; place-items: center; height: 1.25rem; padding-inline: var(--e-1); border-radius: var(--radio); background: var(--banda); color: var(--azul); font: 700 var(--t-etiqueta) / 1 var(--f-cartel); }
+.ficha:has(.ficha__estirar--izquierda) .ficha__hora { left: 1.25rem; }
+.cuadrante__celda { position: relative; }
+.ficha:has(.ficha__estirar--derecha) .ficha__elegir { padding-right: 1.25rem; }
+.ficha:has(.ficha__estirar--izquierda) .ficha__elegir { padding-left: 1.25rem; }
+
+/* Fuera de la pista que dice la FAB: asterisco en el nombre y la nota debajo. */
+.ficha__nota { display: none; color: var(--naranja-claro); font-size: var(--t-etiqueta); font-weight: 700; line-height: 1.2; }
+.ficha--movida .ficha__nota { display: block; }
+.ficha--entreno .ficha__nota { color: var(--naranja); }
+.cuadrante__libre { width: 100%; border: 2px dashed var(--regla); border-radius: var(--radio); background: transparent; cursor: default; }
+.asignar--eligiendo .cuadrante__libre { border-color: var(--naranja); background: var(--naranja-tinte); cursor: pointer; }
+.asignar--eligiendo .cuadrante__libre:hover { background: var(--naranja-claro); }
+.cuadrante__libre:focus-visible { outline: 3px solid var(--naranja); outline-offset: 1px; }
+
+/* La ficha: el partido en azul; el entreno en blanco con borde naranja (como en el cartel). */
+.ficha { position: relative; display: flex; min-width: 0; border-radius: var(--radio); background: var(--azul); color: #fff; }
+.ficha__elegir {
+  display: grid;
+  flex: 1;
+  align-content: center;
+  gap: 0.125rem;
+  min-width: 0;
+  padding: var(--e-2) 1.75rem var(--e-2) var(--e-2);
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: grab;
+}
+.ficha__nombre { overflow: hidden; font: 700 var(--t-equipo) / 1.05 var(--f-cartel); text-transform: uppercase; text-overflow: ellipsis; white-space: nowrap; }
+.ficha__debajo, .ficha__meta { overflow: hidden; font-size: var(--t-etiqueta); line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.ficha__debajo { color: var(--azul-claro); }
+.ficha__meta { color: var(--naranja-claro); }
+/* En el cuadrante ya se ve la hora y la pista: fuera la línea del rival y la hora. */
+.cuadrante .ficha__meta, .completas .ficha__meta { display: none; }
+.cuadrante .ficha--entreno .ficha__meta, .completas .ficha--entreno .ficha__meta { display: block; }
+.ficha__editar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0;
+  border-radius: var(--radio);
+  background: none;
+  color: inherit;
+  opacity: 0.75;
+  cursor: pointer;
+}
+.ficha__editar .icono { width: 0.875rem; height: 0.875rem; }
+.ficha__editar:hover, .ficha__editar:focus-visible { opacity: 1; background: rgb(255 255 255 / 0.15); }
+.ficha--entreno { box-shadow: inset 0 0 0 2px var(--naranja); background: var(--papel); color: var(--azul); }
+.ficha--entreno .ficha__debajo { color: var(--tinta-suave); }
+.ficha--entreno .ficha__meta { color: var(--naranja); font-weight: 700; text-transform: uppercase; }
+.ficha--entreno .ficha__editar:hover { background: var(--hormigon); }
+.ficha:has(.ficha__elegir[aria-pressed='true']) { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.ficha__elegir:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+.ficha--arrastrando { opacity: 0.5; }
+
+.asignar__hora { display: flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; margin-top: var(--e-3); }
+.asignar__nada { margin: var(--e-3) 0 0; color: var(--tinta-suave); }
+
+.asignar__nota { display: grid; gap: var(--e-1); max-width: 36rem; }
+.asignar__nota input + .asignar__etiqueta { margin-top: var(--e-2); }
+
+/* La imagen: la vista previa y, al lado o debajo, los botones. */
+.asignar__salida { display: grid; gap: var(--e-4); }
+.asignar__previa { margin: 0; }
+.asignar__previa img { display: block; width: 100%; max-width: 30rem; height: auto; border: 1px solid var(--regla); border-radius: var(--radio); background: var(--papel); box-shadow: 0 8px 24px -16px rgb(8 38 84 / 0.5); }
+.asignar__botones { display: grid; gap: var(--e-2); align-content: start; }
+.asignar__botones .boton { display: inline-flex; gap: var(--e-2); align-items: center; justify-content: center; }
+.asignar__cero { margin-top: var(--e-3); }
+.asignar__aviso { margin: 0; padding: var(--e-2) var(--e-3); border-left: 3px solid var(--naranja); background: var(--naranja-tinte); color: var(--tinta); font-size: var(--t-dato); }
+
+.dialogo--ficha .dialogo__cuerpo { gap: var(--e-1); }
+.dialogo--ficha input { min-height: 2.75rem; padding-inline: var(--e-3); border: 1px solid var(--regla); border-radius: var(--radio); }
+.dialogo--ficha input + .asignar__etiqueta { margin-top: var(--e-2); }
+.asignar__pie-ficha { display: grid; gap: var(--e-2); }
+.asignar__pie-ficha .boton { display: inline-flex; gap: var(--e-2); align-items: center; justify-content: center; }
+
+@container asignar (width >= 40rem) {
+  /* Hora cuadrada: tan ancha como alta la fila (27-11, Luismi). Van en .cuadrante, no en .asignar: una consulta de
+     contenedor no estiliza al propio contenedor. */
+  .cuadrante { --col-hora: 5rem; --col-hueco: 2.5rem; --col-min: 0px; }
+  .cuadrante { gap: var(--e-2); }
+  .cuadrante__celda { min-height: 5rem; }
+  .cuadrante .ficha__elegir { padding: var(--e-2) 1.75rem var(--e-2) var(--e-2); }
+  .cuadrante .ficha__nombre { font-size: 1.25rem; }
+  .ficha__hora { position: static; flex: none; align-self: center; width: 2.75rem; height: 2.75rem; margin-left: var(--e-2); padding: 0; font-size: var(--t-dato); }
+  .ficha:has(.ficha__estirar--izquierda) .ficha__hora { margin-left: 1.25rem; }
+  .cuadrante__hora { font-size: var(--t-banda); }
+  .ficha__nombre { font-size: 1.25rem; }
+  .ficha__debajo { font-size: var(--t-dato); }
+  .asignar__salida { grid-template-columns: minmax(0, 1fr) 18rem; }
+}
