@@ -1,0 +1,366 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Masculino 15 · Antonio García
+X-WR-CALDESC:Partidos de Minibasket Masculino 15 · Antonio García (CB El 
+ Palo)\, temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y r
+ esultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529581@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261022T171500Z
+DTEND:20261022T191500Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo 67-27 EBG 
+ Málaga´16 Fundación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 1\nVictoria · parciales 14
+ -6\, 2-9\, 25-3\, 14-4\, 12-5\, 0-0\nTodos los partidos: https://cbelpalo.
+ github.io/?periodo=temporada&equipos=minibasket-masculino-15#p-529581
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529581
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529592@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T123000Z
+DTEND:20261107T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Inmobi
+ liaria El Romeral CB Torcal´15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 3\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529592
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529592
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529602@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261114T090000Z
+DTEND:20261114T110000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Academia 675 Negro 
+ – CB El Palo
+LOCATION:Centro Multidisciplinar El Oasis\, C/ José María Garnica\, S/N 2
+ 9140\, Churriana\, Málaga\, Málaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 4\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529602
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529602
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529589@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261122T123000Z
+DTEND:20261122T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Mijas Unión Basket´
+ 15 Verde – CB El Palo
+LOCATION:Pabellón La Cala de Mijas\, Calle Sierra de Baza s/n\, Mijas\, M
+ álaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 2\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529589
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529589
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529614@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Recole
+ tas Salud´15 Marbella Basket
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 6\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529614
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529614
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529616@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261212T113000Z
+DTEND:20261212T133000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Inmoporsan CB Algazar
+ a´15 – CB El Palo
+LOCATION:Pabellón Blas Infante\, AVD. BLAS INFANTE\, S/N\, Alhaurín de la
+  Torre\, Málaga
+GEO:36.65947;-4.56992
+DESCRIPTION:Minibasket · Campeonato · Jornada 7\nPista 2\nTodos los parti
+ dos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masc
+ ulino-15#p-529616
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529616
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529625@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261219T123000Z
+DTEND:20261219T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Miralu
+ x MBK´15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 8\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529625
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529625
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529629@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270109T090000Z
+DTEND:20270109T110000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · EBG Málaga´15 Funda
+ ción Unicaja – CB El Palo
+LOCATION:CEIP Clara Campoamor\, Avenida Alicia de Larrocha\, 2\, Málaga\, 
+ Málaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 9\nTodos los partidos: http
+ s://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15#
+ p-529629
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529629
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529636@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270116T123000Z
+DTEND:20270116T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Edm Te
+ atinos´15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 10\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529636
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529636
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529642@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270123T113000Z
+DTEND:20270123T133000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Miramar Torremolinos'
+ 15 Negro – CB El Palo
+LOCATION:Palacio San Miguel\, C/Pedro Navarro Bruna s/n\, Torremolinos\, M
+ álaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 11\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529642
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529642
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529647@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270130T083000Z
+DTEND:20270130T103000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · EBG Málaga´16 Funda
+ ción Unicaja – CB El Palo
+LOCATION:CEIP Victoria Kent\, Avenida Camino del Pato\, 6 \, Málaga\, Mál
+ aga
+DESCRIPTION:Minibasket · Campeonato · Jornada 12\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529647
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529647
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529655@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270206T123000Z
+DTEND:20270206T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Mijas 
+ Unión Basket´15 Verde
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 13\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529655
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529655
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529658@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270213T090000Z
+DTEND:20270213T110000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Inmobiliaria El Romer
+ al CB Torcal´15 – CB El Palo
+LOCATION:Pabellón 15 de julio\, Calle Juan Pablo II\, nº2 \, Antequera\, 
+ Málaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 14\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529658
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529658
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529668@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270220T123000Z
+DTEND:20270220T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Academ
+ ia 675 Negro
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 15\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529668
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529668
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529680@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270313T123000Z
+DTEND:20270313T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Recoletas Salud´15 M
+ arbella Basket – CB El Palo
+LOCATION:Pabellón Bello Horizonte - Carlos Cabezas\, Cam. Cristo de los Mo
+ linos\, 25\, 29603\, Marbella\, Málaga
+GEO:36.5129952;-4.858492
+DESCRIPTION:Minibasket · Campeonato · Jornada 17\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529680
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529680
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529682@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270320T123000Z
+DTEND:20270320T143000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Inmopo
+ rsan CB Algazara´15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 18\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529682
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529682
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529691@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270403T073000Z
+DTEND:20270403T093000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Miralux MBK´15 – C
+ B El Palo
+LOCATION:CEIP Luis Buñuel\, C/ Tamayo y Baus\, 40\, Málaga\, Málaga
+DESCRIPTION:Minibasket · Campeonato · Jornada 19\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529691
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529691
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529695@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270410T113000Z
+DTEND:20270410T133000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – EBG M
+ álaga´15 Fundación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 20\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529695
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529695
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529702@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270418T080000Z
+DTEND:20270418T100000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · Edm Teatinos´15 – 
+ CB El Palo
+LOCATION:Pistas FAB Teatinos\, Avda. Parménides s/n\, Málaga\, Málaga
+GEO:36.72022;-4.47992
+DESCRIPTION:Minibasket · Campeonato · Jornada 21\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529702
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529702
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529708@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20270424T113000Z
+DTEND:20270424T133000Z
+SUMMARY:Minibasket Masculino 15 · Antonio García · CB El Palo – Mirama
+ r Torremolinos'15 Negro
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Campeonato · Jornada 22\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ #p-529708
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15#p-529708
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,85 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Femenino 16 · Anita Muñoz
+X-WR-CALDESC:Partidos de Minibasket Femenino 16 · Anita Muñoz (CB El Palo
+ )\, temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y resul
+ tados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529319@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261025T090000Z
+DTEND:20261025T110000Z
+SUMMARY:Minibasket Femenino 16 · Anita Muñoz · Rincón de Nelly Manilva 
+ Basket´15 – CB El Palo
+LOCATION:Pabellón Las Viñas\, C/Nueva\, 1\, Manilva\, Málaga
+GEO:36.37752;-5.25409
+DESCRIPTION:Minibasket · Fase Previa · Jornada 3\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-16#
+ p-529319
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16#p-529319
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529317@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T123000Z
+DTEND:20261107T143000Z
+SUMMARY:Minibasket Femenino 16 · Anita Muñoz · CB El Palo – Miramar To
+ rremolinos '15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 2\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-16#
+ p-529317
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16#p-529317
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529322@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261121T123000Z
+DTEND:20261121T143000Z
+SUMMARY:Minibasket Femenino 16 · Anita Muñoz · CB El Palo – Bonifacio 
+ Solís CAB Estepona  2016
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 4\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-16#
+ p-529322
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16#p-529322
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529326@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T090000Z
+DTEND:20261128T110000Z
+SUMMARY:Minibasket Femenino 16 · Anita Muñoz · EBG Málaga´15 Fundació
+ n Unicaja – CB El Palo
+LOCATION:CEIP Clara Campoamor\, Avenida Alicia de Larrocha\, 2\, Málaga\, 
+ Málaga
+DESCRIPTION:Minibasket · Fase Previa · Jornada 5\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-16#
+ p-529326
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16#p-529326
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

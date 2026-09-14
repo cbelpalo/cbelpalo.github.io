@@ -1,0 +1,100 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Masculino 17
+X-WR-CALDESC:Partidos de Minibasket Masculino 17 (CB El Palo)\, temporada 2
+ 026/27. Se actualiza solo: horarios\, aplazamientos y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529843@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261024T103000Z
+DTEND:20261024T123000Z
+SUMMARY:Minibasket Masculino 17 · Atmoss Lighting Basket Norte – CB El P
+ alo
+LOCATION:CEIP Rosa de Gálvez\, Av. Jane Bowles\, 34\, 29011\, Málaga\, M
+ álaga
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 1\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mas
+ culino-17#p-529843
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-17#p-529843
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529848@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Minibasket Masculino 17 · CB El Palo – CB Alhaurín de La Torre
+ ´16
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 2\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mas
+ culino-17#p-529848
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-17#p-529848
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529850@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261114T083000Z
+DTEND:20261114T103000Z
+SUMMARY:Minibasket Masculino 17 · CB Salliver Fuengirola Higuerón Resort
+ ´17 – CB El Palo
+LOCATION:Colegio Salliver\, Avda. Finlandia\, 4\, Fuengirola\, Málaga
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 3\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mas
+ culino-17#p-529850
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-17#p-529850
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529853@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Minibasket Masculino 17 · CB El Palo – Inmoporsan CB Algazara´1
+ 6
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 4\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mas
+ culino-17#p-529853
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-17#p-529853
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529857@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Minibasket Masculino 17 · EBG´16 Fundación Unicaja – CB El Pal
+ o
+LOCATION:CEIP Victoria Kent\, Avenida Camino del Pato\, 6 \, Málaga\, Mál
+ aga
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 5\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mas
+ culino-17#p-529857
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-17#p-529857
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

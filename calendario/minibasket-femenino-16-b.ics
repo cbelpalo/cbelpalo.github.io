@@ -1,0 +1,87 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Femenino 16 · Laura Ruiz
+X-WR-CALDESC:Partidos de Minibasket Femenino 16 · Laura Ruiz (CB El Palo)\
+ , temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y resulta
+ dos.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529407@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T103000Z
+DTEND:20261107T123000Z
+SUMMARY:Minibasket Femenino 16 · Laura Ruiz · CB El Palo – CP Mijas Aut
+ os Molière Baloncesto´16
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 2\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-16-b#p-529407
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16-b#p-529407
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529409@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261115T090000Z
+DTEND:20261115T110000Z
+SUMMARY:Minibasket Femenino 16 · Laura Ruiz · CB Rincón de La Victoria´
+ 16 – CB El Palo
+LOCATION:Pabellón Rubén Ruzafa\, C/ Oleaje\, nº 1 (Torre de Benagalbón)
+ \, Rincón de la Victoria\, Málaga
+GEO:36.71454;-4.25326
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 3\nPista anexo\nT
+ odos los partidos: https://cbelpalo.github.io/?periodo=temporada&equipos=m
+ inibasket-femenino-16-b#p-529409
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16-b#p-529409
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529412@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261121T103000Z
+DTEND:20261121T123000Z
+SUMMARY:Minibasket Femenino 16 · Laura Ruiz · CB El Palo – AD Asunción
+  Málaga "B"
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 4\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-16-b#p-529412
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16-b#p-529412
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529416@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T103000Z
+DTEND:20261128T123000Z
+SUMMARY:Minibasket Femenino 16 · Laura Ruiz · Teresianas´16 – CB El Pa
+ lo
+LOCATION:Colegio Teresianas\, C/ Cañadas de los Ingleses\, 4\, Málaga\, M
+ álaga
+GEO:36.72167;-4.40585
+DESCRIPTION:Minibasket 1er Año · Fase Previa · Jornada 5\nTodos los part
+ idos: https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-fem
+ enino-16-b#p-529416
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-16-b#p-529416
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

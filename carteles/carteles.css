@@ -1,0 +1,65 @@
+/* CARTELES DE LA SEMANA (21-10). Se carga al abrir la ventana (site/carteles/cliente.mjs), nunca con
+   la página: en la web publicada solo existe con `?carteles`. La ventana reutiliza .dialogo,
+   .dialogo__lista, .dialogo__nota, .boton y .boton-icono; aquí solo lo suyo: la fila de la semana
+   con sus flechas, la rejilla de previsualizaciones, la ficha de cada cartel y el visor. El botón de
+   la cabecera va en site/estilo.css, que es la página. */
+
+.dialogo--carteles { height: var(--dialogo-alto); }
+.carteles__semana { display: flex; align-items: center; gap: var(--e-2); padding: var(--e-3) var(--e-4); border-bottom: 1px solid var(--regla); }
+.carteles__semana .boton { display: inline-grid; place-items: center; width: 2.75rem; padding: 0; }
+.carteles__semana .boton:disabled { border-color: var(--regla); background: var(--papel); color: var(--regla); cursor: default; }
+.carteles__fechas { flex: 1; margin: 0; color: var(--azul); font: 700 var(--t-equipo) / 1.2 var(--f-cartel); text-align: center; text-transform: uppercase; letter-spacing: 0.03em; }
+
+/* Una columna en el móvil; dos (un cartel por campo) en cuanto la ventana da para ello. */
+.carteles__marco { container: carteles / inline-size; }
+.carteles__lista { display: grid; gap: var(--e-4); padding: var(--e-4); }
+@container carteles (width >= 30rem) {
+  .carteles__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .carteles__lista > .dialogo__nota { grid-column: 1 / -1; }
+}
+.cartel { display: grid; gap: var(--e-2); margin: 0; }
+/* Mientras se pinta, el hueco del cartel en gris (3:4, el de la imagen) para que nada salte. */
+.cartel__imagen { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; border: 1px solid var(--regla); border-radius: var(--radio); background: var(--hormigon); }
+.cartel__imagen[aria-busy="true"] { animation: cartel-latido 1.2s ease-in-out infinite alternate; }
+@keyframes cartel-latido { to { background: var(--regla); } }
+@media (prefers-reduced-motion: reduce) { .cartel__imagen[aria-busy="true"] { animation: none; } }
+.cartel__pie { display: grid; gap: var(--e-2); }
+.cartel__nombre { color: var(--azul); font: 700 var(--t-dato) / 1.2 var(--f-cartel); text-transform: uppercase; letter-spacing: 0.03em; }
+.cartel__acciones { display: flex; flex-wrap: wrap; gap: var(--e-2); }
+.cartel__acciones .boton { display: inline-flex; flex: 1 1 auto; align-items: center; justify-content: center; gap: var(--e-2); text-decoration: none; }
+.cartel__acciones .boton--primario { width: auto; }
+.cartel__acciones .boton[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+/* La previsualización es un botón: abre el visor. Sin aspecto propio, solo el cursor de ampliar. */
+.cartel__ampliar { display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radio); background: none; cursor: zoom-in; }
+.cartel__ampliar:disabled { cursor: progress; }
+.cartel__ampliar:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+
+/* VISOR (21-10): el cartel a pantalla completa, entero (como `contain`: lo limitan el ancho y el
+   alto, nunca se recorta) sobre fondo oscuro. Lo que no es la imagen es el propio <dialog>, y un
+   clic ahí lo cierra. Los botones son .boton-icono, que ya es blanco sobre oscuro. */
+.visor {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: var(--e-7) var(--e-4) var(--e-6);
+  border: 0;
+  background: transparent;
+  color: #fff;
+}
+.visor[open] { display: grid; place-items: center; }
+.visor::backdrop { background: rgb(5 12 24 / 0.92); }
+.visor__imagen { display: block; max-width: 100%; max-height: calc(100dvh - var(--e-7) - var(--e-6)); width: auto; height: auto; border-radius: var(--radio); box-shadow: 0 24px 48px -16px rgb(0 0 0 / 0.6); }
+.visor__pie { position: fixed; inset: auto var(--e-4) var(--e-2); margin: 0; color: var(--azul-claro); font: 600 var(--t-dato) / 1.3 var(--f-texto); text-align: center; }
+.visor__boton { position: fixed; background: rgb(5 12 24 / 0.5); }
+.visor__boton:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.visor__boton--cerrar { top: var(--e-3); right: var(--e-3); }
+.visor__boton--anterior, .visor__boton--siguiente { top: 50%; translate: 0 -50%; }
+.visor__boton--anterior { left: var(--e-3); }
+.visor__boton--siguiente { right: var(--e-3); }
+/* Con sitio a los lados, la imagen deja libres las flechas. */
+@media (min-aspect-ratio: 1 / 1) { .visor { padding-inline: var(--e-7); } }
+/* Sin hoja de compartir en el móvil (por la IP de la LAN): cómo guardar el cartel en Fotos (21-10). */
+.carteles__nota { padding: var(--e-2) var(--e-4) 0; }

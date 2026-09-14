@@ -1,0 +1,84 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Masculino 15 · Alejandro Sánchez
+X-WR-CALDESC:Partidos de Minibasket Masculino 15 · Alejandro Sánchez (CB 
+ El Palo)\, temporada 2026/27. Se actualiza solo: horarios\, aplazamientos 
+ y resultados.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529803@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T083000Z
+DTEND:20261107T103000Z
+SUMMARY:Minibasket Masculino 15 · Alejandro Sánchez · CB El Palo – Cdc
+  Los Olivos
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 2\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ -b#p-529803
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15-b#p-529803
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529805@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261114T103000Z
+DTEND:20261114T123000Z
+SUMMARY:Minibasket Masculino 15 · Alejandro Sánchez · Academia Avda. And
+ alucía Basket Norte – CB El Palo
+LOCATION:IES Sierra Bermeja\, C. Potro de Córdoba\, 4\, Málaga\, Málaga
+DESCRIPTION:Minibasket · Fase Previa · Jornada 3\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ -b#p-529805
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15-b#p-529805
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529808@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Minibasket Masculino 15 · Alejandro Sánchez · CB El Palo – CB 
+ Benalmádena´15
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 4\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ -b#p-529808
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15-b#p-529808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529812@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T123000Z
+DTEND:20261128T143000Z
+SUMMARY:Minibasket Masculino 15 · Alejandro Sánchez · CD Estudiantes Bal
+ oncesto Nerja – CB El Palo
+LOCATION:Pabellón Municipal de Nerja\, C/ Saturno s/n\, Nerja\, Málaga
+GEO:36.7554;-3.87474
+DESCRIPTION:Minibasket · Fase Previa · Jornada 5\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-masculino-15
+ -b#p-529812
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-mascul
+ ino-15-b#p-529812
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

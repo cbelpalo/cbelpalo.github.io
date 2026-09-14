@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CB El Palo//Partidos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB El Palo · Minibasket Femenino 15 · Javi Ariza
+X-WR-CALDESC:Partidos de Minibasket Femenino 15 · Javi Ariza (CB El Palo)\
+ , temporada 2026/27. Se actualiza solo: horarios\, aplazamientos y resulta
+ dos.
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#E65D1E
+COLOR:orangered
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:529343@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261024T073000Z
+DTEND:20261024T093000Z
+SUMMARY:Minibasket Femenino 15 · Javi Ariza · CB El Palo – Dicel Seguri
+ dad MBK 15-16
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 1\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15#
+ p-529343
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15#p-529343
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529347@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261107T090000Z
+DTEND:20261107T110000Z
+SUMMARY:Minibasket Femenino 15 · Javi Ariza · Adesa Málaga – CB El Pal
+ o
+LOCATION:Colegio Salesiano San Bartolomé\, C/ Eduardo Domínguez Ávila\, 
+ 19\, Málaga\, Málaga
+GEO:36.73119;-4.42158
+DESCRIPTION:Minibasket · Fase Previa · Jornada 2\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15#
+ p-529347
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15#p-529347
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529348@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261114T120000Z
+DTEND:20261114T140000Z
+SUMMARY:Minibasket Femenino 15 · Javi Ariza · La Sorrentina Torrebasket 
+ – CB El Palo
+LOCATION:Pabellón Paco Aguilar\, C. Verano\, 16\, 29700 Vélez-Málaga\, M
+ álaga\, Vélez-Málaga\, Málaga
+DESCRIPTION:Minibasket · Fase Previa · Jornada 3\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15#
+ p-529348
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15#p-529348
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529353@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261121T083000Z
+DTEND:20261121T103000Z
+SUMMARY:Minibasket Femenino 15 · Javi Ariza · CB El Palo – EBG Málaga
+ ´16 Fundación Unicaja
+LOCATION:CEIP Ramón del Valle Inclán\, Av. Pío Baroja nº 6\, Málaga\, 
+ Málaga
+GEO:36.72044;-4.36475
+DESCRIPTION:Minibasket · Fase Previa · Jornada 4\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15#
+ p-529353
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15#p-529353
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:529355@cbelpalo
+DTSTAMP:20261023T140052Z
+DTSTART:20261128T121500Z
+DTEND:20261128T141500Z
+SUMMARY:Minibasket Femenino 15 · Javi Ariza · Maristas Málaga – CB El 
+ Palo
+LOCATION:Colegio HH Maristas\, C/Victoria 108\, Málaga\, Málaga
+GEO:36.72613;-4.41372
+DESCRIPTION:Minibasket · Fase Previa · Jornada 5\nTodos los partidos: htt
+ ps://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femenino-15#
+ p-529355
+URL:https://cbelpalo.github.io/?periodo=temporada&equipos=minibasket-femeni
+ no-15#p-529355
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
